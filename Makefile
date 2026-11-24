@@ -1,7 +1,7 @@
 CXX ?= g++
 CXXFLAGS ?= -std=c++20 -Wall -Wextra -pedantic -O2
-SOURCES := main.cpp Estructuras.cpp GrafoCampus.cpp SistemaAlerta360.cpp Pruebas.cpp
-HEADERS := Incidencia.h Estructuras.h GrafoCampus.h SistemaAlerta360.h
+SOURCES := main.cpp Estructuras.cpp GrafoCampus.cpp SistemaAlerta360.cpp Pruebas.cpp MapaVisual.cpp UbicacionesCampus.cpp
+HEADERS := Incidencia.h Estructuras.h GrafoCampus.h SistemaAlerta360.h MapaVisual.h UbicacionesCampus.h MapaPlantilla.inc
 
 ifeq ($(OS),Windows_NT)
 TARGET := alerta360.exe

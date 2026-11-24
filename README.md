@@ -76,6 +76,8 @@ Resuelta 101; conservada en historial.
 | 08 | Buscar por ID usando el BST. |
 | 09 | Historial adelante/atras, BST inorden, altura, conteos y proximas cinco pendientes. |
 | 10 | Mostrar vias, cambiar costo/reabrir, cerrar o restaurar el ultimo costo. |
+| 11 | Abrir mapa visual numerado en el navegador. |
+| 12 | Vincular una incidencia con un lugar exacto del catalogo UPSA. |
 | 00 | Liberar estructuras y mostrar cantidades vaciadas. |
 
 La gravedad 5 tiene la mayor urgencia. Una asignacion sin ruta conserva la
@@ -83,6 +85,49 @@ incidencia en el heap; no intenta saltarse a la siguiente. Las rutas registradas
 son historicas: no se recalculan al cambiar posteriormente el mapa. Restaurar
 una via recupera su ultimo costo; cambiar su costo tambien permite reabrirla.
 Solo se gestionan las conexiones del mapa inicial.
+
+## Mapa visual numerado
+
+El mapa se abre con la opcion **11**, o al iniciar:
+
+```powershell
+./alerta360.exe --visual
+```
+
+Funciona sin instalar bibliotecas y sin servidor web: C++ genera un archivo
+`mapa_alerta360.html` con los datos de la sesion y una vista interactiva.
+La consola lo actualiza despues de cada operacion y el navegador lo recarga
+cada ocho segundos. El boton **Actualizar** permite hacerlo manualmente.
+Al cerrar el programa queda la ultima instantanea; no permite recuperar la
+sesion de incidencias. No se deben abrir dos sesiones visuales en la misma carpeta.
+
+Dos vistas:
+
+- **Campus UPSA:** diez areas numeradas (Bloque Central, A, B, C, D, E,
+  Polideportivo, Cancha de Futbol, Centro de Convenciones e Ingreso Peatonal),
+  ubicaciones originales del catalogo, buscador y marcadores de incidencias.
+- **Zonas de atencion 0-7:** grafo obligatorio con todas sus zonas enumeradas,
+  conexiones, minutos y ruta registrada de la incidencia seleccionada.
+
+Los numeros de area visual 1-10, los ID de lugar #1-#205 y las zonas de atencion
+0-7 son identificadores diferentes y se muestran con sus respectivas etiquetas.
+Las areas visuales son una agrupacion para explorar el campus: no agregan nodos
+al grafo obligatorio. Los contornos del mapa agrupan puntos; no son planos de
+edificios. El servidor del fondo grafico oficial no respondio al consultar;
+esta version utiliza las posiciones del catalogo y no incluye ese fondo.
+
+Para marcar un problema: registrar la incidencia normalmente, abrir el mapa,
+buscar el lugar y usar **12 -> ID de incidencia -> numero del lugar**.
+Ejemplos: Biblioteca #173, Coliseo Polideportivo #49, Laboratorio de Redes #131.
+Un lugar sin posicion publicada (202 o 204) se rechaza para no inventar un punto.
+La ubicacion exacta no modifica la zona de atencion elegida ni el calculo de
+Dijkstra. La ruta del grafo no se presenta como un camino peatonal real.
+
+La vista permite seleccionar una incidencia y consultar descripcion, estado,
+gravedad, lugar, planta y ruta; filtrar por estado; y buscar un lugar por nombre,
+bloque o numero. Los datos del usuario se insertan como JSON escapado y se
+renderizan con `textContent`. El archivo generado contiene las descripciones
+de la sesion, por eso se excluye de Git junto con su temporal.
 
 ## Grafo inicial (no dirigido)
 
@@ -144,7 +189,9 @@ flowchart TD
 - `GrafoCampus.h/.cpp`: matriz 8x8 y Dijkstra con reconstruccion de camino.
 - `SistemaAlerta360.h/.cpp`: reglas, coordinacion, consultas e invariantes.
 - `main.cpp`: entrada validada, menu y manejo de EOF.
-- `Pruebas.cpp`: 22 escenarios reproducibles con verificaciones automaticas.
+- `Pruebas.cpp`: 25 escenarios reproducibles con verificaciones automaticas.
+- `MapaVisual.h/.cpp` y `MapaPlantilla.inc`: exportacion y vista interactiva.
+- `UbicacionesCampus.h/.cpp`: catalogo compilado de los 205 lugares UPSA.
 
 La lista es la unica propietaria de los registros. El BST guarda punteros no
 propietarios. Cola y pila guardan IDs. Cada entrada del heap guarda ID,
@@ -205,7 +252,7 @@ Get-Content pruebas/entrada_invalidas.txt | ./alerta360.exe
 ```
 
 En Linux/macOS se puede usar redireccion con `< archivo.txt` y `> salida.txt`.
-La suite devuelve 0 si todas las pruebas pasan, 1 si alguna falla. Las pruebas
+La suite ejecuta 25 escenarios y devuelve 0 si todos pasan, 1 si alguno falla. Las pruebas
 T01-T10 siguen la secuencia oficial; las restantes cubren casos adversos,
 memoria, prioridades, consultas, BST, UTF-8 y costos grandes. Ver `pruebas/CASOS.md`.
 La evidencia incluida se obtuvo con GCC 15.1.0 en Windows y advertencias activas.

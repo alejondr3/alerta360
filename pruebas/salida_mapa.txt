@@ -1,0 +1,69 @@
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
+00 Salir
+Opcion: ID positivo: 1 Energia | 2 Red | 3 Equipo | 4 Clima | 5 Infraestructura | 6 Otro
+Tipo: Descripcion (10-120 caracteres): Zona (1-7): Registrada 999: RECIBIDA, secuencia 1.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
+00 Salir
+Opcion: ID de la incidencia: Elija el numero del lugar en el mapa (opcion 11).
+Lugar UPSA (1-205; 0 quitar; 206 listar catalogo): Incidencia 999: ubicada en #173 Biblioteca. La zona de atencion sigue siendo 3.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
+00 Salir
+Opcion: ID a buscar: ID 999 | RECIBIDA | gravedad 0 | ingreso 1
+  Red | zona 3 (Coliseo)
+  Falla de prueba para el mapa
+  Ubicacion UPSA #173: Biblioteca | Bloque A | 4ta. Planta
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
+00 Salir
+Opcion: Liberacion: heap=0, pila=0, cola=1, BST=1, lista=1.

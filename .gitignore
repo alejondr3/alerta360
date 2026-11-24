@@ -2,6 +2,8 @@
 /build*/
 /alerta360
 /alerta360_asan
+/mapa_alerta360.html
+/mapa_alerta360.html.tmp
 *.exe
 *.o
 *.obj

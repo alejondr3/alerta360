@@ -1,4 +1,6 @@
 #include "SistemaAlerta360.h"
+#include "MapaVisual.h"
+#include "UbicacionesCampus.h"
 #include <limits>
 #include <ostream>
 #include <stdexcept>
@@ -122,6 +124,9 @@ void SistemaAlerta360::mostrarFicha(const Incidencia& d, std::ostream& out) {
     out << "ID " << d.id << " | " << nombreEstado(d.estado) << " | gravedad " << d.gravedad
         << " | ingreso " << d.secuenciaIngreso << "\n  " << nombreTipo(d.tipo)
         << " | zona " << d.zona << " (" << GrafoCampus::nombreZona(d.zona) << ")\n  " << d.descripcion << '\n';
+    if (const auto* lugar = buscarUbicacionCampus(d.ubicacionCampus))
+        out << "  Ubicacion UPSA #" << lugar->id << ": " << lugar->nombre << " | "
+            << lugar->bloque << " | " << lugar->planta << '\n';
     if (d.ruta.existe) {
         out << "  Ruta registrada: ";
         for (int i = 0; i < d.ruta.longitud; ++i) out << (i ? " -> " : "") << d.ruta.nodos[i];
@@ -163,6 +168,7 @@ bool SistemaAlerta360::validarConsistencia() const {
     long long anterior = 0;
     for (const auto* n = lista_.cabeza(); n; n = n->siguiente) {
         const auto& d = n->dato;
+        if (d.ubicacionCampus && !buscarUbicacionCampus(d.ubicacionCampus)) return false;
         if (indice_.buscar(d.id) != &d || d.id <= 0 || d.zona < 1 || d.zona > 7
             || d.secuenciaIngreso <= anterior || d.secuenciaIngreso > secuencia_) return false;
         anterior = d.secuenciaIngreso;
@@ -190,4 +196,50 @@ void SistemaAlerta360::cerrar(std::ostream& out) {
         << ", cola=" << cola_.limpiar() << ", BST=" << indice_.limpiar()
         << ", lista=" << lista_.limpiar() << ".\n";
     secuencia_ = 0;
+}
+
+bool SistemaAlerta360::ubicarEnCampus(int id, int ubicacion, std::ostream& out) {
+    Incidencia* dato = indice_.buscar(id);
+    if (!dato) { out << "ID inexistente.\n"; return false; }
+    const auto* lugar = buscarUbicacionCampus(ubicacion);
+    if (ubicacion != 0 && (!lugar || !lugar->tienePosicion)) {
+        out << "Ubicacion inexistente o sin posicion en el mapa oficial.\n";
+        return false;
+    }
+    dato->ubicacionCampus = ubicacion;
+    out << "Incidencia " << id << ": ";
+    if (lugar) out << "ubicada en #" << lugar->id << " " << lugar->nombre;
+    else out << "ubicacion exacta retirada";
+    out << ". La zona de atencion sigue siendo " << dato->zona << ".\n";
+    return true;
+}
+void SistemaAlerta360::exportarDatosMapa(std::ostream& out) const {
+    out << "{\"incidencias\":[";
+    bool primera = true;
+    for (const auto* n = lista_.cabeza(); n; n = n->siguiente) {
+        const auto& d = n->dato;
+        if (!primera) out << ',';
+        primera = false;
+        out << "{\"id\":" << d.id << ",\"zona\":" << d.zona << ",\"ubicacion\":" << d.ubicacionCampus
+            << ",\"gravedad\":" << d.gravedad << ",\"secuencia\":" << d.secuenciaIngreso << ",\"estado\":";
+        escribirCadenaJSON(out,nombreEstado(d.estado));
+        out << ",\"descripcion\":"; escribirCadenaJSON(out,d.descripcion);
+        out << ",\"tipo\":"; escribirCadenaJSON(out,nombreTipo(d.tipo));
+        out << ",\"ruta\":[";
+        for (int i = 0; i < d.ruta.longitud; ++i) out << (i ? "," : "") << d.ruta.nodos[i];
+        out << "],\"costo\":" << d.ruta.costo << '}';
+    }
+    out << "],\"zonas\":[";
+    for (int z = 0; z < 8; ++z) {
+        out << (z ? "," : ""); escribirCadenaJSON(out,GrafoCampus::nombreZona(z));
+    }
+    out << "],\"aristas\":[";
+    primera = true;
+    for (int a = 0; a < 8; ++a) for (int b = a+1; b < 8; ++b) {
+        const int costo = grafo_.costo(a,b);
+        if (costo <= 0) continue;
+        out << (primera ? "" : ",") << '[' << a << ',' << b << ',' << costo << ']';
+        primera = false;
+    }
+    out << "]}";
 }

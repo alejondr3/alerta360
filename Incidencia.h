@@ -51,6 +51,9 @@ struct Incidencia {
     Ruta ruta;
     // Referencia inversa al heap, -1 si no pertenece a el.
     int posicionHeap = -1;
+    // ID opcional del catalogo UPSA (1-205); 0 = ubicacion exacta sin elegir.
+    // No modifica la zona 1-7 del grafo obligatorio.
+    int ubicacionCampus = 0;
 
     Incidencia(int id_, const std::string& desc, Tipo tipo_, int zona_, long long sec)
         : id(id_), descripcion(desc), tipo(tipo_), zona(zona_), secuenciaIngreso(sec) {}

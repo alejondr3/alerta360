@@ -28,6 +28,9 @@ obtenidas y el registro de operaciones estan en `resultados.txt`.
 | T20 | Todas las vias con costo INT_MAX | Ruta 0 a 7 cuesta 8589934588, sin overflow. |
 | T21 | Varias canceladas y deshacer invalido sobre otro valido | FIFO preservada; cada intento consume una sola correccion. |
 | T22 | Descripcion UTF-8 de 120/121 caracteres y misma gravedad | Acepta 120, rechaza 121; mismo valor no apila. |
+| T23 | Vincular/quitar lugar UPSA e IDs invalidos | Ubicacion independiente de zona; rechazos sin modificar registro. |
+| T24 | Exportar descripcion con etiquetas script y catalogo | JSON seguro, datos completos y consultas sin mutacion. |
+| T25 | Crear/reemplazar mapa; carpeta inexistente y directorio como destino | Archivo completo, errores controlados, directorio preservado. |
 
 T19 prueba la estructura aislada: en el sistema real la secuencia de ingreso es
 unica, por lo que no se repite para dos incidencias.

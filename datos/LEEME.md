@@ -29,5 +29,14 @@ de aceptacion. Para un modo adicional de campus real habria que definir nodos
 y conexiones transitables, incluir escaleras/cambios de planta cuando corresponda
 y medir o declarar como estimados los costos positivos de cada tramo.
 
-El ejecutable no carga este JSON ni depende de internet. La incorporacion de
-esta referencia no modifica estados, prioridades, rutas o resultados del codigo.
+El catalogo tambien se incluye compilado en `UbicacionesCampus.cpp`: el mapa
+visual no necesita cargar este JSON ni conectarse a internet. Las posiciones
+se convierten al espacio del dibujo con el mismo extent TILE_PIXELS que publica
+la aplicacion oficial: [-20037508.342789244, -20037508.342789244,
+20037508.342789244, 20037508.342789244]. No se interpretan como GPS o metros.
+Las posiciones de los seis bloques proceden del catalogo `cat-blocks` del mismo
+recurso publicado. Las otras cuatro areas se anclan a los lugares 49, 51, 46 y 185.
+La numeracion visual 1-10 se definio para esta interfaz y no es una numeracion
+oficial de la universidad. El servidor del fondo grafico no respondio; se
+representan puntos y agrupaciones sin reproducir huellas de edificios.
+Vincular un lugar a una incidencia no modifica estados, prioridades ni rutas.

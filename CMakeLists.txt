@@ -9,9 +9,14 @@ add_executable(alerta360
     GrafoCampus.cpp
     SistemaAlerta360.cpp
     Pruebas.cpp
+    MapaVisual.cpp
+    UbicacionesCampus.cpp
 )
 target_compile_features(alerta360 PRIVATE cxx_std_20)
 set_target_properties(alerta360 PROPERTIES CXX_EXTENSIONS OFF)
+if(WIN32)
+    target_link_libraries(alerta360 PRIVATE shell32)
+endif()
 
 if(MSVC)
     target_compile_options(alerta360 PRIVATE /W4 /utf-8 /permissive-)

@@ -1,4 +1,9 @@
 #include "SistemaAlerta360.h"
+#include "MapaVisual.h"
+#include "UbicacionesCampus.h"
+#include <chrono>
+#include <filesystem>
+#include <fstream>
 #include <limits>
 #include <ostream>
 #include <sstream>
@@ -244,6 +249,63 @@ int ejecutarPruebas(std::ostream& out) {
         x.clasificarSiguiente(3,log);
         exigir(!x.cambiarGravedad(1,3,log) && x.correcciones() == 0 && x.validarConsistencia(),
                 "Mismo valor no crea una correccion ficticia", out);
+    });
+    prueba("T23", "Ubicacion exacta independiente de la zona del grafo", [&] {
+        SistemaAlerta360 x;
+        ingresar(x,1,3,log);
+        const auto* original=x.buscar(1);
+        exigir(x.ubicarEnCampus(1,173,log) && x.buscar(1)==original
+            && x.buscar(1)->ubicacionCampus==173 && x.buscar(1)->zona==3,
+                "Biblioteca #173 vinculada sin copiar registro ni cambiar zona 3", out);
+        exigir(!x.ubicarEnCampus(999,173,log) && !x.ubicarEnCampus(1,999,log)
+            && !x.ubicarEnCampus(1,202,log) && x.buscar(1)->ubicacionCampus==173,
+                "Rechaza ID inexistente, lugar invalido y punto sin coordenadas", out);
+        exigir(x.ubicarEnCampus(1,0,log) && x.buscar(1)->ubicacionCampus==0
+            && x.validarConsistencia(), "Quitar ubicacion no modifica estado ni estructuras", out);
+    });
+    prueba("T24", "Exportacion segura y sin efectos sobre el sistema", [&] {
+        SistemaAlerta360 x;
+        x.registrar(1,"Falla </script><script>alert(1)</script> & \\\"\\n",Tipo::RED,3,log);
+        x.clasificarSiguiente(5,log); x.ubicarEnCampus(1,49,log);
+        std::ostringstream datos;
+        x.exportarDatosMapa(datos);
+        exigir(datos.str().find("</script>")==std::string::npos
+            && datos.str().find("\\u003c/script\\u003e")!=std::string::npos,
+                "Descripcion no puede cerrar el bloque JSON ni ejecutar HTML", out);
+        exigir(datos.str().find("\"ubicacion\":49")!=std::string::npos
+            && x.buscar(1)->estado==Estado::PENDIENTE && x.validarConsistencia(),
+                "Exportacion incluye lugar y preserva prioridades y estado", out);
+        std::ostringstream catalogo;
+        escribirUbicacionesCampusJSON(catalogo);
+        exigir(buscarUbicacionCampus(173) && buscarUbicacionCampus(205)
+            && !buscarUbicacionCampus(206) && catalogo.str().find("\"id\":205")!=std::string::npos,
+                "Catalogo de 205 lugares disponible sin internet", out);
+    });
+    prueba("T25", "Archivo del mapa completo, reemplazo y error de escritura", [&] {
+        namespace fs = std::filesystem;
+        const auto dir=fs::temp_directory_path()/ ("alerta360-prueba-"+std::to_string(
+            std::chrono::steady_clock::now().time_since_epoch().count()));
+        fs::create_directory(dir);
+        try {
+            SistemaAlerta360 x;
+            ingresar(x,1,3,log); x.ubicarEnCampus(1,49,log);
+            std::string error;
+            const auto archivo=dir/"mapa.html";
+            exigir(guardarMapaVisual(x,archivo.string(),error), "Crear HTML autosuficiente", out);
+            x.clasificarSiguiente(5,log);
+            exigir(guardarMapaVisual(x,archivo.string(),error), "Reemplazar instantanea existente", out);
+            std::ifstream entrada(archivo,std::ios::binary);
+            std::ostringstream contenido;contenido<<entrada.rdbuf();entrada.close();
+            exigir(contenido.str().find("\"estado\":\"PENDIENTE\"")!=std::string::npos
+                && contenido.str().find("Campus UPSA")!=std::string::npos
+                && contenido.str().find("</body></html>")!=std::string::npos,
+                    "Archivo actualizado, con plantilla y cierre completo", out);
+            exigir(!guardarMapaVisual(x,(dir/"no-existe"/"mapa.html").string(),error)
+                && !error.empty() && x.validarConsistencia(), "Error de carpeta no corrompe datos", out);
+            exigir(!guardarMapaVisual(x,dir.string(),error) && fs::is_directory(dir),
+                    "Nunca reemplaza ni elimina una carpeta con el mapa", out);
+            fs::remove_all(dir);
+        } catch (...) {fs::remove_all(dir);throw;}
     });
     out << "\n=== Resumen: " << aprobadas << " aprobadas, " << fallidas << " fallidas ===\n";
     out << "\n--- Registro de operaciones y entradas de prueba ---\n" << log.str();

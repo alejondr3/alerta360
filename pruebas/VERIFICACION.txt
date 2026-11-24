@@ -48,3 +48,21 @@ Resultado: compilacion sin advertencias; CTest 1/1 aprobado
 Makefile: verificada la receta mediante mingw32-make -n -B test.
 GitHub Actions: configurado para Linux, Windows y sanitizadores en Linux.
 Los resultados remotos se consultan en la pestana Actions del repositorio.
+
+MAPA VISUAL - 24 de noviembre de 2026
+
+Suite ampliada: 25/25 escenarios aprobados. Compilacion GCC con -Wall,
+-Wextra, -Wconversion, -Wshadow y -pedantic, sin advertencias.
+CMake/CTest: 1/1 suite aprobada (25 escenarios).
+Menu original: entradas de aceptacion, invalidas, EOF y portabilidad aprobadas.
+Opcion 12: ubicacion Biblioteca #173 vinculada a incidencia en zona 3;
+la zona y el estado RECIBIDA se conservaron. Evidencia: entrada_mapa.txt
+y salida_mapa.txt. JSON del HTML parseado: 205 lugares, incidencia #101
+en lugar #49, ruta 0-2-1-3 y costo 8.
+
+Revision de navegador: vista de zonas numeradas y tres incidencias DEMO;
+seleccion de incidencia #101 muestra descripcion, ubicacion y ruta registrada;
+busqueda biblioteca limita el selector al lugar #173; seleccion muestra el
+punto correspondiente. Numeros adaptados al ancho y leyenda de zonas visible.
+La vista comprobada usa las coordenadas originales y agrupaciones de puntos.
+No contiene el fondo oficial: el servidor de teselas no respondio.

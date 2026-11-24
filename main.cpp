@@ -1,4 +1,6 @@
 #include "SistemaAlerta360.h"
+#include "MapaVisual.h"
+#include "UbicacionesCampus.h"
 #include <iostream>
 #include <limits>
 #include <stdexcept>
@@ -60,20 +62,40 @@ void menu() {
     std::cout << "\n=== ALERTA360 ===\n"
         "01 Registrar incidencia\n02 Clasificar siguiente\n03 Cambiar gravedad\n"
         "04 Deshacer gravedad\n05 Asignar siguiente\n06 Resolver\n07 Cancelar\n"
-        "08 Buscar por ID\n09 Listados e indicadores\n10 Gestionar rutas\n00 Salir\n";
+        "08 Buscar por ID\n09 Listados e indicadores\n10 Gestionar rutas\n"
+        "11 Abrir mapa visual numerado\n12 Ubicar incidencia en el campus\n00 Salir\n";
 }
 }
 
 int main(int argc, char* argv[]) {
     try {
         if (argc == 2 && std::string(argv[1]) == "--pruebas") return ejecutarPruebas(std::cout);
-        if (argc != 1) { std::cerr << "Uso: alerta360 [--pruebas]\n"; return 2; }
+        const bool soloMapa = argc == 2 && std::string(argv[1]) == "--mapa";
+        const bool inicioVisual = argc == 2 && std::string(argv[1]) == "--visual";
+        if (argc != 1 && !soloMapa && !inicioVisual) { std::cerr << "Uso: alerta360 [--pruebas | --mapa | --visual]\n"; return 2; }
         SistemaAlerta360 sistema;
+        const std::string archivoMapa = "mapa_alerta360.html";
+        bool mapaActivo = false;
+        auto actualizarMapa = [&]() {
+            std::string error;
+            if (guardarMapaVisual(sistema,archivoMapa,error)) return true;
+            std::cerr << "No se pudo actualizar el mapa: " << error << '\n';
+            return false;
+        };
+        if (soloMapa) {
+            if (!actualizarMapa()) return 1;
+            if (!abrirMapaVisual(archivoMapa)) std::cout << "Abra manualmente " << archivoMapa << ".\n";
+            return 0;
+        }
+        if (inicioVisual && actualizarMapa()) {
+            mapaActivo = true;
+            if (!abrirMapaVisual(archivoMapa)) std::cout << "Abra manualmente " << archivoMapa << ".\n";
+        }
         try {
             bool seguir = true;
             while (seguir) {
                 menu();
-                const int opcion = leerEntero("Opcion: ", 0, 10);
+                const int opcion = leerEntero("Opcion: ", 0, 12);
                 switch (opcion) {
                     case 0: seguir = false; break;
                     case 1: {
@@ -117,11 +139,33 @@ int main(int argc, char* argv[]) {
                     }
                     case 9: sistema.mostrarInformes(std::cout); break;
                     case 10: gestionarRutas(sistema.grafo()); break;
+                    case 11:
+                        if (actualizarMapa()) {
+                            mapaActivo = true;
+                            std::cout << "Mapa numerado: " << archivoMapa << ". Se actualiza con esta sesion.\n";
+                            if (!abrirMapaVisual(archivoMapa)) std::cout << "Abra ese archivo con su navegador.\n";
+                        }
+                        break;
+                    case 12: {
+                        const int id = leerEntero("ID de la incidencia: ", 1, std::numeric_limits<int>::max());
+                        if (!sistema.buscar(id)) { std::cout << "ID inexistente.\n"; break; }
+                        std::cout << "Elija el numero del lugar en el mapa (opcion 11).\n";
+                        const int lugar = leerEntero("Lugar UPSA (1-205; 0 quitar; 206 listar catalogo): ",0,206);
+                        if (lugar == 206) {
+                            listarUbicacionesCampus(std::cout);
+                            const int elegido = leerEntero("Lugar UPSA (0-205): ",0,205);
+                            sistema.ubicarEnCampus(id,elegido,std::cout);
+                        } else sistema.ubicarEnCampus(id,lugar,std::cout);
+                        break;
+                    }
                 }
+                if (mapaActivo && opcion != 0 && opcion != 11) actualizarMapa();
             }
         } catch (const FinEntrada&) {
             std::cout << "\nFin de entrada; cierre seguro.\n";
         }
+        // Conserva la ultima vista como instantanea al cerrar la sesion.
+        if (mapaActivo) actualizarMapa();
         sistema.cerrar(std::cout);
         return 0;
     } catch (const std::bad_alloc&) {

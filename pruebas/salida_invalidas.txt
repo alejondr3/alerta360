@@ -10,9 +10,11 @@
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
 00 Salir
-Opcion: Entrada invalida. Ingrese un entero entre 0 y 10.
-Opcion: Entrada invalida. Ingrese un entero entre 0 y 10.
+Opcion: Entrada invalida. Ingrese un entero entre 0 y 12.
+Opcion: Entrada invalida. Ingrese un entero entre 0 y 12.
 Opcion: ID positivo: Entrada invalida. Ingrese un entero entre 1 y 2147483647.
 ID positivo: 1 Energia | 2 Red | 3 Equipo | 4 Clima | 5 Infraestructura | 6 Otro
 Tipo: Entrada invalida. Ingrese un entero entre 1 y 6.
@@ -31,6 +33,8 @@ Zona (1-7): Registrada 101: RECIBIDA, secuencia 1.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
 00 Salir
 Opcion: ID positivo: El ID ya existe.
 
@@ -45,6 +49,8 @@ Opcion: ID positivo: El ID ya existe.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
 00 Salir
 Opcion: ID 101 | RECIBIDA | gravedad 0 | ingreso 1
   Red | zona 2 (Laboratorios)
@@ -64,6 +70,8 @@ Gravedad (1-5, 5 es mayor urgencia): Clasificada 101: PENDIENTE, gravedad 4.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
 00 Salir
 Opcion: ID: Nueva gravedad (1-5): Entrada invalida. Ingrese un entero entre 1 y 5.
 Nueva gravedad (1-5): Gravedad de 101 actualizada a 5.
@@ -79,6 +87,8 @@ Nueva gravedad (1-5): Gravedad de 101 actualizada a 5.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
 00 Salir
 Opcion: Deshecho: 101 vuelve a gravedad 4.
 
@@ -93,6 +103,8 @@ Opcion: Deshecho: 101 vuelve a gravedad 4.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
 00 Salir
 Opcion: Asignada 101. Ruta: 0 -> 2; costo 2 min.
 
@@ -107,6 +119,8 @@ Opcion: Asignada 101. Ruta: 0 -> 2; costo 2 min.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
 00 Salir
 Opcion: ID a resolver: Resuelta 101; conservada en historial.
 
@@ -121,6 +135,8 @@ Opcion: ID a resolver: Resuelta 101; conservada en historial.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
 00 Salir
 Opcion: ID a cancelar: No se cancela una RESUELTA.
 
@@ -135,6 +151,8 @@ Opcion: ID a cancelar: No se cancela una RESUELTA.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
 00 Salir
 Opcion: Pila de deshacer vacia.
 
@@ -149,5 +167,7 @@ Opcion: Pila de deshacer vacia.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar incidencia en el campus
 00 Salir
 Opcion: Liberacion: heap=0, pila=0, cola=0, BST=1, lista=1.

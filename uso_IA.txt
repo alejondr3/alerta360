@@ -18,3 +18,8 @@ o modificaciones del estudiante que aun no se hayan realizado.
 Publicacion en GitHub: asistencia para preparar README, .gitignore,
 .gitattributes, CMake, Makefile y workflow de compilacion/pruebas; ejecucion
 local con CMake/CTest y publicacion autorizada por el usuario.
+
+Mapa visual: asistencia para exportar una instantanea HTML desde C++, incluir
+el catalogo de 205 lugares, numerar areas, vincular ubicaciones, representar
+incidencias y rutas del grafo, y agregar pruebas de exportacion y seguridad.
+No se inventaron tiempos peatonales ni huellas de edificios del campus.
