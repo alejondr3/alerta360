@@ -127,6 +127,8 @@ void SistemaAlerta360::mostrarFicha(const Incidencia& d, std::ostream& out) {
     if (const auto* lugar = buscarUbicacionCampus(d.ubicacionCampus))
         out << "  Ubicacion UPSA #" << lugar->id << ": " << lugar->nombre << " | "
             << lugar->bloque << " | " << lugar->planta << '\n';
+    if (const auto* referencia = nombreReferenciaPlano(d.referenciaPlano))
+        out << "  Plano oficial #" << d.referenciaPlano << ": " << referencia << '\n';
     if (d.ruta.existe) {
         out << "  Ruta registrada: ";
         for (int i = 0; i < d.ruta.longitud; ++i) out << (i ? " -> " : "") << d.ruta.nodos[i];
@@ -169,6 +171,8 @@ bool SistemaAlerta360::validarConsistencia() const {
     for (const auto* n = lista_.cabeza(); n; n = n->siguiente) {
         const auto& d = n->dato;
         if (d.ubicacionCampus && !buscarUbicacionCampus(d.ubicacionCampus)) return false;
+        if (d.referenciaPlano && !nombreReferenciaPlano(d.referenciaPlano)) return false;
+        if (d.ubicacionCampus && d.referenciaPlano) return false;
         if (indice_.buscar(d.id) != &d || d.id <= 0 || d.zona < 1 || d.zona > 7
             || d.secuenciaIngreso <= anterior || d.secuenciaIngreso > secuencia_) return false;
         anterior = d.secuenciaIngreso;
@@ -207,9 +211,23 @@ bool SistemaAlerta360::ubicarEnCampus(int id, int ubicacion, std::ostream& out) 
         return false;
     }
     dato->ubicacionCampus = ubicacion;
+    dato->referenciaPlano = 0;
     out << "Incidencia " << id << ": ";
     if (lugar) out << "ubicada en #" << lugar->id << " " << lugar->nombre;
     else out << "ubicacion exacta retirada";
+    out << ". La zona de atencion sigue siendo " << dato->zona << ".\n";
+    return true;
+}
+bool SistemaAlerta360::ubicarEnPlano(int id, int referencia, std::ostream& out) {
+    Incidencia* dato = indice_.buscar(id);
+    if (!dato) { out << "ID inexistente.\n"; return false; }
+    const char* nombre = nombreReferenciaPlano(referencia);
+    if (referencia != 0 && !nombre) { out << "Referencia del plano invalida (1-36).\n"; return false; }
+    dato->referenciaPlano = referencia;
+    dato->ubicacionCampus = 0;
+    out << "Incidencia " << id << ": ";
+    if (nombre) out << "plano oficial #" << referencia << " " << nombre;
+    else out << "referencia del plano retirada";
     out << ". La zona de atencion sigue siendo " << dato->zona << ".\n";
     return true;
 }
@@ -221,6 +239,7 @@ void SistemaAlerta360::exportarDatosMapa(std::ostream& out) const {
         if (!primera) out << ',';
         primera = false;
         out << "{\"id\":" << d.id << ",\"zona\":" << d.zona << ",\"ubicacion\":" << d.ubicacionCampus
+            << ",\"referenciaPlano\":" << d.referenciaPlano
             << ",\"gravedad\":" << d.gravedad << ",\"secuencia\":" << d.secuenciaIngreso << ",\"estado\":";
         escribirCadenaJSON(out,nombreEstado(d.estado));
         out << ",\"descripcion\":"; escribirCadenaJSON(out,d.descripcion);

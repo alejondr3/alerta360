@@ -216,6 +216,27 @@ const UbicacionCampus* buscarUbicacionCampus(int id) {
     for (const auto& lugar : lugares) if (lugar.id == id) return &lugar;
     return nullptr;
 }
+
+const char* nombreReferenciaPlano(int numero) {
+    static const char* const nombres[] = {
+        "Parqueo Administrativo", "DIP - Direccion de Postgrado", "Salon Auditorio",
+        "CIAP - Asesoramiento Psicologico", "Facultad de Arquitectura, Diseno y Urbanismo",
+        "CENACE - Educacion Continua", "Facultades del Edificio Central", "Ventanilla Unica",
+        "Patio Central", "Tramites y Titulos", "Ingreso Peatonal", "Parqueo Edificio Central",
+        "Cabana Jatata", "Escalera Central", "Internacionalizacion", "Admisiones y Registro / Contabilidad",
+        "Portico", "Alumni / Asuntos Estudiantiles / Admisiones", "Rampa", "Cabanas Modulares",
+        "DABE - Bienestar Estudiantil", "Extension Cultural / IncubaUPSA", "Parqueo Docente",
+        "Parqueo Externo", "Parqueo Edificio Central", "Biblioteca (P4)", "Aula Magna",
+        "Parqueo CC UPSA", "Centro de Convenciones", "Plaza de Banderas", "Polideportivo",
+        "Coordinacion de Deportes", "Parqueo Polideportivo", "Parqueo Ingenieria",
+        "Facultad de Ingenieria (P2)", "Laboratorios de Ingenieria"
+    };
+    return numero >= 1 && numero <= 36 ? nombres[numero-1] : nullptr;
+}
+void listarReferenciasPlano(std::ostream& out) {
+    for (int numero=1; numero<=36; ++numero)
+        out << numero << ": " << nombreReferenciaPlano(numero) << '\n';
+}
 void listarUbicacionesCampus(std::ostream& out) {
     for (const auto& p : lugares) {
         out << p.id << ": " << p.nombre << " | " << p.bloque << " | " << p.planta;

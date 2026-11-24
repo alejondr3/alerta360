@@ -28,6 +28,7 @@ public:
     void mostrarIncidencia(int id, std::ostream&) const;
     void mostrarInformes(std::ostream&) const;
     bool ubicarEnCampus(int id, int ubicacion, std::ostream&);
+    bool ubicarEnPlano(int id, int referencia, std::ostream&);
     void exportarDatosMapa(std::ostream&) const;
     static void mostrarFicha(const Incidencia&, std::ostream&);
     GrafoCampus& grafo() { return grafo_; }

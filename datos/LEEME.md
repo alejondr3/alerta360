@@ -34,9 +34,11 @@ visual no necesita cargar este JSON ni conectarse a internet. Las posiciones
 se convierten al espacio del dibujo con el mismo extent TILE_PIXELS que publica
 la aplicacion oficial: [-20037508.342789244, -20037508.342789244,
 20037508.342789244, 20037508.342789244]. No se interpretan como GPS o metros.
-Las posiciones de los seis bloques proceden del catalogo `cat-blocks` del mismo
-recurso publicado. Las otras cuatro areas se anclan a los lugares 49, 51, 46 y 185.
-La numeracion visual 1-10 se definio para esta interfaz y no es una numeracion
-oficial de la universidad. El servidor del fondo grafico no respondio; se
-representan puntos y agrupaciones sin reproducir huellas de edificios.
-Vincular un lugar a una incidencia no modifica estados, prioridades ni rutas.
+La vista actual usa la foto completa de Postgrado UPSA (ver FUENTE_PLANO.md).
+Sus 36 referencias se ubican mediante anclajes en pixeles de esa imagen;
+las coordenadas del catalogo interactivo no se proyectan directamente sobre
+la foto porque son sistemas distintos. Las correspondencias nominales
+verificadas usan las referencias impresas; las aulas restantes se representan
+aproximadamente por bloque, con indicacion visible. Los lugares sin un anclaje
+verificado no se dibujan sobre la foto. Vincular un lugar o referencia no
+modifica estados, prioridades ni rutas del grafo.

@@ -56,6 +56,13 @@ bool guardarMapaVisual(const SistemaAlerta360& sistema, const std::string& archi
         out << ",\"sistema\":";
         sistema.exportarDatosMapa(out);
         out << "}</script>";
+        // Fragmentos cortos para respetar el limite de literales de MSVC.
+        static const char* const imagenCampus[] = {
+#include "MapaCampusImagen.inc"
+        };
+        out << "<script id=\"imagen-campus\" type=\"application/json\">{\"uri\":\"data:image/jpeg;base64,";
+        for (const char* fragmento : imagenCampus) out << fragmento;
+        out << "\"}</script>";
         out <<
 #include "MapaPlantilla.inc"
         ;

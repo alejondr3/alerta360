@@ -77,7 +77,8 @@ Resuelta 101; conservada en historial.
 | 09 | Historial adelante/atras, BST inorden, altura, conteos y proximas cinco pendientes. |
 | 10 | Mostrar vias, cambiar costo/reabrir, cerrar o restaurar el ultimo costo. |
 | 11 | Abrir mapa visual numerado en el navegador. |
-| 12 | Vincular una incidencia con un lugar exacto del catalogo UPSA. |
+| 12 | Vincular una incidencia a un lugar del catalogo UPSA (1-205). |
+| 13 | Marcar el problema con el numero impreso en la foto (1-36). |
 | 00 | Liberar estructuras y mostrar cantidades vaciadas. |
 
 La gravedad 5 tiene la mayor urgencia. Una asignacion sin ruta conserva la
@@ -86,48 +87,51 @@ son historicas: no se recalculan al cambiar posteriormente el mapa. Restaurar
 una via recupera su ultimo costo; cambiar su costo tambien permite reabrirla.
 Solo se gestionan las conexiones del mapa inicial.
 
-## Mapa visual numerado
+## Mapa visual con foto oficial
 
-El mapa se abre con la opcion **11**, o al iniciar:
+La vista usa la **imagen completa del campus** publicada en
+[Postgrado UPSA / Contacto](https://postgrado.upsa.edu.bo/contacto).
+La foto original de 1280 x 786 conserva sus edificios, calles, bloques,
+leyendas y **36 referencias numeradas**; no se recorta ni se redibuja.
+
+Abrir con la opcion **11**, o iniciar consola y mapa juntos:
 
 ```powershell
 ./alerta360.exe --visual
 ```
 
-Funciona sin instalar bibliotecas y sin servidor web: C++ genera un archivo
-`mapa_alerta360.html` con los datos de la sesion y una vista interactiva.
-La consola lo actualiza despues de cada operacion y el navegador lo recarga
-cada ocho segundos. El boton **Actualizar** permite hacerlo manualmente.
-Al cerrar el programa queda la ultima instantanea; no permite recuperar la
-sesion de incidencias. No se deben abrir dos sesiones visuales en la misma carpeta.
+Para ubicar un problema usando los numeros de la foto:
 
-Dos vistas:
+1. Registrar la incidencia normalmente.
+2. Elegir **13 -> ID de incidencia -> referencia 1-36**.
+3. Ejemplos: **26 Biblioteca**, **31 Polideportivo**, **36 Laboratorios de Ingenieria**.
 
-- **Campus UPSA:** diez areas numeradas (Bloque Central, A, B, C, D, E,
-  Polideportivo, Cancha de Futbol, Centro de Convenciones e Ingreso Peatonal),
-  ubicaciones originales del catalogo, buscador y marcadores de incidencias.
-- **Zonas de atencion 0-7:** grafo obligatorio con todas sus zonas enumeradas,
-  conexiones, minutos y ruta registrada de la incidencia seleccionada.
+La opcion 12 mantiene el catalogo avanzado de 205 lugares. Su numeracion es
+independiente de los numeros de la foto. Si un aula no tiene referencia propia,
+el marcador se muestra de forma aproximada en su bloque y se informa esa
+limitacion. Los lugares sin correspondencia verificada en esta imagen no
+reciben una posicion inventada. Elegir una referencia directa retira la
+vinculacion al catalogo, y viceversa, para evitar ubicaciones contradictorias.
+La ubicacion visual no cambia la zona 1-7 del grafo ni los calculos de Dijkstra.
 
-Los numeros de area visual 1-10, los ID de lugar #1-#205 y las zonas de atencion
-0-7 son identificadores diferentes y se muestran con sus respectivas etiquetas.
-Las areas visuales son una agrupacion para explorar el campus: no agregan nodos
-al grafo obligatorio. Los contornos del mapa agrupan puntos; no son planos de
-edificios. El servidor del fondo grafico oficial no respondio al consultar;
-esta version utiliza las posiciones del catalogo y no incluye ese fondo.
+Controles: **+ / -** para ampliar hasta 400%, desplazamiento sobre el plano y
+**Ver completo** para regresar al encuadre original. Se puede seleccionar una
+referencia de la foto, buscar un lugar o elegir una incidencia y consultar su
+estado y detalle. La segunda vista conserva el grafo 0-7 y la ruta registrada.
+Los caminos del grafo no se presentan como rutas peatonales reales sobre la foto.
 
-Para marcar un problema: registrar la incidencia normalmente, abrir el mapa,
-buscar el lugar y usar **12 -> ID de incidencia -> numero del lugar**.
-Ejemplos: Biblioteca #173, Coliseo Polideportivo #49, Laboratorio de Redes #131.
-Un lugar sin posicion publicada (202 o 204) se rechaza para no inventar un punto.
-La ubicacion exacta no modifica la zona de atencion elegida ni el calculo de
-Dijkstra. La ruta del grafo no se presenta como un camino peatonal real.
+La imagen esta incorporada en el HTML generado y en el ejecutable: el mapa no
+necesita internet, servidor web ni archivos externos. La foto original se guarda
+en `datos/campus-upsa.jpeg`; `MapaCampusImagen.inc` contiene su codificacion para
+compilarla en fragmentos compatibles con MSVC. Fuente y hash en
+[datos/FUENTE_PLANO.md](datos/FUENTE_PLANO.md).
 
-La vista permite seleccionar una incidencia y consultar descripcion, estado,
-gravedad, lugar, planta y ruta; filtrar por estado; y buscar un lugar por nombre,
-bloque o numero. Los datos del usuario se insertan como JSON escapado y se
-renderizan con `textContent`. El archivo generado contiene las descripciones
-de la sesion, por eso se excluye de Git junto con su temporal.
+C++ actualiza `mapa_alerta360.html` despues de cada operacion. El navegador se
+recarga automaticamente cuando no se esta interactuando, o mediante Actualizar.
+Al cerrar el programa queda una instantanea; no recupera los registros en otra
+sesion. No se deben abrir dos sesiones visuales en la misma carpeta.
+El archivo contiene las descripciones de la sesion y se excluye de Git.
+Los datos se exportan como JSON escapado y se muestran con `textContent`.
 
 ## Grafo inicial (no dirigido)
 
@@ -189,7 +193,7 @@ flowchart TD
 - `GrafoCampus.h/.cpp`: matriz 8x8 y Dijkstra con reconstruccion de camino.
 - `SistemaAlerta360.h/.cpp`: reglas, coordinacion, consultas e invariantes.
 - `main.cpp`: entrada validada, menu y manejo de EOF.
-- `Pruebas.cpp`: 25 escenarios reproducibles con verificaciones automaticas.
+- `Pruebas.cpp`: 26 escenarios reproducibles con verificaciones automaticas.
 - `MapaVisual.h/.cpp` y `MapaPlantilla.inc`: exportacion y vista interactiva.
 - `UbicacionesCampus.h/.cpp`: catalogo compilado de los 205 lugares UPSA.
 
@@ -252,7 +256,7 @@ Get-Content pruebas/entrada_invalidas.txt | ./alerta360.exe
 ```
 
 En Linux/macOS se puede usar redireccion con `< archivo.txt` y `> salida.txt`.
-La suite ejecuta 25 escenarios y devuelve 0 si todos pasan, 1 si alguno falla. Las pruebas
+La suite ejecuta 26 escenarios y devuelve 0 si todos pasan, 1 si alguno falla. Las pruebas
 T01-T10 siguen la secuencia oficial; las restantes cubren casos adversos,
 memoria, prioridades, consultas, BST, UTF-8 y costos grandes. Ver `pruebas/CASOS.md`.
 La evidencia incluida se obtuvo con GCC 15.1.0 en Windows y advertencias activas.

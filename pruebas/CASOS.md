@@ -30,7 +30,8 @@ obtenidas y el registro de operaciones estan en `resultados.txt`.
 | T22 | Descripcion UTF-8 de 120/121 caracteres y misma gravedad | Acepta 120, rechaza 121; mismo valor no apila. |
 | T23 | Vincular/quitar lugar UPSA e IDs invalidos | Ubicacion independiente de zona; rechazos sin modificar registro. |
 | T24 | Exportar descripcion con etiquetas script y catalogo | JSON seguro, datos completos y consultas sin mutacion. |
-| T25 | Crear/reemplazar mapa; carpeta inexistente y directorio como destino | Archivo completo, errores controlados, directorio preservado. |
+| T25 | Crear/reemplazar mapa con JPEG incorporado; carpeta inexistente y directorio como destino | Archivo completo, errores controlados, directorio preservado. |
+| T26 | Referencias 1-36 de la foto, cambios de identificador y valores invalidos | Biblioteca 26 y Polideportivo 31 correctos; zona, estado y heap conservados. |
 
 T19 prueba la estructura aislada: en el sistema real la secuencia de ingreso es
 unica, por lo que no se repite para dos incidencias.
@@ -47,3 +48,7 @@ unica, por lo que no se repite para dos incidencias.
 La ejecucion automatica cubre tambien la limpieza, pero no demuestra por si
 sola ausencia absoluta de fugas. Consultar `VERIFICACION.txt` para el entorno
 y las herramientas disponibles.
+
+
+Entrada de menu adicional: entrada_foto.txt (opcion 13 -> referencia 26);
+evidencia real: salida_foto.txt.

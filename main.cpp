@@ -63,7 +63,8 @@ void menu() {
         "01 Registrar incidencia\n02 Clasificar siguiente\n03 Cambiar gravedad\n"
         "04 Deshacer gravedad\n05 Asignar siguiente\n06 Resolver\n07 Cancelar\n"
         "08 Buscar por ID\n09 Listados e indicadores\n10 Gestionar rutas\n"
-        "11 Abrir mapa visual numerado\n12 Ubicar incidencia en el campus\n00 Salir\n";
+        "11 Abrir mapa visual numerado\n12 Ubicar por catalogo UPSA (1-205)\n"
+        "13 Ubicar por numero de la foto (1-36)\n00 Salir\n";
 }
 }
 
@@ -95,7 +96,7 @@ int main(int argc, char* argv[]) {
             bool seguir = true;
             while (seguir) {
                 menu();
-                const int opcion = leerEntero("Opcion: ", 0, 12);
+                const int opcion = leerEntero("Opcion: ", 0, 13);
                 switch (opcion) {
                     case 0: seguir = false; break;
                     case 1: {
@@ -156,6 +157,14 @@ int main(int argc, char* argv[]) {
                             const int elegido = leerEntero("Lugar UPSA (0-205): ",0,205);
                             sistema.ubicarEnCampus(id,elegido,std::cout);
                         } else sistema.ubicarEnCampus(id,lugar,std::cout);
+                        break;
+                    }
+                    case 13: {
+                        const int id = leerEntero("ID de la incidencia: ",1,std::numeric_limits<int>::max());
+                        if (!sistema.buscar(id)) { std::cout << "ID inexistente.\n"; break; }
+                        listarReferenciasPlano(std::cout);
+                        const int referencia = leerEntero("Numero impreso en la foto (1-36; 0 quitar): ",0,36);
+                        sistema.ubicarEnPlano(id,referencia,std::cout);
                         break;
                     }
                 }

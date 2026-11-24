@@ -66,3 +66,18 @@ busqueda biblioteca limita el selector al lugar #173; seleccion muestra el
 punto correspondiente. Numeros adaptados al ancho y leyenda de zonas visible.
 La vista comprobada usa las coordenadas originales y agrupaciones de puntos.
 No contiene el fondo oficial: el servidor de teselas no respondio.
+
+FOTO OFICIAL COMPLETA - 24 de noviembre de 2026
+
+Se reemplazo la vista de agrupaciones por la foto original campus-upsa.jpeg
+de https://postgrado.upsa.edu.bo/contacto. Dimensiones: 1280x786.
+El JPEG incorporado en el HTML se decodifico y comparo byte por byte con
+el descargado: identidad completa, 357101 bytes.
+SHA256: 2e6247318708ee2dd526ea6a6444ae303f1335999f4255d19c34ed618059dfe4
+
+26/26 pruebas aprobadas; compilacion GCC con advertencias activas sin avisos.
+Opcion 13 verificada: referencia 26 Biblioteca vinculada y zona 1 conservada.
+Navegador: foto completa y leyendas visibles; zoom 150% y regreso a 100%;
+incidencia DEMO #102 muestra referencia 26 Biblioteca sobre la imagen;
+consola del navegador sin errores. Las referencias son las de la foto
+y se mantienen separadas de la numeracion del catalogo y del grafo.

@@ -54,6 +54,8 @@ struct Incidencia {
     // ID opcional del catalogo UPSA (1-205); 0 = ubicacion exacta sin elegir.
     // No modifica la zona 1-7 del grafo obligatorio.
     int ubicacionCampus = 0;
+    // Numeracion 1-36 impresa en la foto oficial; independiente del catalogo.
+    int referenciaPlano = 0;
 
     Incidencia(int id_, const std::string& desc, Tipo tipo_, int zona_, long long sec)
         : id(id_), descripcion(desc), tipo(tipo_), zona(zona_), secuenciaIngreso(sec) {}

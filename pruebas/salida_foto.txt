@@ -1,0 +1,108 @@
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: ID positivo: 1 Energia | 2 Red | 3 Equipo | 4 Clima | 5 Infraestructura | 6 Otro
+Tipo: Descripcion (10-120 caracteres): Zona (1-7): Registrada 999: RECIBIDA, secuencia 1.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: ID de la incidencia: 1: Parqueo Administrativo
+2: DIP - Direccion de Postgrado
+3: Salon Auditorio
+4: CIAP - Asesoramiento Psicologico
+5: Facultad de Arquitectura, Diseno y Urbanismo
+6: CENACE - Educacion Continua
+7: Facultades del Edificio Central
+8: Ventanilla Unica
+9: Patio Central
+10: Tramites y Titulos
+11: Ingreso Peatonal
+12: Parqueo Edificio Central
+13: Cabana Jatata
+14: Escalera Central
+15: Internacionalizacion
+16: Admisiones y Registro / Contabilidad
+17: Portico
+18: Alumni / Asuntos Estudiantiles / Admisiones
+19: Rampa
+20: Cabanas Modulares
+21: DABE - Bienestar Estudiantil
+22: Extension Cultural / IncubaUPSA
+23: Parqueo Docente
+24: Parqueo Externo
+25: Parqueo Edificio Central
+26: Biblioteca (P4)
+27: Aula Magna
+28: Parqueo CC UPSA
+29: Centro de Convenciones
+30: Plaza de Banderas
+31: Polideportivo
+32: Coordinacion de Deportes
+33: Parqueo Polideportivo
+34: Parqueo Ingenieria
+35: Facultad de Ingenieria (P2)
+36: Laboratorios de Ingenieria
+Numero impreso en la foto (1-36; 0 quitar): Incidencia 999: plano oficial #26 Biblioteca (P4). La zona de atencion sigue siendo 1.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: ID a buscar: ID 999 | RECIBIDA | gravedad 0 | ingreso 1
+  Red | zona 1 (Biblioteca)
+  Falla de red en biblioteca
+  Plano oficial #26: Biblioteca (P4)
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: Liberacion: heap=0, pila=0, cola=1, BST=1, lista=1.

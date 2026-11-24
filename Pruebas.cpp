@@ -298,14 +298,36 @@ int ejecutarPruebas(std::ostream& out) {
             std::ostringstream contenido;contenido<<entrada.rdbuf();entrada.close();
             exigir(contenido.str().find("\"estado\":\"PENDIENTE\"")!=std::string::npos
                 && contenido.str().find("Campus UPSA")!=std::string::npos
+                && contenido.str().find("id=\"imagen-campus\"")!=std::string::npos
+                && contenido.str().find("data:image/jpeg;base64,/9j/")!=std::string::npos
+                && contenido.str().size()>476136
                 && contenido.str().find("</body></html>")!=std::string::npos,
-                    "Archivo actualizado, con plantilla y cierre completo", out);
+                    "Archivo actualizado, con foto JPEG incorporada, plantilla y cierre completo", out);
             exigir(!guardarMapaVisual(x,(dir/"no-existe"/"mapa.html").string(),error)
                 && !error.empty() && x.validarConsistencia(), "Error de carpeta no corrompe datos", out);
             exigir(!guardarMapaVisual(x,dir.string(),error) && fs::is_directory(dir),
                     "Nunca reemplaza ni elimina una carpeta con el mapa", out);
             fs::remove_all(dir);
         } catch (...) {fs::remove_all(dir);throw;}
+    });
+    prueba("T26", "Referencias 1-36 de la foto sin alterar estados ni prioridades", [&] {
+        SistemaAlerta360 x;
+        ingresar(x,1,3,log);x.clasificarSiguiente(5,log);
+        exigir(x.ubicarEnPlano(1,26,log) && x.buscar(1)->referenciaPlano==26
+            && x.buscar(1)->zona==3 && x.buscar(1)->estado==Estado::PENDIENTE,
+                "Referencia 26 Biblioteca vinculada; estado y zona conservados", out);
+        exigir(!x.ubicarEnPlano(1,37,log) && !x.ubicarEnPlano(999,26,log)
+            && x.buscar(1)->referenciaPlano==26, "Numeros invalidos rechazados sin cambiar referencia", out);
+        std::ostringstream datos;x.exportarDatosMapa(datos);
+        exigir(datos.str().find("\"referenciaPlano\":26")!=std::string::npos,
+                "Exportacion conserva numero impreso en la imagen", out);
+        exigir(x.ubicarEnCampus(1,173,log) && x.buscar(1)->referenciaPlano==0
+            && x.ubicarEnPlano(1,31,log) && x.buscar(1)->ubicacionCampus==0
+            && x.ubicarEnPlano(1,0,log) && x.buscar(1)->referenciaPlano==0,
+                "Cambiar de identificador o quitarlo evita referencias contradictorias", out);
+        exigir(nombreReferenciaPlano(1) && nombreReferenciaPlano(36)
+            && !nombreReferenciaPlano(0) && !nombreReferenciaPlano(37) && x.validarConsistencia(),
+                "Catalogo de 36 referencias valido; heap consistente", out);
     });
     out << "\n=== Resumen: " << aprobadas << " aprobadas, " << fallidas << " fallidas ===\n";
     out << "\n--- Registro de operaciones y entradas de prueba ---\n" << log.str();

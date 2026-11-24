@@ -13,3 +13,5 @@ struct UbicacionCampus {
 const UbicacionCampus* buscarUbicacionCampus(int id);
 void listarUbicacionesCampus(std::ostream& out);
 void escribirUbicacionesCampusJSON(std::ostream& out);
+const char* nombreReferenciaPlano(int numero);
+void listarReferenciasPlano(std::ostream& out);
