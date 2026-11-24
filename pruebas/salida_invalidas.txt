@@ -1,0 +1,153 @@
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Entrada invalida. Ingrese un entero entre 0 y 10.
+Opcion: Entrada invalida. Ingrese un entero entre 0 y 10.
+Opcion: ID positivo: Entrada invalida. Ingrese un entero entre 1 y 2147483647.
+ID positivo: 1 Energia | 2 Red | 3 Equipo | 4 Clima | 5 Infraestructura | 6 Otro
+Tipo: Entrada invalida. Ingrese un entero entre 1 y 6.
+Tipo: Descripcion (10-120 caracteres): Descripcion invalida.
+Descripcion (10-120 caracteres): Zona (1-7): Entrada invalida. Ingrese un entero entre 1 y 7.
+Zona (1-7): Registrada 101: RECIBIDA, secuencia 1.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID positivo: El ID ya existe.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID 101 | RECIBIDA | gravedad 0 | ingreso 1
+  Red | zona 2 (Laboratorios)
+  Falla de conexion de laboratorio
+Gravedad (1-5, 5 es mayor urgencia): Entrada invalida. Ingrese un entero entre 1 y 5.
+Gravedad (1-5, 5 es mayor urgencia): Entrada invalida. Ingrese un entero entre 1 y 5.
+Gravedad (1-5, 5 es mayor urgencia): Clasificada 101: PENDIENTE, gravedad 4.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID: Nueva gravedad (1-5): Entrada invalida. Ingrese un entero entre 1 y 5.
+Nueva gravedad (1-5): Gravedad de 101 actualizada a 5.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Deshecho: 101 vuelve a gravedad 4.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Asignada 101. Ruta: 0 -> 2; costo 2 min.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID a resolver: Resuelta 101; conservada en historial.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID a cancelar: No se cancela una RESUELTA.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Pila de deshacer vacia.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Liberacion: heap=0, pila=0, cola=0, BST=1, lista=1.

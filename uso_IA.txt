@@ -1,0 +1,20 @@
+Se utilizo asistencia de IA (OpenAI Codex) para interpretar la consigna de
+Alerta360, proponer la arquitectura, generar el codigo C++20, documentacion y
+pruebas, y compilar y ejecutar verificaciones en el entorno de desarrollo.
+
+Actualizacion: se utilizo asistencia de IA para consultar el mapa interactivo
+oficial https://maps.upsa.edu.bo/ y extraer 205 ubicaciones a un catalogo JSON
+de referencia. No se generaron conexiones ni tiempos reales a partir del plano;
+el grafo obligatorio y el codigo ejecutable permanecen iguales.
+
+Alcance generado: modelo, estructuras propias, grafo y Dijkstra, coordinacion,
+menu, suite automatica, datos de entrada y README. No se genero en esta entrega
+el informe institucional PDF ni se aportaron datos de integrantes o grupo.
+
+Modificaciones realizadas por el estudiante: completar con los cambios reales
+despues de revisar, comprender y adaptar el codigo. No se declaran revisiones
+o modificaciones del estudiante que aun no se hayan realizado.
+
+Publicacion en GitHub: asistencia para preparar README, .gitignore,
+.gitattributes, CMake, Makefile y workflow de compilacion/pruebas; ejecucion
+local con CMake/CTest y publicacion autorizada por el usuario.

@@ -1,0 +1,26 @@
+# Compilacion y ejecutables
+/build*/
+/alerta360
+/alerta360_asan
+*.exe
+*.o
+*.obj
+*.dll
+*.a
+*.lib
+*.pdb
+*.ilk
+*.dSYM/
+
+# Editores y sistema operativo
+.vs/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Archivos locales de entorno
+.env
+.env.*
+!.env.example

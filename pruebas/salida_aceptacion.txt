@@ -1,0 +1,489 @@
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID positivo: 1 Energia | 2 Red | 3 Equipo | 4 Clima | 5 Infraestructura | 6 Otro
+Tipo: Descripcion (10-120 caracteres): Zona (1-7): Registrada 101: RECIBIDA, secuencia 1.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID positivo: 1 Energia | 2 Red | 3 Equipo | 4 Clima | 5 Infraestructura | 6 Otro
+Tipo: Descripcion (10-120 caracteres): Zona (1-7): Registrada 102: RECIBIDA, secuencia 2.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID positivo: 1 Energia | 2 Red | 3 Equipo | 4 Clima | 5 Infraestructura | 6 Otro
+Tipo: Descripcion (10-120 caracteres): Zona (1-7): Registrada 103: RECIBIDA, secuencia 3.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID 101 | RECIBIDA | gravedad 0 | ingreso 1
+  Energia | zona 3 (Coliseo)
+  Falla electrica en coliseo
+Gravedad (1-5, 5 es mayor urgencia): Clasificada 101: PENDIENTE, gravedad 5.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID 102 | RECIBIDA | gravedad 0 | ingreso 2
+  Red | zona 7 (Estadio)
+  Falla de red en el estadio
+Gravedad (1-5, 5 es mayor urgencia): Clasificada 102: PENDIENTE, gravedad 5.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID 103 | RECIBIDA | gravedad 0 | ingreso 3
+  Equipo | zona 2 (Laboratorios)
+  Equipo averiado en laboratorio
+Gravedad (1-5, 5 es mayor urgencia): Clasificada 103: PENDIENTE, gravedad 3.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID: Nueva gravedad (1-5): Gravedad de 103 actualizada a 5.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: --- Historial hacia adelante ---
+ID 101 | PENDIENTE | gravedad 5 | ingreso 1
+  Energia | zona 3 (Coliseo)
+  Falla electrica en coliseo
+ID 102 | PENDIENTE | gravedad 5 | ingreso 2
+  Red | zona 7 (Estadio)
+  Falla de red en el estadio
+ID 103 | PENDIENTE | gravedad 5 | ingreso 3
+  Equipo | zona 2 (Laboratorios)
+  Equipo averiado en laboratorio
+--- Historial hacia atras (IDs) ---
+103 102 101 
+--- BST inorden (IDs) ---
+101 102 103 
+Altura BST (niveles): 3
+RECIBIDA: 0
+PENDIENTE: 3
+ASIGNADA: 0
+RESUELTA: 0
+CANCELADA: 0
+Proximas 3 pendientes: 101, 102, 103
+En cola: 0 (incluye canceladas sin descartar). Correcciones: 1.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Deshecho: 103 vuelve a gravedad 3.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Asignada 101. Ruta: 0 -> 2 -> 1 -> 3; costo 8 min.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID a resolver: Resuelta 101; conservada en historial.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID a resolver: Solo se resuelve una ASIGNADA; estado actual: RESUELTA.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: 0: Central de soporte
+1: Biblioteca
+2: Laboratorios
+3: Coliseo
+4: Residencias
+5: Cafeteria
+6: Centro de salud universitario
+7: Estadio
+Vias (minutos):
+0 <-> 1: 4 min
+0 <-> 2: 2 min
+1 <-> 2: 1 min
+1 <-> 3: 5 min
+2 <-> 3: 8 min
+2 <-> 4: 10 min
+3 <-> 4: 2 min
+3 <-> 5: 6 min
+4 <-> 5: 3 min
+4 <-> 6: 1 min
+5 <-> 7: 4 min
+6 <-> 7: 2 min
+1 Cambiar costo/reabrir | 2 Cerrar | 3 Restaurar ultimo costo | 0 Volver: Zona A (0-7): Zona B (0-7): Via actualizada en ambos sentidos.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: 0: Central de soporte
+1: Biblioteca
+2: Laboratorios
+3: Coliseo
+4: Residencias
+5: Cafeteria
+6: Centro de salud universitario
+7: Estadio
+Vias (minutos):
+0 <-> 1: 4 min
+0 <-> 2: 2 min
+1 <-> 2: 1 min
+1 <-> 3: 5 min
+2 <-> 3: 8 min
+2 <-> 4: 10 min
+3 <-> 4: 2 min
+3 <-> 5: 6 min
+4 <-> 5: 3 min
+4 <-> 6: 1 min
+5 <-> 7: CERRADA (ultimo costo 4)
+6 <-> 7: 2 min
+1 Cambiar costo/reabrir | 2 Cerrar | 3 Restaurar ultimo costo | 0 Volver: Zona A (0-7): Zona B (0-7): Via actualizada en ambos sentidos.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Sin ruta a zona 7: 102 permanece PENDIENTE en el heap.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: 0: Central de soporte
+1: Biblioteca
+2: Laboratorios
+3: Coliseo
+4: Residencias
+5: Cafeteria
+6: Centro de salud universitario
+7: Estadio
+Vias (minutos):
+0 <-> 1: 4 min
+0 <-> 2: 2 min
+1 <-> 2: 1 min
+1 <-> 3: 5 min
+2 <-> 3: 8 min
+2 <-> 4: 10 min
+3 <-> 4: 2 min
+3 <-> 5: 6 min
+4 <-> 5: 3 min
+4 <-> 6: 1 min
+5 <-> 7: CERRADA (ultimo costo 4)
+6 <-> 7: CERRADA (ultimo costo 2)
+1 Cambiar costo/reabrir | 2 Cerrar | 3 Restaurar ultimo costo | 0 Volver: Zona A (0-7): Zona B (0-7): Via actualizada en ambos sentidos.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Asignada 102. Ruta: 0 -> 2 -> 1 -> 3 -> 4 -> 6 -> 7; costo 13 min.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID positivo: 1 Energia | 2 Red | 3 Equipo | 4 Clima | 5 Infraestructura | 6 Otro
+Tipo: Descripcion (10-120 caracteres): Zona (1-7): Registrada 104: RECIBIDA, secuencia 4.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID a cancelar: Cancelada 104; conservada en historial.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Se ignora 104 porque esta CANCELADA.
+No hay incidencias por clasificar.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID a buscar: ID inexistente.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: ID a cancelar: No se cancela una RESUELTA.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Asignada 103. Ruta: 0 -> 2; costo 2 min.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: No hay incidencias PENDIENTES (heap vacio).
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: --- Historial hacia adelante ---
+ID 101 | RESUELTA | gravedad 5 | ingreso 1
+  Energia | zona 3 (Coliseo)
+  Falla electrica en coliseo
+  Ruta registrada: 0 -> 2 -> 1 -> 3; costo registrado 8 min.
+ID 102 | ASIGNADA | gravedad 5 | ingreso 2
+  Red | zona 7 (Estadio)
+  Falla de red en el estadio
+  Ruta registrada: 0 -> 2 -> 1 -> 3 -> 4 -> 6 -> 7; costo registrado 13 min.
+ID 103 | ASIGNADA | gravedad 3 | ingreso 3
+  Equipo | zona 2 (Laboratorios)
+  Equipo averiado en laboratorio
+  Ruta registrada: 0 -> 2; costo registrado 2 min.
+ID 104 | CANCELADA | gravedad 0 | ingreso 4
+  Clima | zona 1 (Biblioteca)
+  Falla de aire acondicionado
+--- Historial hacia atras (IDs) ---
+104 103 102 101 
+--- BST inorden (IDs) ---
+101 102 103 104 
+Altura BST (niveles): 4
+RECIBIDA: 0
+PENDIENTE: 0
+ASIGNADA: 2
+RESUELTA: 1
+CANCELADA: 1
+Proximas 0 pendientes: 
+En cola: 0 (incluye canceladas sin descartar). Correcciones: 0.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+00 Salir
+Opcion: Liberacion: heap=0, pila=0, cola=0, BST=4, lista=4.

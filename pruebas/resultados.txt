@@ -1,0 +1,3678 @@
+
+T01 - Registrar 101 zona 3, 102 zona 7 y 103 zona 2
+  Registro y secuencia 101 | esperado: OK | obtenido: OK
+  Registro y secuencia 102 | esperado: OK | obtenido: OK
+  Registro y secuencia 103 | esperado: OK | obtenido: OK
+  Lista/BST/cola consistentes | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T02 - Clasificar FIFO con gravedades 5,5,3
+  Tres clasificaciones | esperado: OK | obtenido: OK
+  Prioridad 101,102,103 | esperado: OK | obtenido: OK
+  Invariantes | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T03 - Cambiar gravedad de 103: 3 a 5
+  Cambio aceptado | esperado: OK | obtenido: OK
+  Antiguedad y una correccion en pila | esperado: OK | obtenido: OK
+  Invariantes | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T04 - Deshacer cambio de 103
+  Gravedad restaurada a 3 | esperado: OK | obtenido: OK
+  Heap y pila consistentes | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T05 - Asignar 101 con ruta de control
+  Asignacion aceptada | esperado: OK | obtenido: OK
+  Ruta 0->2->1->3, costo 8 | esperado: OK | obtenido: OK
+  101 sale del heap | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T06 - Resolver 101 dos veces
+  Primera aceptada y segunda rechazada | esperado: OK | obtenido: OK
+  Historial conservado | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T07 - Cerrar 5-7 y 6-7; asignacion sin ruta
+  Vias cerradas | esperado: OK | obtenido: OK
+  Asignacion rechazada | esperado: OK | obtenido: OK
+  102 permanece en heap sin ruta ficticia | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T08 - Restaurar 6-7 y asignar 102
+  Via restaurada y asignacion aceptada | esperado: OK | obtenido: OK
+  Ruta 0->2->1->3->4->6->7, costo 13 | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T09 - Cancelar 104 RECIBIDA y saltarla en cola
+  104 ignorada al clasificar | esperado: OK | obtenido: OK
+  104 nunca ingresa al heap | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T10 - ID inexistente, cancelar resuelta y heap vacio
+  Busqueda y cancelacion rechazadas | esperado: OK | obtenido: OK
+  Ultima pendiente y heap vacio | esperado: OK | obtenido: OK
+  Sin corrupcion | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T11 - Validaciones y transiciones prohibidas
+  Datos invalidos rechazados | esperado: OK | obtenido: OK
+  ID duplicado rechazado | esperado: OK | obtenido: OK
+  RECIBIDA protegida; gravedades invalidas rechazadas | esperado: OK | obtenido: OK
+  Transiciones validas unicamente | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T12 - Cancelar desde heap y corregir prioridades repetidas
+  Eliminar medio, cima y hoja | esperado: OK | obtenido: OK
+  Subidas y bajadas de prioridad | esperado: OK | obtenido: OK
+  Tres deshacer en orden LIFO | esperado: OK | obtenido: OK
+  Heap sin duplicados | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T13 - Pila vacia y correcciones de incidencias que ya no estan pendientes
+  Pila vacia rechazada | esperado: OK | obtenido: OK
+  Correccion de ASIGNADA descartada | esperado: OK | obtenido: OK
+  Correccion de CANCELADA descartada | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T14 - Crecimiento del heap y consultas sin efectos secundarios
+  Cinco resultados | esperado: OK | obtenido: OK
+  Posicion 1 | esperado: OK | obtenido: OK
+  Posicion 2 | esperado: OK | obtenido: OK
+  Posicion 3 | esperado: OK | obtenido: OK
+  Posicion 4 | esperado: OK | obtenido: OK
+  Posicion 5 | esperado: OK | obtenido: OK
+  Informes repetibles sin mutacion | esperado: OK | obtenido: OK
+  La siguiente asignada sigue siendo 4 | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T15 - BST ascendente frente a insercion equilibrada
+  Alturas 7 y 3 niveles | esperado: OK | obtenido: OK
+  Busqueda ID 1 | esperado: OK | obtenido: OK
+  Busqueda ID 2 | esperado: OK | obtenido: OK
+  Busqueda ID 3 | esperado: OK | obtenido: OK
+  Busqueda ID 4 | esperado: OK | obtenido: OK
+  Busqueda ID 5 | esperado: OK | obtenido: OK
+  Busqueda ID 6 | esperado: OK | obtenido: OK
+  Busqueda ID 7 | esperado: OK | obtenido: OK
+  Indices consistentes | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T16 - Origen a si mismo, aislamiento y validaciones del grafo
+  Ruta 0->0 con costo cero | esperado: OK | obtenido: OK
+  Entradas invalidas rechazadas | esperado: OK | obtenido: OK
+  Base completamente desconectada | esperado: OK | obtenido: OK
+  Restauracion simetrica y ruta recuperada | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T17 - Ruta historica independiente de cambios posteriores
+  Mapa modificado | esperado: OK | obtenido: OK
+  Ruta y costo asignados conservados | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T18 - Limpieza explicita, reutilizacion y destruccion repetida
+  100 ciclos con lista, cola, BST, heap y pila; doble cierre seguro | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T19 - Empate defensivo de gravedad y secuencia en heap aislado
+  ID ascendente como tercer criterio defensivo | esperado: OK | obtenido: OK
+  Extraer 1 | esperado: OK | obtenido: OK
+  Extraer 2 | esperado: OK | obtenido: OK
+  Extraer 3 | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T20 - Costos grandes sin desbordamiento de int
+  Costo 8589934588 almacenado en long long | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T21 - FIFO con varias canceladas y deshacer una sola entrada por intento
+  Se saltan 1 y 2, se clasifican 3 y 4 | esperado: OK | obtenido: OK
+  Descarta solo la ultima correccion invalida | esperado: OK | obtenido: OK
+  El siguiente intento restaura la correccion anterior | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T22 - Longitud UTF-8 y cambio de gravedad al mismo valor
+  120 letras acentuadas aceptadas como 120 caracteres | esperado: OK | obtenido: OK
+  121 caracteres rechazados | esperado: OK | obtenido: OK
+  Mismo valor no crea una correccion ficticia | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+=== Resumen: 22 aprobadas, 0 fallidas ===
+
+--- Registro de operaciones y entradas de prueba ---
+Registrada 101: RECIBIDA, secuencia 1.
+Registrada 102: RECIBIDA, secuencia 2.
+Registrada 103: RECIBIDA, secuencia 3.
+Clasificada 101: PENDIENTE, gravedad 5.
+Clasificada 102: PENDIENTE, gravedad 5.
+Clasificada 103: PENDIENTE, gravedad 3.
+Gravedad de 103 actualizada a 5.
+Deshecho: 103 vuelve a gravedad 3.
+Asignada 101. Ruta: 0 -> 2 -> 1 -> 3; costo 8 min.
+Resuelta 101; conservada en historial.
+Solo se resuelve una ASIGNADA; estado actual: RESUELTA.
+Sin ruta a zona 7: 102 permanece PENDIENTE en el heap.
+Asignada 102. Ruta: 0 -> 2 -> 1 -> 3 -> 4 -> 6 -> 7; costo 13 min.
+Registrada 104: RECIBIDA, secuencia 4.
+Cancelada 104; conservada en historial.
+Se ignora 104 porque esta CANCELADA.
+No hay incidencias por clasificar.
+No se cancela una RESUELTA.
+Asignada 103. Ruta: 0 -> 2; costo 2 min.
+No hay incidencias PENDIENTES (heap vacio).
+Datos invalidos: ID positivo, descripcion de 10 a 120 caracteres, tipo 1-6 y zona 1-7.
+Datos invalidos: ID positivo, descripcion de 10 a 120 caracteres, tipo 1-6 y zona 1-7.
+Datos invalidos: ID positivo, descripcion de 10 a 120 caracteres, tipo 1-6 y zona 1-7.
+Datos invalidos: ID positivo, descripcion de 10 a 120 caracteres, tipo 1-6 y zona 1-7.
+Datos invalidos: ID positivo, descripcion de 10 a 120 caracteres, tipo 1-6 y zona 1-7.
+Datos invalidos: ID positivo, descripcion de 10 a 120 caracteres, tipo 1-6 y zona 1-7.
+Registrada 1: RECIBIDA, secuencia 1.
+El ID ya existe.
+Solo se resuelve una ASIGNADA; estado actual: RECIBIDA.
+Solo se cambia gravedad de una PENDIENTE.
+Gravedad invalida (1-5).
+Gravedad invalida (1-5).
+Clasificada 1: PENDIENTE, gravedad 2.
+Solo se resuelve una ASIGNADA; estado actual: PENDIENTE.
+Asignada 1. Ruta: 0 -> 2 -> 1; costo 3 min.
+No se cancela una ASIGNADA.
+Solo se cambia gravedad de una PENDIENTE.
+Resuelta 1; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Clasificada 1: PENDIENTE, gravedad 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Clasificada 2: PENDIENTE, gravedad 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Clasificada 4: PENDIENTE, gravedad 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Clasificada 5: PENDIENTE, gravedad 5.
+Cancelada 3; conservada en historial.
+Cancelada 5; conservada en historial.
+Cancelada 1; conservada en historial.
+Gravedad de 2 actualizada a 5.
+Gravedad de 2 actualizada a 1.
+Gravedad de 2 actualizada a 3.
+Deshecho: 2 vuelve a gravedad 1.
+Deshecho: 2 vuelve a gravedad 5.
+Deshecho: 2 vuelve a gravedad 2.
+Pila de deshacer vacia.
+Registrada 1: RECIBIDA, secuencia 1.
+Clasificada 1: PENDIENTE, gravedad 2.
+Gravedad de 1 actualizada a 4.
+Asignada 1. Ruta: 0 -> 2; costo 2 min.
+Correccion de 1 descartada: estado ASIGNADA; ya no esta PENDIENTE.
+Registrada 2: RECIBIDA, secuencia 2.
+Clasificada 2: PENDIENTE, gravedad 1.
+Gravedad de 2 actualizada a 3.
+Cancelada 2; conservada en historial.
+Correccion de 2 descartada: estado CANCELADA; ya no esta PENDIENTE.
+Registrada 1: RECIBIDA, secuencia 1.
+Clasificada 1: PENDIENTE, gravedad 2.
+Registrada 2: RECIBIDA, secuencia 2.
+Clasificada 2: PENDIENTE, gravedad 3.
+Registrada 3: RECIBIDA, secuencia 3.
+Clasificada 3: PENDIENTE, gravedad 4.
+Registrada 4: RECIBIDA, secuencia 4.
+Clasificada 4: PENDIENTE, gravedad 5.
+Registrada 5: RECIBIDA, secuencia 5.
+Clasificada 5: PENDIENTE, gravedad 1.
+Registrada 6: RECIBIDA, secuencia 6.
+Clasificada 6: PENDIENTE, gravedad 2.
+Registrada 7: RECIBIDA, secuencia 7.
+Clasificada 7: PENDIENTE, gravedad 3.
+Registrada 8: RECIBIDA, secuencia 8.
+Clasificada 8: PENDIENTE, gravedad 4.
+Registrada 9: RECIBIDA, secuencia 9.
+Clasificada 9: PENDIENTE, gravedad 5.
+Registrada 10: RECIBIDA, secuencia 10.
+Clasificada 10: PENDIENTE, gravedad 1.
+Registrada 11: RECIBIDA, secuencia 11.
+Clasificada 11: PENDIENTE, gravedad 2.
+Registrada 12: RECIBIDA, secuencia 12.
+Clasificada 12: PENDIENTE, gravedad 3.
+Registrada 13: RECIBIDA, secuencia 13.
+Clasificada 13: PENDIENTE, gravedad 4.
+Registrada 14: RECIBIDA, secuencia 14.
+Clasificada 14: PENDIENTE, gravedad 5.
+Registrada 15: RECIBIDA, secuencia 15.
+Clasificada 15: PENDIENTE, gravedad 1.
+Registrada 16: RECIBIDA, secuencia 16.
+Clasificada 16: PENDIENTE, gravedad 2.
+Registrada 17: RECIBIDA, secuencia 17.
+Clasificada 17: PENDIENTE, gravedad 3.
+Registrada 18: RECIBIDA, secuencia 18.
+Clasificada 18: PENDIENTE, gravedad 4.
+Registrada 19: RECIBIDA, secuencia 19.
+Clasificada 19: PENDIENTE, gravedad 5.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 20: PENDIENTE, gravedad 1.
+Registrada 21: RECIBIDA, secuencia 21.
+Clasificada 21: PENDIENTE, gravedad 2.
+Registrada 22: RECIBIDA, secuencia 22.
+Clasificada 22: PENDIENTE, gravedad 3.
+Registrada 23: RECIBIDA, secuencia 23.
+Clasificada 23: PENDIENTE, gravedad 4.
+Registrada 24: RECIBIDA, secuencia 24.
+Clasificada 24: PENDIENTE, gravedad 5.
+Registrada 25: RECIBIDA, secuencia 25.
+Clasificada 25: PENDIENTE, gravedad 1.
+Registrada 26: RECIBIDA, secuencia 26.
+Clasificada 26: PENDIENTE, gravedad 2.
+Registrada 27: RECIBIDA, secuencia 27.
+Clasificada 27: PENDIENTE, gravedad 3.
+Registrada 28: RECIBIDA, secuencia 28.
+Clasificada 28: PENDIENTE, gravedad 4.
+Registrada 29: RECIBIDA, secuencia 29.
+Clasificada 29: PENDIENTE, gravedad 5.
+Registrada 30: RECIBIDA, secuencia 30.
+Clasificada 30: PENDIENTE, gravedad 1.
+Registrada 31: RECIBIDA, secuencia 31.
+Clasificada 31: PENDIENTE, gravedad 2.
+Registrada 32: RECIBIDA, secuencia 32.
+Clasificada 32: PENDIENTE, gravedad 3.
+Registrada 33: RECIBIDA, secuencia 33.
+Clasificada 33: PENDIENTE, gravedad 4.
+Registrada 34: RECIBIDA, secuencia 34.
+Clasificada 34: PENDIENTE, gravedad 5.
+Registrada 35: RECIBIDA, secuencia 35.
+Clasificada 35: PENDIENTE, gravedad 1.
+Registrada 36: RECIBIDA, secuencia 36.
+Clasificada 36: PENDIENTE, gravedad 2.
+Registrada 37: RECIBIDA, secuencia 37.
+Clasificada 37: PENDIENTE, gravedad 3.
+Registrada 38: RECIBIDA, secuencia 38.
+Clasificada 38: PENDIENTE, gravedad 4.
+Registrada 39: RECIBIDA, secuencia 39.
+Clasificada 39: PENDIENTE, gravedad 5.
+Registrada 40: RECIBIDA, secuencia 40.
+Clasificada 40: PENDIENTE, gravedad 1.
+Asignada 4. Ruta: 0 -> 2 -> 1; costo 3 min.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 4: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 6: RECIBIDA, secuencia 3.
+Registrada 1: RECIBIDA, secuencia 4.
+Registrada 3: RECIBIDA, secuencia 5.
+Registrada 5: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 1: RECIBIDA, secuencia 1.
+Clasificada 1: PENDIENTE, gravedad 5.
+Asignada 1. Ruta: 0 -> 2 -> 1 -> 3; costo 8 min.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Liberacion: heap=9, pila=1, cola=10, BST=20, lista=20.
+Liberacion: heap=0, pila=0, cola=0, BST=0, lista=0.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Registrada 5: RECIBIDA, secuencia 5.
+Registrada 6: RECIBIDA, secuencia 6.
+Registrada 7: RECIBIDA, secuencia 7.
+Registrada 8: RECIBIDA, secuencia 8.
+Registrada 9: RECIBIDA, secuencia 9.
+Registrada 10: RECIBIDA, secuencia 10.
+Registrada 11: RECIBIDA, secuencia 11.
+Registrada 12: RECIBIDA, secuencia 12.
+Registrada 13: RECIBIDA, secuencia 13.
+Registrada 14: RECIBIDA, secuencia 14.
+Registrada 15: RECIBIDA, secuencia 15.
+Registrada 16: RECIBIDA, secuencia 16.
+Registrada 17: RECIBIDA, secuencia 17.
+Registrada 18: RECIBIDA, secuencia 18.
+Registrada 19: RECIBIDA, secuencia 19.
+Registrada 20: RECIBIDA, secuencia 20.
+Clasificada 1: PENDIENTE, gravedad 3.
+Clasificada 2: PENDIENTE, gravedad 3.
+Clasificada 3: PENDIENTE, gravedad 3.
+Clasificada 4: PENDIENTE, gravedad 3.
+Clasificada 5: PENDIENTE, gravedad 3.
+Clasificada 6: PENDIENTE, gravedad 3.
+Clasificada 7: PENDIENTE, gravedad 3.
+Clasificada 8: PENDIENTE, gravedad 3.
+Clasificada 9: PENDIENTE, gravedad 3.
+Clasificada 10: PENDIENTE, gravedad 3.
+Gravedad de 1 actualizada a 5.
+Cancelada 2; conservada en historial.
+Registrada 1: RECIBIDA, secuencia 1.
+Registrada 2: RECIBIDA, secuencia 2.
+Registrada 3: RECIBIDA, secuencia 3.
+Registrada 4: RECIBIDA, secuencia 4.
+Cancelada 1; conservada en historial.
+Cancelada 2; conservada en historial.
+Se ignora 1 porque esta CANCELADA.
+Se ignora 2 porque esta CANCELADA.
+Clasificada 3: PENDIENTE, gravedad 1.
+Clasificada 4: PENDIENTE, gravedad 2.
+Gravedad de 3 actualizada a 3.
+Gravedad de 4 actualizada a 4.
+Cancelada 4; conservada en historial.
+Correccion de 4 descartada: estado CANCELADA; ya no esta PENDIENTE.
+Deshecho: 3 vuelve a gravedad 1.
+Registrada 1: RECIBIDA, secuencia 1.
+Datos invalidos: ID positivo, descripcion de 10 a 120 caracteres, tipo 1-6 y zona 1-7.
+Clasificada 1: PENDIENTE, gravedad 3.
+La gravedad ya tiene ese valor; no se guarda correccion.

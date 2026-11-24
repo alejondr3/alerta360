@@ -1,0 +1,50 @@
+VERIFICACION REAL - 23 de noviembre de 2026
+
+Entorno: Windows x64, GCC/MinGW 15.1.0, PowerShell 7.6.
+
+Compilacion ejecutada:
+g++ -std=c++20 -Wall -Wextra -Wconversion -Wshadow -pedantic -O2 -static -static-libgcc -static-libstdc++ *.cpp -o alerta360.exe
+
+Resultado: codigo de salida 0, sin advertencias ni errores.
+
+Suite automatica:
+./alerta360.exe --pruebas
+Resultado: codigo de salida 0; 22 aprobadas, 0 fallidas.
+Evidencia: resultados.txt. Entradas programadas en Pruebas.cpp, con expectativas
+y verificaciones reales por escenario; incluye registro de operaciones.
+
+Pruebas reales del menu mediante subprocess y entrada estandar:
+- entrada_aceptacion.txt: OK; rutas con costos 8 y 13, rechazo sin ruta,
+  cancelada ignorada, resolucion repetida rechazada, conteos finales y cierre.
+- entrada_invalidas.txt: OK; letras, enteros fuera de rango, descripcion corta,
+  zona/gravedad invalidas, ID duplicado y cancelacion de resuelta rechazados.
+- Entrada vacia: OK; cierre seguro.
+- EOF a mitad de registro: OK; ninguna incidencia parcial guardada.
+- EOF al pedir gravedad: OK; incidencia recibida conservada hasta el cierre.
+- Entero mayor que long long: OK; mensaje de entrada invalida, sin fallo.
+- Ejecutable con PATH vacio: OK; no requiere DLLs adicionales de MinGW.
+Evidencia de las dos sesiones completas: salida_aceptacion.txt y salida_invalidas.txt.
+
+Memoria:
+La suite ejecuta 100 ciclos de construccion/destruccion con las cinco estructuras
+dinamicas, incluyendo cierre repetido y reutilizacion. Todos terminaron sin fallo
+y con invariantes verificadas. Esto no equivale a una medicion de fugas.
+
+Se intento compilar con AddressSanitizer y UndefinedBehaviorSanitizer, pero el
+enlazador de esta instalacion informo que no encuentra -lasan ni -lubsan.
+Por tanto NO se afirma que se haya ejecutado un sanitizador ni que estas pruebas
+demuestren por si solas ausencia absoluta de fugas. El README contiene el comando
+para ejecutarlo en otro entorno con las bibliotecas correspondientes.
+
+VERIFICACION PARA GITHUB - 24 de noviembre de 2026
+
+CMake / generador MinGW Makefiles, configuracion Debug:
+cmake -S . -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug
+cmake --build build --parallel 2
+ctest --test-dir build --output-on-failure
+Resultado: compilacion sin advertencias; CTest 1/1 aprobado
+(la suite interna ejecuta 22 escenarios).
+
+Makefile: verificada la receta mediante mingw32-make -n -B test.
+GitHub Actions: configurado para Linux, Windows y sanitizadores en Linux.
+Los resultados remotos se consultan en la pestana Actions del repositorio.

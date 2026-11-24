@@ -1,0 +1,43 @@
+name: Compilacion y pruebas
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compilar-y-probar:
+    name: C++20 en ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configurar
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+      - name: Compilar
+        run: cmake --build build --config Debug --parallel 2
+      - name: Ejecutar las 22 pruebas
+        run: ctest --test-dir build -C Debug --output-on-failure
+
+  sanitizadores:
+    name: Memoria y comportamiento indefinido
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configurar sanitizadores
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DENABLE_SANITIZERS=ON
+      - name: Compilar
+        run: cmake --build build --parallel 2
+      - name: Verificar memoria y ejecutar pruebas
+        run: ctest --test-dir build --output-on-failure
+        env:
+          ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+          UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1

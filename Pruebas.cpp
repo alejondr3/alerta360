@@ -1,0 +1,251 @@
+#include "SistemaAlerta360.h"
+#include <limits>
+#include <ostream>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+
+namespace {
+void exigir(bool condicion, const std::string& descripcion, std::ostream& out) {
+    out << "  " << descripcion << " | esperado: OK | obtenido: " << (condicion ? "OK" : "FALLO") << '\n';
+    if (!condicion) throw std::runtime_error(descripcion);
+}
+bool orden(const SistemaAlerta360& s, const int* esperados, int total) {
+    int ids[128]{};
+    if (total > 128 || s.proximos(ids, 128) != total) return false;
+    for (int i = 0; i < total; ++i) if (ids[i] != esperados[i]) return false;
+    return true;
+}
+bool rutaIgual(const Ruta& ruta, const int* nodos, int total, long long costo) {
+    if (!ruta.existe || ruta.longitud != total || ruta.costo != costo) return false;
+    for (int i = 0; i < total; ++i) if (ruta.nodos[i] != nodos[i]) return false;
+    return true;
+}
+void ingresar(SistemaAlerta360& s, int id, int zona, std::ostream& log) {
+    if (!s.registrar(id, "Falla tecnica de prueba", Tipo::RED, zona, log))
+        throw std::runtime_error("No se pudo preparar incidencia " + std::to_string(id));
+}
+}
+
+int ejecutarPruebas(std::ostream& out) {
+    int aprobadas = 0, fallidas = 0;
+    auto prueba = [&](const char* id, const char* titulo, auto cuerpo) {
+        out << '\n' << id << " - " << titulo << '\n';
+        try { cuerpo(); ++aprobadas; out << "Resultado: APROBADA\n"; }
+        catch (const std::exception& e) { ++fallidas; out << "Resultado: FALLIDA - " << e.what() << '\n'; }
+    };
+    SistemaAlerta360 s;
+    std::ostringstream log;
+    prueba("T01", "Registrar 101 zona 3, 102 zona 7 y 103 zona 2", [&] {
+        ingresar(s,101,3,log); ingresar(s,102,7,log); ingresar(s,103,2,log);
+        for (int i = 0; i < 3; ++i) {
+            const auto* d = s.buscar(101+i);
+            exigir(d && d->estado == Estado::RECIBIDA && d->secuenciaIngreso == i+1,
+                    "Registro y secuencia " + std::to_string(101+i), out);
+        }
+        exigir(s.validarConsistencia(), "Lista/BST/cola consistentes", out);
+    });
+    prueba("T02", "Clasificar FIFO con gravedades 5,5,3", [&] {
+        exigir(s.clasificarSiguiente(5,log) && s.clasificarSiguiente(5,log)
+            && s.clasificarSiguiente(3,log), "Tres clasificaciones", out);
+        const int ids[] = {101,102,103};
+        exigir(orden(s,ids,3) && s.buscar(103)->gravedad == 3, "Prioridad 101,102,103", out);
+        exigir(s.validarConsistencia(), "Invariantes", out);
+    });
+    prueba("T03", "Cambiar gravedad de 103: 3 a 5", [&] {
+        exigir(s.cambiarGravedad(103,5,log), "Cambio aceptado", out);
+        const int ids[] = {101,102,103};
+        exigir(orden(s,ids,3) && s.correcciones() == 1, "Antiguedad y una correccion en pila", out);
+        exigir(s.validarConsistencia(), "Invariantes", out);
+    });
+    prueba("T04", "Deshacer cambio de 103", [&] {
+        exigir(s.deshacerGravedad(log) && s.buscar(103)->gravedad == 3,
+                "Gravedad restaurada a 3", out);
+        const int ids[] = {101,102,103};
+        exigir(orden(s,ids,3) && s.correcciones() == 0 && s.validarConsistencia(), "Heap y pila consistentes", out);
+    });
+    prueba("T05", "Asignar 101 con ruta de control", [&] {
+        exigir(s.asignarSiguiente(log), "Asignacion aceptada", out);
+        const int ruta[] = {0,2,1,3}; const int ids[] = {102,103};
+        exigir(s.buscar(101)->estado == Estado::ASIGNADA && rutaIgual(s.buscar(101)->ruta,ruta,4,8),
+                "Ruta 0->2->1->3, costo 8", out);
+        exigir(orden(s,ids,2) && s.validarConsistencia(), "101 sale del heap", out);
+    });
+    prueba("T06", "Resolver 101 dos veces", [&] {
+        exigir(s.resolver(101,log) && !s.resolver(101,log), "Primera aceptada y segunda rechazada", out);
+        exigir(s.buscar(101)->estado == Estado::RESUELTA && s.cantidad() == 3
+            && s.validarConsistencia(), "Historial conservado", out);
+    });
+    prueba("T07", "Cerrar 5-7 y 6-7; asignacion sin ruta", [&] {
+        exigir(s.grafo().cerrar(5,7) && s.grafo().cerrar(6,7), "Vias cerradas", out);
+        exigir(!s.asignarSiguiente(log), "Asignacion rechazada", out);
+        const int ids[] = {102,103};
+        exigir(s.buscar(102)->estado == Estado::PENDIENTE && !s.buscar(102)->ruta.existe
+            && orden(s,ids,2) && s.validarConsistencia(), "102 permanece en heap sin ruta ficticia", out);
+    });
+    prueba("T08", "Restaurar 6-7 y asignar 102", [&] {
+        exigir(s.grafo().restaurar(6,7) && s.asignarSiguiente(log), "Via restaurada y asignacion aceptada", out);
+        const int ruta[] = {0,2,1,3,4,6,7};
+        exigir(rutaIgual(s.buscar(102)->ruta,ruta,7,13) && s.validarConsistencia(),
+                "Ruta 0->2->1->3->4->6->7, costo 13", out);
+    });
+    prueba("T09", "Cancelar 104 RECIBIDA y saltarla en cola", [&] {
+        ingresar(s,104,1,log);
+        exigir(s.cancelar(104,log) && !s.clasificarSiguiente(5,log), "104 ignorada al clasificar", out);
+        const int ids[] = {103};
+        exigir(orden(s,ids,1) && s.buscar(104)->estado == Estado::CANCELADA
+            && s.validarConsistencia(), "104 nunca ingresa al heap", out);
+    });
+    prueba("T10", "ID inexistente, cancelar resuelta y heap vacio", [&] {
+        exigir(!s.buscar(999) && !s.cancelar(101,log), "Busqueda y cancelacion rechazadas", out);
+        exigir(s.asignarSiguiente(log) && !s.asignarSiguiente(log), "Ultima pendiente y heap vacio", out);
+        exigir(s.validarConsistencia(), "Sin corrupcion", out);
+    });
+    prueba("T11", "Validaciones y transiciones prohibidas", [&] {
+        SistemaAlerta360 x;
+        exigir(!x.registrar(0,"Descripcion valida",Tipo::RED,1,log)
+            && !x.registrar(1,"corta",Tipo::RED,1,log)
+            && !x.registrar(1,std::string(121,'a'),Tipo::RED,1,log)
+            && !x.registrar(1,std::string(10,' '),Tipo::RED,1,log)
+            && !x.registrar(1,"Descripcion valida",static_cast<Tipo>(9),1,log)
+            && !x.registrar(1,"Descripcion valida",Tipo::RED,0,log), "Datos invalidos rechazados", out);
+        ingresar(x,1,1,log);
+        exigir(!x.registrar(1,"Descripcion repetida",Tipo::RED,1,log) && x.cantidad() == 1,
+                "ID duplicado rechazado", out);
+        exigir(!x.resolver(1,log) && !x.cambiarGravedad(1,5,log)
+            && !x.clasificarSiguiente(0,log) && !x.clasificarSiguiente(6,log),
+                "RECIBIDA protegida; gravedades invalidas rechazadas", out);
+        exigir(x.clasificarSiguiente(2,log) && !x.resolver(1,log)
+            && x.asignarSiguiente(log) && !x.cancelar(1,log) && !x.cambiarGravedad(1,3,log)
+            && x.resolver(1,log) && x.validarConsistencia(), "Transiciones validas unicamente", out);
+    });
+    prueba("T12", "Cancelar desde heap y corregir prioridades repetidas", [&] {
+        SistemaAlerta360 x;
+        for (int id = 1; id <= 5; ++id) { ingresar(x,id,2,log); x.clasificarSiguiente(id,log); }
+        exigir(x.cancelar(3,log) && x.cancelar(5,log) && x.cancelar(1,log), "Eliminar medio, cima y hoja", out);
+        exigir(x.cambiarGravedad(2,5,log) && x.cambiarGravedad(2,1,log)
+            && x.cambiarGravedad(2,3,log), "Subidas y bajadas de prioridad", out);
+        exigir(x.deshacerGravedad(log) && x.buscar(2)->gravedad == 1
+            && x.deshacerGravedad(log) && x.buscar(2)->gravedad == 5
+            && x.deshacerGravedad(log) && x.buscar(2)->gravedad == 2,
+                "Tres deshacer en orden LIFO", out);
+        const int ids[] = {4,2};
+        exigir(orden(x,ids,2) && x.validarConsistencia(), "Heap sin duplicados", out);
+    });
+    prueba("T13", "Pila vacia y correcciones de incidencias que ya no estan pendientes", [&] {
+        SistemaAlerta360 x;
+        exigir(!x.deshacerGravedad(log), "Pila vacia rechazada", out);
+        ingresar(x,1,2,log); x.clasificarSiguiente(2,log); x.cambiarGravedad(1,4,log);
+        x.asignarSiguiente(log);
+        exigir(!x.deshacerGravedad(log) && x.buscar(1)->gravedad == 4 && x.correcciones() == 0,
+                "Correccion de ASIGNADA descartada", out);
+        ingresar(x,2,2,log); x.clasificarSiguiente(1,log); x.cambiarGravedad(2,3,log); x.cancelar(2,log);
+        exigir(!x.deshacerGravedad(log) && x.buscar(2)->gravedad == 3
+            && x.correcciones() == 0 && x.validarConsistencia(), "Correccion de CANCELADA descartada", out);
+    });
+    prueba("T14", "Crecimiento del heap y consultas sin efectos secundarios", [&] {
+        SistemaAlerta360 x;
+        for (int id = 1; id <= 40; ++id) { ingresar(x,id,1,log); x.clasificarSiguiente(id%5+1,log); }
+        const int esperados[] = {4,9,14,19,24}; int ids[5];
+        exigir(x.proximos(ids,5) == 5, "Cinco resultados", out);
+        for (int i = 0; i < 5; ++i) exigir(ids[i] == esperados[i], "Posicion " + std::to_string(i+1), out);
+        std::ostringstream antes, despues;
+        x.mostrarInformes(antes); x.mostrarInformes(despues);
+        exigir(antes.str() == despues.str() && x.validarConsistencia(), "Informes repetibles sin mutacion", out);
+        exigir(x.asignarSiguiente(log) && x.buscar(4)->estado == Estado::ASIGNADA
+            && x.validarConsistencia(), "La siguiente asignada sigue siendo 4", out);
+    });
+    prueba("T15", "BST ascendente frente a insercion equilibrada", [&] {
+        SistemaAlerta360 a,b;
+        for (int i = 1; i <= 7; ++i) ingresar(a,i,1,log);
+        const int ids[] = {4,2,6,1,3,5,7};
+        for (int id : ids) ingresar(b,id,1,log);
+        exigir(a.alturaBST() == 7 && b.alturaBST() == 3, "Alturas 7 y 3 niveles", out);
+        for (int i = 1; i <= 7; ++i) exigir(a.buscar(i) && b.buscar(i), "Busqueda ID " + std::to_string(i), out);
+        exigir(a.validarConsistencia() && b.validarConsistencia(), "Indices consistentes", out);
+    });
+    prueba("T16", "Origen a si mismo, aislamiento y validaciones del grafo", [&] {
+        GrafoCampus g;
+        const int origen[] = {0};
+        exigir(rutaIgual(g.dijkstra(0,0),origen,1,0), "Ruta 0->0 con costo cero", out);
+        exigir(!g.cambiarCosto(0,1,0) && !g.cambiarCosto(0,1,-1) && !g.cambiarCosto(1,1,2)
+            && !g.cerrar(-1,2) && !g.restaurar(8,1) && !g.dijkstra(0,9).existe,
+                "Entradas invalidas rechazadas", out);
+        exigir(g.cerrar(0,1) && g.cerrar(0,2) && !g.dijkstra(0,7).existe,
+                "Base completamente desconectada", out);
+        exigir(g.restaurar(0,2) && g.costo(2,0) == 2 && g.dijkstra(0,7).costo == 13
+            && g.validar(), "Restauracion simetrica y ruta recuperada", out);
+    });
+    prueba("T17", "Ruta historica independiente de cambios posteriores", [&] {
+        SistemaAlerta360 x;
+        ingresar(x,1,3,log); x.clasificarSiguiente(5,log); x.asignarSiguiente(log);
+        exigir(x.grafo().cerrar(1,3) && x.grafo().cambiarCosto(0,2,100), "Mapa modificado", out);
+        const int ruta[] = {0,2,1,3};
+        exigir(rutaIgual(x.buscar(1)->ruta,ruta,4,8) && x.validarConsistencia(), "Ruta y costo asignados conservados", out);
+    });
+    prueba("T18", "Limpieza explicita, reutilizacion y destruccion repetida", [&] {
+        for (int vuelta = 0; vuelta < 100; ++vuelta) {
+            SistemaAlerta360 x;
+            for (int id = 1; id <= 20; ++id) ingresar(x,id,1,log);
+            for (int i = 0; i < 10; ++i) x.clasificarSiguiente(3,log);
+            x.cambiarGravedad(1,5,log); x.cancelar(2,log);
+            if (vuelta % 2 == 0) {
+                x.cerrar(log); x.cerrar(log);
+                if (!x.validarConsistencia() || x.cantidad() != 0) throw std::runtime_error("Limpieza inconsistente");
+                ingresar(x,1,1,log);
+                if (x.buscar(1)->secuenciaIngreso != 1) throw std::runtime_error("Contador no reiniciado");
+            }
+            if (!x.validarConsistencia()) throw std::runtime_error("Destruccion preparada incorrectamente");
+        }
+        exigir(true, "100 ciclos con lista, cola, BST, heap y pila; doble cierre seguro", out);
+    });
+    prueba("T19", "Empate defensivo de gravedad y secuencia en heap aislado", [&] {
+        ListaIncidencias lista; IndiceBST indice; HeapPrioridad heap;
+        for (int id = 3; id >= 1; --id) {
+            auto& d = lista.agregar(id,"Prueba empate artificial",Tipo::RED,1,1);
+            d.estado = Estado::PENDIENTE; d.gravedad = 5; indice.insertar(d); heap.insertar(d);
+        }
+        int ids[3];
+        exigir(heap.proximos(ids,3) == 3 && ids[0] == 1 && ids[1] == 2 && ids[2] == 3,
+                "ID ascendente como tercer criterio defensivo", out);
+        for (int i = 1; i <= 3; ++i) {
+            int id = 0;
+            exigir(heap.extraer(id) && id == i && heap.validar(indice), "Extraer " + std::to_string(i), out);
+        }
+    });
+    prueba("T20", "Costos grandes sin desbordamiento de int", [&] {
+        GrafoCampus g;
+        for (int a = 0; a < 8; ++a)
+            for (int b = a+1; b < 8; ++b)
+                if (g.costo(a,b) > 0) g.cambiarCosto(a,b,std::numeric_limits<int>::max());
+        exigir(g.dijkstra(0,7).costo == 4LL * std::numeric_limits<int>::max()
+            && g.validar(), "Costo 8589934588 almacenado en long long", out);
+    });
+    prueba("T21", "FIFO con varias canceladas y deshacer una sola entrada por intento", [&] {
+        SistemaAlerta360 x;
+        for (int i = 1; i <= 4; ++i) ingresar(x,i,1,log);
+        x.cancelar(1,log); x.cancelar(2,log);
+        exigir(x.siguienteClasificacion(log) == 3 && x.clasificarSiguiente(1,log)
+            && x.siguienteClasificacion(log) == 4 && x.clasificarSiguiente(2,log), "Se saltan 1 y 2, se clasifican 3 y 4", out);
+        x.cambiarGravedad(3,3,log); x.cambiarGravedad(4,4,log); x.cancelar(4,log);
+        exigir(!x.deshacerGravedad(log) && x.correcciones() == 1 && x.buscar(3)->gravedad == 3,
+                "Descarta solo la ultima correccion invalida", out);
+        exigir(x.deshacerGravedad(log) && x.buscar(3)->gravedad == 1 && x.validarConsistencia(),
+                "El siguiente intento restaura la correccion anterior", out);
+    });
+    prueba("T22", "Longitud UTF-8 y cambio de gravedad al mismo valor", [&] {
+        SistemaAlerta360 x;
+        std::string texto;
+        for (int i = 0; i < 120; ++i) texto += "\xC3\xA1";
+        exigir(longitudTexto(texto) == 120 && x.registrar(1,texto,Tipo::ENERGIA,1,log),
+                "120 letras acentuadas aceptadas como 120 caracteres", out);
+        texto += "\xC3\xA1";
+        exigir(!x.registrar(2,texto,Tipo::ENERGIA,1,log), "121 caracteres rechazados", out);
+        x.clasificarSiguiente(3,log);
+        exigir(!x.cambiarGravedad(1,3,log) && x.correcciones() == 0 && x.validarConsistencia(),
+                "Mismo valor no crea una correccion ficticia", out);
+    });
+    out << "\n=== Resumen: " << aprobadas << " aprobadas, " << fallidas << " fallidas ===\n";
+    out << "\n--- Registro de operaciones y entradas de prueba ---\n" << log.str();
+    return fallidas == 0 ? 0 : 1;
+}

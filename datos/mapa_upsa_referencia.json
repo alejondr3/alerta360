@@ -1,0 +1,3050 @@
+{
+  "fuente": "https://maps.upsa.edu.bo/",
+  "recurso": "https://maps.upsa.edu.bo/static/js/253.841d7e66.chunk.js",
+  "fecha_consulta": "2026-11-23",
+  "cantidad": 205,
+  "uso": "Referencia de ubicaciones; no reemplaza el grafo obligatorio de ocho zonas.",
+  "advertencia": "Los valores map son coordenadas internas del plano, no se interpretan como GPS, metros o minutos. No se extrajeron aristas ni tiempos.",
+  "ubicaciones": [
+    {
+      "id": "1",
+      "name": "Pascana",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Referencias y Recreación",
+      "categorySlug": "cat-ref-recreation",
+      "clickable": "TRUE",
+      "map": [
+        -6036690.745850077,
+        2475336.723987148
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "2",
+      "name": "Informaciones",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -7680392.602094507,
+        2064411.2599260407
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "3",
+      "name": "Admisiones y Registro",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -8548812.417563505,
+        1182051.6375932507
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "4",
+      "name": "Dirección Académica",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -10967796.314583367,
+        -205462.73203055374
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "5",
+      "name": "Secretaría General",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -11574400.571054526,
+        185894.85278954916
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "6",
+      "name": "Programación Académica",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -9226255.062133912,
+        127191.21506653354
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "7",
+      "name": "Departamento de Comunicación e Imagen",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -10224216.903425172,
+        -577252.4376096502
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "8",
+      "name": "Vicerrectorado",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -11280882.38243945,
+        29351.81886150688
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "9",
+      "name": "Rectorado",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -11985326.035115633,
+        420709.4036816098
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "10",
+      "name": "Salón Auditorio",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Espacios de Eventos",
+      "categorySlug": "cat-events",
+      "clickable": "TRUE",
+      "map": [
+        -12842000.830198789,
+        1365776.8729128037
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "11",
+      "name": "Directorio",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -12220140.586007696,
+        1477374.8826958863
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "12",
+      "name": "Cabaña Jatata",
+      "building": "",
+      "block": "",
+      "categoryName": "Referencias y Recreación",
+      "categorySlug": "cat-ref-recreation",
+      "clickable": "TRUE",
+      "map": [
+        -8313997.866671446,
+        4440103.531220608
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "13",
+      "name": "Cabañas Modulares",
+      "building": "",
+      "block": "",
+      "categoryName": "Referencias y Recreación",
+      "categorySlug": "cat-ref-recreation",
+      "clickable": "TRUE",
+      "map": [
+        -4185175.3468193654,
+        5897910.534675489
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "14",
+      "name": "Informaciones a Estudiantes Nuevos",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -7015084.707900332,
+        1966571.863721015
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "15",
+      "name": "Agencia de Banco",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -5821444.074199021,
+        1966571.863721015
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "16",
+      "name": "Extensión Cultural",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -6592024.493462993,
+        1504921.6450698338
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "17",
+      "name": "Dirección de Admisiones",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -10701279.13407407,
+        47114.641614953056
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "18",
+      "name": "A-108 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "19",
+      "name": "A-110 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "20",
+      "name": "A-112 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "21",
+      "name": "A-114 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "22",
+      "name": "A-116 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "23",
+      "name": "Aula Magna",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Espacios de Eventos",
+      "categorySlug": "cat-events",
+      "clickable": "TRUE",
+      "map": [
+        -342730.2020767485,
+        612413.5221341066
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "24",
+      "name": "Aula Magna - Sala VIP",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "1ra. Planta",
+      "categoryName": "Espacios de Eventos",
+      "categorySlug": "cat-events",
+      "clickable": "TRUE",
+      "map": [
+        248910.38203363493,
+        827660.1937851626
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "25",
+      "name": "Fotocopiadora",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -8392269.383635465,
+        2815969.5542171784
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "26",
+      "name": "B-101 Sala de Estudio de Matemática",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "27",
+      "name": "Enfermería",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -9284958.699856926,
+        3297187.652109363
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "28",
+      "name": "Sala de Estudio",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -9950266.5940511,
+        3668977.3576884605
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "29",
+      "name": "Ventanilla Única",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -10583871.858628038,
+        3549765.025754869
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "30",
+      "name": "B-107 Taller de Moda",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "31",
+      "name": "TI - Departamento de Tecnología de las Informaciones",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -11554832.691813523,
+        5077864.663040828
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "32",
+      "name": "Mantenimiento y Seguridad",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -12044029.67283865,
+        5801876.194958018
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "33",
+      "name": "B-109 Aula de CENACE",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "34",
+      "name": "B-111 Aula de CENACE",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "35",
+      "name": "B-113 Aula de CENACE",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "36",
+      "name": "Secretaría de Atención al Docente",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -8639218.68490376,
+        2436200.965505136
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "37",
+      "name": "Sala de Docentes",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -9304526.579097934,
+        2729719.1541202143
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "38",
+      "name": "B-108 Sala de Auditores Externos",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "39",
+      "name": "B-110 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "40",
+      "name": "B-112 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "41",
+      "name": "B-114 Aula de CENACE",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "42",
+      "name": "CENACE - Unidad de Educación Continua",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -11523536.430753596,
+        3910954.420524694
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "43",
+      "name": "B-118 Aula de CENACE",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "44",
+      "name": "B-120 Aula de CENACE",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "45",
+      "name": "B-122 Aula de CENACE",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "46",
+      "name": "Centro de Convenciones",
+      "building": "",
+      "block": "",
+      "categoryName": "Espacios de Eventos",
+      "categorySlug": "cat-events",
+      "clickable": "TRUE",
+      "map": [
+        5336558.984694965,
+        1620159.3030458707
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "47",
+      "name": "Centro de Convenciones - Sala VIP ",
+      "building": "",
+      "block": "",
+      "categoryName": "Espacios de Eventos",
+      "categorySlug": "cat-events",
+      "clickable": "TRUE",
+      "map": [
+        6686742.652324317,
+        710252.9183391333
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "48",
+      "name": "Plaza de Banderas",
+      "building": "",
+      "block": "",
+      "categoryName": "Espacios de Eventos",
+      "categorySlug": "cat-events",
+      "clickable": "TRUE",
+      "map": [
+        5884459.603443107,
+        -786689.8435977586
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "49",
+      "name": "Coliseo Polideportivo",
+      "building": "",
+      "block": "",
+      "categoryName": "Espacios de Eventos",
+      "categorySlug": "cat-events",
+      "clickable": "TRUE",
+      "map": [
+        9054456.040485937,
+        2980126.9102957277
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "50",
+      "name": "Coordinación de Deportes",
+      "building": "",
+      "block": "",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        10040672.861391356,
+        3129055.622073262
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "51",
+      "name": "Cancha de Fútbol",
+      "building": "",
+      "block": "",
+      "categoryName": "Espacios de Eventos",
+      "categorySlug": "cat-events",
+      "clickable": "TRUE",
+      "map": [
+        7023003.113389423,
+        4940405.278645178
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "52",
+      "name": "Archivo Central",
+      "building": "",
+      "block": "Bloque C",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        11758429.889712663,
+        1594297.9284333028
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "53",
+      "name": "C-103 Sala de Ensayos",
+      "building": "",
+      "block": "Bloque C",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        11308551.190083962,
+        2770711.4412758723
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "54",
+      "name": "C-105 Laboratorio de Procesos Industriales (Planta de Vapor)",
+      "building": "",
+      "block": "Bloque C",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        11308551.190083962,
+        2770711.4412758723
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "55",
+      "name": "Atención al Docente",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "1ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        14038853.395715516,
+        1496740.789983754
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "56",
+      "name": "D-103 Laboratorio de Hormigón",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "57",
+      "name": "D-105 Laboratorio de Materiales de Construcción",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "58",
+      "name": "D-107 Laboratorio de Mecánica de Suelos",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "59",
+      "name": "D-100 Exposición Materiales de Construcción",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "60",
+      "name": "D-102 Laboratorio de Resistencia de Materiales",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "61",
+      "name": "D-104 Laboratorio de Hidráulica y Mecánica de Fluidos",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "62",
+      "name": "D-106 Laboratorio de Asfalto",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "63",
+      "name": "E-101 Laboratorio de Química Orgánica",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "64",
+      "name": "E-105 Laboratorio de Secado",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "65",
+      "name": "E-107 Laboratorio de Química General",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "66",
+      "name": "E-109 Laboratorio de Investigaciones Químicas",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "67",
+      "name": "E-111 Laboratorio de Electrónica / Laboratorio de Potencia y Energía",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "68",
+      "name": "E-113 Laboratorio de Método y Manufactura Esbelta",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "69",
+      "name": "E-115 Laboratorio de Robótica / Laboratorio de Instrumentación",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "70",
+      "name": "E-117 Laboratorio de Máquinas y Herramientas / Laboratorio de Automatización Industrial (Neumática)",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "71",
+      "name": "E-119 Taller de Soldadura",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "72",
+      "name": "E-100 Laboratorio de Física",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "73",
+      "name": "E-102 Laboratorio de Física 2",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "74",
+      "name": "E-104 Laboratorio de Producción de Hidrocarburos",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "75",
+      "name": "E-106 Laboratorio de Presión Volumen Temperatura - PVT",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "76",
+      "name": "E-108 Sala de Telecomunicaciones",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "77",
+      "name": "E-110 Laboratorio de Cableado Estructurado y Telecomunicaciones",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "78",
+      "name": "E-112 Sala de Computación ",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "79",
+      "name": "E-114 Laboratorio de Modelación Industrial - Fab Lab",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "80",
+      "name": "E-116 Laboratorio de Ingeniería Civil (Servicio Externo)",
+      "building": "LABORATORIOS DE INGENIERÍA",
+      "block": "Bloque E",
+      "floor": "1ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        14322004.59319875,
+        5627621.810462621
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "81",
+      "name": "Centro de Cómputo",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -8196121.669252034,
+        2200902.1849044617
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "82",
+      "name": "Departamento de Personal",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -8685318.650277162,
+        2181334.3056634553
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "83",
+      "name": "Contabilidad",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -9057108.355856258,
+        2063927.030217426
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "84",
+      "name": "Gerencia General",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -8704886.529518168,
+        1516026.4114692826
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "85",
+      "name": "Créditos y Recuperaciones",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -9154947.752061285,
+        1007261.5512031484
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "86",
+      "name": "Jefatura de Retención",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -9957230.800942495,
+        400657.2947319895
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "87",
+      "name": "Dirección de Mejoramiento Institucional",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -10602970.815895664,
+        557200.3286600318
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "88",
+      "name": "Trámites y Títulos",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -10505049.606981415,
+        -220686.28457863815
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "89",
+      "name": "Facultad de Ciencias Empresariales",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -11586334.787238898,
+        1918861.8993173046
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "90",
+      "name": "Facultad de Ciencias Jurídicas y Sociales",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -11347870.76236587,
+        1808806.4852208155
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "91",
+      "name": "Facultad de Humanidades, Comunicación y Artes",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque Central",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -11150949.47412653,
+        1708507.1974764988
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "92",
+      "name": "DABE - Departamento de Asesoría y Bienestar Estudiantil",
+      "building": "",
+      "block": "",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -1777775.4654931314,
+        5816004.4612714425
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "93",
+      "name": "Internacionalización",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -6978099.225982193,
+        3026893.061339219
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "94",
+      "name": "Alumni",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -6547605.882680077,
+        2870350.027411178
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "95",
+      "name": "A-209 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "96",
+      "name": "A-211 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "97",
+      "name": "A-213 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "98",
+      "name": "CVI - Centro de Visualización de Imagen",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -6943777.397827706,
+        2259605.8226274773
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "99",
+      "name": "Data Center",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -6611123.45073062,
+        1985655.5132534057
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "100",
+      "name": "Asuntos Estudiantiles",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -6337091.328647324,
+        1462151.3301478047
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "101",
+      "name": "A-204 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "102",
+      "name": "A-206 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "103",
+      "name": "A-208 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "104",
+      "name": "A-210 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "105",
+      "name": "A-212 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "106",
+      "name": "A-214 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "107",
+      "name": "A-216 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "108",
+      "name": "A-218 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "109",
+      "name": "A-220 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "110",
+      "name": "IncubaUPSA - Incubadora de Empresas",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -6748176.644900381,
+        2941283.589659822
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "111",
+      "name": "B-205 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "112",
+      "name": "B-209 Sala de Audiencias / Defensas de Tesis",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "113",
+      "name": "B-211 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "114",
+      "name": "B-213 Taller de Moda",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "115",
+      "name": "B-215 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "116",
+      "name": "DIP - Dirección de Postgrado",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -13503408.398919405,
+        4278637.619212157
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "117",
+      "name": "B-219 Aula de Postgrado ",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "118",
+      "name": "B-202 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "119",
+      "name": "B-204 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "120",
+      "name": "B-206 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "121",
+      "name": "B-208 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "122",
+      "name": "B-210 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "123",
+      "name": "B-214 Aula de Postgrado ",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "124",
+      "name": "B-218 Aula de Postgrado ",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "125",
+      "name": "B-220 Aula de Postgrado ",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "126",
+      "name": "B-222 Aula de Postgrado ",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "127",
+      "name": "C-201 Aula",
+      "building": "Bloque C",
+      "block": "Bloque C",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        11308551.190083962,
+        2770711.4412758723
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "128",
+      "name": "C-203 Taller de Maquetería",
+      "building": "Bloque C",
+      "block": "Bloque C",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        11308551.190083962,
+        2770711.4412758723
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "129",
+      "name": "C-205 Taller de Instalaciones Eléctricas",
+      "building": "Bloque C",
+      "block": "Bloque C",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        11308551.190083962,
+        2770711.4412758723
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "130",
+      "name": "D-201 Sala de Computación",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "131",
+      "name": "D-203 Laboratorio de Redes",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "2da. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "132",
+      "name": "Sala de Reuniones ",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        13054595.186479531,
+        1946519.7547713947
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "133",
+      "name": "Facultad de Ingeniería",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "2da. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        12512558.814917114,
+        2749085.061408081
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "134",
+      "name": "A-305 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "135",
+      "name": "A-307 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "136",
+      "name": "A-309 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "137",
+      "name": "A-302 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "138",
+      "name": "A-304 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "139",
+      "name": "A-306 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "140",
+      "name": "A-308 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "141",
+      "name": "A-310 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "142",
+      "name": "A-312 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "143",
+      "name": "A-314 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "144",
+      "name": "A-316 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "145",
+      "name": "A-318 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "146",
+      "name": "A-320 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "147",
+      "name": "A-322 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "148",
+      "name": "A-324 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -3236421.0320395213,
+        2755693.073192481
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "149",
+      "name": "B-301 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "150",
+      "name": "B-303 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "151",
+      "name": "B-307 Taller de Diseño",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "152",
+      "name": "Facultad de Arquitectura, Diseño y Urbanismo",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -11621299.83083604,
+        4939492.884935168
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "153",
+      "name": "CIAP - Centro de Investigación y Asesoramiento Psicológico",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "154",
+      "name": "B-317 Aula de Postgrado / Defensas de Tesis",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "155",
+      "name": "B-319 Aula de Postgrado / Defensas de Tesis",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "156",
+      "name": "B-302 Taller de Diseño",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "157",
+      "name": "B-304 Taller de Diseño",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "158",
+      "name": "B-306 Taller de Diseño",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "159",
+      "name": "B-308 Taller de Diseño",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "160",
+      "name": "B-310 Taller de Diseño",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "161",
+      "name": "B-312 Taller de Diseño",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "162",
+      "name": "Sala de Estudio - Arquitectura",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        -11793090.42579719,
+        4429135.252050759
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "163",
+      "name": "B-316 Aula de Postgrado ",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "164",
+      "name": "B-318 Aula de CENACE",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "165",
+      "name": "B-320 Aula de Postgrado ",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "166",
+      "name": "B-322 Aula de Postgrado / Taller de Diseño",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "167",
+      "name": "B-324 Aula de Postgrado / Defensas de Tesis",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "168",
+      "name": "D-301 Aula",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "169",
+      "name": "D-303 Aula",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "170",
+      "name": "D-305 Aula",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "171",
+      "name": "D-302 Sala de Computación",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "172",
+      "name": "D-304 Sala de Computación",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "3ra. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "173",
+      "name": "Biblioteca ",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque A",
+      "floor": "4ta. Planta",
+      "categoryName": "Unidades Académicas",
+      "categorySlug": "cat-academic",
+      "clickable": "TRUE",
+      "map": [
+        179012.45860738494,
+        2851470.7562591694
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "174",
+      "name": "B-401 Aula de CENACE",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "4ta. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "175",
+      "name": "B-403 Aula de CENACE",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "4ta. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "176",
+      "name": "B-402 Taller de Diseño",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "4ta. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "177",
+      "name": "B-404 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "4ta. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "178",
+      "name": "B-406 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "4ta. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "179",
+      "name": "B-408 Aula",
+      "building": "EDIFICIO CENTRAL",
+      "block": "Bloque B",
+      "floor": "4ta. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        -10711350.902103476,
+        5074486.76325159
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "180",
+      "name": "Administración Laboratorios de Computación",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "4ta. Planta",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        12954020.13551527,
+        2469090.882668134
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "181",
+      "name": "D-401 Sala de Computación",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "4ta. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "182",
+      "name": "D-403 Sala de Computación",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "4ta. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "183",
+      "name": "D-402 Sala de Computación",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "4ta. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "184",
+      "name": "D-404 Sala de Computación",
+      "building": "EDIFICIO DE INGENIERÍA",
+      "block": "Bloque D",
+      "floor": "4ta. Planta",
+      "categoryName": "Aula/Laboratorio/Taller",
+      "categorySlug": "cat-classrooms",
+      "clickable": "TRUE",
+      "map": [
+        13206635.476461457,
+        3915432.3768746722
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "185",
+      "name": "Ingreso Peatonal",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        -10378736.563976273,
+        -1958897.7108234884
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "186",
+      "name": "Parqueo Administrativos",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        -15799039.1137347,
+        4136496.672749607
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "187",
+      "name": "Parqueo Docentes",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        -3862632.7767215744,
+        -1684947.4014494177
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "188",
+      "name": "Parqueo Edificio Central",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        -6939519.387001565,
+        6662862.881562244
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "189",
+      "name": "Parqueo Edificio Central",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        675091.8338146759,
+        4808806.323477009
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "190",
+      "name": "Parqueo Externo",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        -8676331.070008844,
+        -7154169.649310343
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "191",
+      "name": "Parqueo Polideportivo",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        13152388.066752838,
+        -285844.03571755346
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "192",
+      "name": "Parqueo Ingeniería",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        13132820.187511832,
+        6983623.102315849
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "193",
+      "name": "Parqueo Bicicletas",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        -9291969.42268004,
+        -2457878.631469122
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "194",
+      "name": "Parqueo Motos",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        -10652637.688611863,
+        6181334.767944848
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "195",
+      "name": "Parqueo Motos",
+      "building": "",
+      "block": "",
+      "categoryName": "Ingreso y Parqueos",
+      "categorySlug": "cat-parking-entry",
+      "clickable": "TRUE",
+      "map": [
+        -14996706.880114999,
+        6386797.499975402
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "196",
+      "name": "Agencia BNB",
+      "building": "",
+      "block": "",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -17354358.07601581,
+        829829.8112551626
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "197",
+      "name": "Cajero Automático Banco Fassil",
+      "building": "",
+      "block": "",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -11916754.379802238,
+        -2403311.0483421423
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "198",
+      "name": "Snack",
+      "building": "",
+      "block": "",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -12481956.145005533,
+        5242386.580101818
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "199",
+      "name": "Patio de Comida",
+      "building": "",
+      "block": "",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        -1269561.3399096075,
+        5213034.761240304
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "200",
+      "name": "Snack / Librería",
+      "building": "",
+      "block": "",
+      "categoryName": "Unidades Administrativas",
+      "categorySlug": "cat-services",
+      "clickable": "TRUE",
+      "map": [
+        16006609.29711207,
+        3564892.1201644186
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "201",
+      "name": "Pórtico",
+      "building": "",
+      "block": "",
+      "categoryName": "Referencias y Recreación",
+      "categorySlug": "cat-ref-recreation",
+      "clickable": "TRUE",
+      "map": [
+        -7413875.42158521,
+        1191835.5772137549
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "202",
+      "name": "Punto de Encuentro",
+      "building": "",
+      "block": "",
+      "categoryName": "Referencias y Recreación",
+      "categorySlug": "cat-ref-recreation",
+      "clickable": "TRUE",
+      "map": "/*/",
+      "minimap": "/*/"
+    },
+    {
+      "id": "203",
+      "name": "Patio Central",
+      "building": "",
+      "block": "",
+      "categoryName": "Referencias y Recreación",
+      "categorySlug": "cat-ref-recreation",
+      "clickable": "TRUE",
+      "map": [
+        -9742453.051264819,
+        2238717.116607529
+      ],
+      "minimap": "/*/"
+    },
+    {
+      "id": "204",
+      "name": "Baños",
+      "building": "",
+      "block": "",
+      "categoryName": "Referencias y Recreación",
+      "categorySlug": "cat-ref-recreation",
+      "clickable": "TRUE",
+      "map": "/*/",
+      "minimap": "/*/"
+    },
+    {
+      "id": "205",
+      "name": "Escalera / Rampa",
+      "building": "",
+      "block": "",
+      "categoryName": "Referencias y Recreación",
+      "categorySlug": "cat-ref-recreation",
+      "clickable": "TRUE",
+      "map": [
+        -4987458.395700574,
+        3383438.052206328
+      ],
+      "minimap": "/*/"
+    }
+  ]
+}
