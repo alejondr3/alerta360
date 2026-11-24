@@ -9,6 +9,14 @@
 #define NOMINMAX
 #endif
 
+#include <windows.h>
+#include <shellapi.h>
+#elif defined(__unix__) || defined(__APPLE__)
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#endif
+
 namespace {
 struct LimpiezaTemporal {
     std::filesystem::path ruta;
@@ -18,13 +26,6 @@ struct LimpiezaTemporal {
     }
 };
 }
-#include <windows.h>
-#include <shellapi.h>
-#elif defined(__unix__) || defined(__APPLE__)
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <unistd.h>
-#endif
 
 void escribirCadenaJSON(std::ostream& out, const std::string& valor) {
     static const char hex[] = "0123456789abcdef";
