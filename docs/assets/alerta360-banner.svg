@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title description">
+  <title id="title">Alerta360</title>
+  <desc id="description">Centro de incidencias técnicas de campus. Prioridad, ubicación y atención en un mismo flujo.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#0c2925"/>
+      <stop offset="1" stop-color="#165c46"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="260" rx="20" fill="url(#background)"/>
+  <g fill="none" stroke="#568e77" stroke-width="2" opacity=".55">
+    <path d="M854 178 930 88 1030 142 1114 64M930 88 1100 211M854 178 1030 142 1100 211"/>
+  </g>
+  <g fill="#c1e7d2" stroke="#0c2925" stroke-width="4">
+    <circle cx="854" cy="178" r="11"/><circle cx="930" cy="88" r="11"/>
+    <circle cx="1030" cy="142" r="11"/><circle cx="1114" cy="64" r="11"/>
+    <circle cx="1100" cy="211" r="11"/>
+  </g>
+  <path d="M854 178 930 88 1030 142" fill="none" stroke="#e9c37d" stroke-width="4"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="54" y="57" fill="#a7d9be" font-size="13" font-weight="600" letter-spacing="3">ESTRUCTURAS DE DATOS · C++20</text>
+    <text x="50" y="134" fill="#ffffff" font-size="65" font-weight="700" letter-spacing="-2">ALERTA<tspan fill="#a7d9be">360</tspan></text>
+    <text x="54" y="176" fill="#e0eee6" font-size="22">Incidencias, prioridades y rutas del campus.</text>
+    <text x="54" y="218" fill="#aac9ba" font-size="14">Consola C++ · Mapa visual · Estructuras propias</text>
+  </g>
+</svg>
