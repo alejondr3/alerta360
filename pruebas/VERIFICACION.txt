@@ -81,3 +81,14 @@ Navegador: foto completa y leyendas visibles; zoom 150% y regreso a 100%;
 incidencia DEMO #102 muestra referencia 26 Biblioteca sobre la imagen;
 consola del navegador sin errores. Las referencias son las de la foto
 y se mantienen separadas de la numeracion del catalogo y del grafo.
+
+REGISTRO SIMPLIFICADO - 26 de noviembre de 2026
+
+29 escenarios aprobados. El registro normal solicita exactamente bloque, aula,
+ID de incidencia y gravedad. Se verifico que no aparezcan preguntas de tipo,
+descripcion o zona. Caso D/203/501/5 guardado como PENDIENTE con gravedad 5.
+EOF antes de la gravedad no deja registros parciales. Se rechazan campos
+vacios e invalidos. Se conserva la incidencia si falta configurar su ruta.
+Las sesiones originales de aceptacion, entradas invalidas, foto y catalogo
+se reprodujeron correctamente con --consigna. El mapa no fue reemplazado;
+la configuracion de ubicaciones y rutas queda pendiente del nuevo plano.

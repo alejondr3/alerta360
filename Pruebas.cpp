@@ -329,6 +329,55 @@ int ejecutarPruebas(std::ostream& out) {
             && !nombreReferenciaPlano(0) && !nombreReferenciaPlano(37) && x.validarConsistencia(),
                 "Catalogo de 36 referencias valido; heap consistente", out);
     });
+    prueba("T27", "Registro de cuatro campos y clasificacion automatica", [&] {
+        SistemaAlerta360 x;
+        exigir(x.registrarAula(" d "," 203 ",501,5,log), "Bloque, aula, ID y gravedad aceptados", out);
+        const auto* d=x.buscar(501);
+        exigir(d && d->bloque=="D" && d->aula=="203" && d->gravedad==5
+            && d->estado==Estado::PENDIENTE && d->zona==-1 && d->gravedadRegistro==0,
+                "Registro PENDIENTE con campos guardados y ruta sin inventar", out);
+        exigir(!x.asignarSiguiente(log) && x.buscar(501)->estado==Estado::PENDIENTE
+            && !x.buscar(501)->ruta.existe, "Asignacion espera la configuracion del nuevo mapa", out);
+        exigir(x.registrarAula("A","101",502,2,log)
+            && x.registrarAula("B","202",503,5,log), "Otros registros con prioridad inicial", out);
+        const int ids[]={501,503,502};
+        exigir(orden(x,ids,3) && x.validarConsistencia(), "Heap por gravedad y antiguedad", out);
+        std::ostringstream datos;x.exportarDatosMapa(datos);
+        exigir(datos.str().find("\"bloque\":\"D\"")!=std::string::npos
+            && datos.str().find("\"aula\":\"203\"")!=std::string::npos,
+                "Mapa recibe bloque y aula sin inventar coordenadas", out);
+    });
+    prueba("T28", "Validaciones del registro simplificado sin datos parciales", [&] {
+        SistemaAlerta360 x;
+        exigir(!x.registrarAula(" ","101",1,3,log)
+            && !x.registrarAula("A"," ",1,3,log)
+            && !x.registrarAula(std::string(21,'A'),"101",1,3,log)
+            && !x.registrarAula("A",std::string(31,'1'),1,3,log)
+            && !x.registrarAula("A","10\n1",1,3,log)
+            && !x.registrarAula("A","101",0,3,log)
+            && !x.registrarAula("A","101",1,6,log)
+            && x.cantidad()==0, "Rechaza campos invalidos antes de insertar", out);
+        exigir(x.registrarAula("A","101",1,3,log)
+            && !x.registrarAula("B","202",1,5,log)
+            && x.buscar(1)->bloque=="A" && x.buscar(1)->gravedad==3,
+                "ID duplicado no sobrescribe el reporte", out);
+        exigir(x.cambiarGravedad(1,5,log) && x.deshacerGravedad(log)
+            && x.buscar(1)->gravedad==3 && x.cancelar(1,log) && x.validarConsistencia(),
+                "Correccion, deshacer y cancelacion siguen funcionando", out);
+    });
+    prueba("T29", "Registros nuevos respetan recibidas anteriores de la cola", [&] {
+        SistemaAlerta360 x;
+        ingresar(x,1,1,log);
+        exigir(x.registrarAula("B","201",2,4,log)
+            && x.buscar(2)->estado==Estado::RECIBIDA && x.buscar(2)->gravedadRegistro==4,
+                "Guarda gravedad sin saltarse a una recibida anterior", out);
+        exigir(x.cancelar(1,log) && x.registrarAula("C","301",3,2,log),
+                "Omite cancelada anterior y continua clasificacion FIFO", out);
+        const int ids[]={2,3};
+        exigir(x.buscar(2)->estado==Estado::PENDIENTE && x.buscar(2)->gravedad==4
+            && x.buscar(3)->estado==Estado::PENDIENTE && orden(x,ids,2)
+            && x.validarConsistencia(), "Ambas gravedades preservadas sin duplicados", out);
+    });
     out << "\n=== Resumen: " << aprobadas << " aprobadas, " << fallidas << " fallidas ===\n";
     out << "\n--- Registro de operaciones y entradas de prueba ---\n" << log.str();
     return fallidas == 0 ? 0 : 1;

@@ -1,0 +1,75 @@
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: 
+--- Registrar incidencia ---
+Bloque: Aula: ID de incidencia: Gravedad (1-5): Registrada 501: RECIBIDA, secuencia 1.
+Clasificada 501: PENDIENTE, gravedad 5.
+Registro listo: ID 501 | bloque D | aula 203 | gravedad 5.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: ID a buscar: ID 501 | PENDIENTE | gravedad 5 | ingreso 1
+  Otro | ruta por configurar con el nuevo mapa
+  Incidencia en bloque D, aula 203
+  Bloque: D | Aula: 203
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: Falta configurar la ruta del bloque D con el nuevo mapa. La incidencia 501 permanece PENDIENTE.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: Liberacion: heap=1, pila=0, cola=0, BST=1, lista=1.

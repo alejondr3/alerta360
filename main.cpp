@@ -32,16 +32,18 @@ int leerEntero(const std::string& mensaje, int minimo, int maximo) {
         std::cout << "Entrada invalida. Ingrese un entero entre " << minimo << " y " << maximo << ".\n";
     }
 }
-std::string leerDescripcion() {
+std::string leerCampo(const std::string& mensaje, std::size_t limite) {
     for (;;) {
-        std::cout << "Descripcion (10-120 caracteres): ";
+        std::cout << mensaje;
         std::string linea;
         if (!std::getline(std::cin, linea)) throw FinEntrada{};
         const auto primero = linea.find_first_not_of(" \t\r");
         const auto ultimo = linea.find_last_not_of(" \t\r");
         if (primero != std::string::npos) linea = linea.substr(primero, ultimo - primero + 1);
-        if (primero != std::string::npos && longitudTexto(linea) >= 10 && longitudTexto(linea) <= 120) return linea;
-        std::cout << "Descripcion invalida.\n";
+        bool valido=primero!=std::string::npos && longitudTexto(linea)<=limite;
+        for (unsigned char c:linea) if (c<32 || c==127) valido=false;
+        if (valido) return linea;
+        std::cout << "Campo invalido. Ingrese de 1 a " << limite << " caracteres.\n";
     }
 }
 void gestionarRutas(GrafoCampus& grafo) {
@@ -73,7 +75,10 @@ int main(int argc, char* argv[]) {
         if (argc == 2 && std::string(argv[1]) == "--pruebas") return ejecutarPruebas(std::cout);
         const bool soloMapa = argc == 2 && std::string(argv[1]) == "--mapa";
         const bool inicioVisual = argc == 2 && std::string(argv[1]) == "--visual";
-        if (argc != 1 && !soloMapa && !inicioVisual) { std::cerr << "Uso: alerta360 [--pruebas | --mapa | --visual]\n"; return 2; }
+        const bool modoConsigna=argc==2 && std::string(argv[1])=="--consigna";
+        if (argc != 1 && !soloMapa && !inicioVisual && !modoConsigna) {
+            std::cerr << "Uso: alerta360 [--pruebas | --mapa | --visual | --consigna]\n"; return 2;
+        }
         SistemaAlerta360 sistema;
         const std::string archivoMapa = "mapa_alerta360.html";
         bool mapaActivo = false;
@@ -100,20 +105,36 @@ int main(int argc, char* argv[]) {
                 switch (opcion) {
                     case 0: seguir = false; break;
                     case 1: {
-                        const int id = leerEntero("ID positivo: ", 1, std::numeric_limits<int>::max());
+                        if (modoConsigna) {
+                            const int id=leerEntero("ID positivo: ",1,std::numeric_limits<int>::max());
+                            if (sistema.buscar(id)) {std::cout << "El ID ya existe.\n";break;}
+                            std::cout << "1 Energia | 2 Red | 3 Equipo | 4 Clima | 5 Infraestructura | 6 Otro\n";
+                            const auto tipo=static_cast<Tipo>(leerEntero("Tipo: ",1,6));
+                            std::string descripcion;
+                            do {
+                                descripcion=leerCampo("Descripcion (10-120 caracteres): ",120);
+                                if (longitudTexto(descripcion)<10) std::cout << "Descripcion invalida.\n";
+                            } while (longitudTexto(descripcion)<10);
+                            const int zona=leerEntero("Zona (1-7): ",1,7);
+                            sistema.registrar(id,descripcion,tipo,zona,std::cout);
+                            break;
+                        }
+                        std::cout << "\n--- Registrar incidencia ---\n";
+                        const std::string bloque=leerCampo("Bloque: ",20);
+                        const std::string aula=leerCampo("Aula: ",30);
+                        const int id = leerEntero("ID de incidencia: ", 1, std::numeric_limits<int>::max());
                         if (sistema.buscar(id)) { std::cout << "El ID ya existe.\n"; break; }
-                        std::cout << "1 Energia | 2 Red | 3 Equipo | 4 Clima | 5 Infraestructura | 6 Otro\n";
-                        const auto tipo = static_cast<Tipo>(leerEntero("Tipo: ", 1, 6));
-                        const std::string descripcion = leerDescripcion();
-                        const int zona = leerEntero("Zona (1-7): ", 1, 7);
-                        sistema.registrar(id, descripcion, tipo, zona, std::cout);
+                        const int gravedad=leerEntero("Gravedad (1-5): ",1,5);
+                        sistema.registrarAula(bloque,aula,id,gravedad,std::cout);
                         break;
                     }
                     case 2: {
                         const int id = sistema.siguienteClasificacion(std::cout);
                         if (id) {
                             sistema.mostrarIncidencia(id, std::cout);
-                            const int gravedad = leerEntero("Gravedad (1-5, 5 es mayor urgencia): ", 1, 5);
+                            const auto* dato=sistema.buscar(id);
+                            const int gravedad = dato->gravedadRegistro ? dato->gravedadRegistro
+                                : leerEntero("Gravedad (1-5, 5 es mayor urgencia): ", 1, 5);
                             sistema.clasificarSiguiente(gravedad, std::cout);
                         }
                         break;

@@ -56,6 +56,10 @@ struct Incidencia {
     int ubicacionCampus = 0;
     // Numeracion 1-36 impresa en la foto oficial; independiente del catalogo.
     int referenciaPlano = 0;
+    std::string bloque;
+    std::string aula;
+    // Solo mientras espera clasificacion automatica en la cola FIFO.
+    int gravedadRegistro = 0;
 
     Incidencia(int id_, const std::string& desc, Tipo tipo_, int zona_, long long sec)
         : id(id_), descripcion(desc), tipo(tipo_), zona(zona_), secuenciaIngreso(sec) {}

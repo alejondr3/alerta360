@@ -12,7 +12,7 @@ Central de incidencias técnicas de campus desarrollada en C++20, con estructura
 
 [![Compilación y pruebas](https://github.com/alejondr3/alerta360/actions/workflows/ci.yml/badge.svg)](https://github.com/alejondr3/alerta360/actions/workflows/ci.yml)
 ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus&logoColor=white)
-![Pruebas](https://img.shields.io/badge/escenarios_de_prueba-26-165c46)
+![Pruebas](https://img.shields.io/badge/escenarios_de_prueba-29-165c46)
 ![Plataformas](https://img.shields.io/badge/CI-Linux_%7C_Windows-374151)
 
 [Inicio rápido](#inicio-rápido) · [Mapa del campus](#mapa-del-campus) · [Arquitectura](#arquitectura) · [Pruebas](#pruebas) · [Documentación](#documentación)
@@ -21,13 +21,15 @@ Central de incidencias técnicas de campus desarrollada en C++20, con estructura
 
 ---
 
+> **Registro simplificado:** ahora se solicitan solo **bloque, aula, ID y gravedad**. La incidencia se clasifica al registrarse. El reemplazo del mapa y la conexión de los bloques con las rutas están pendientes del nuevo plano que aportará el usuario.
+
 ## Qué hace
 
 Alerta360 recibe fallas de energía, red, equipos, climatización e infraestructura. Las clasifica, ordena su atención por urgencia, calcula una ruta de asignación y conserva el historial de cada reporte durante la sesión.
 
 | Capacidad | Comportamiento |
 | :--- | :--- |
-| **Recepción ordenada** | Los reportes ingresan a una cola FIFO y reciben un ID único. |
+| **Recepción ordenada** | Los reportes reciben un ID único; la cola FIFO conserva el orden durante la clasificación automática. |
 | **Atención por prioridad** | Mayor gravedad primero; ante un empate, se atiende el reporte más antiguo. |
 | **Correcciones reversibles** | Los cambios de gravedad se guardan en una pila y pueden deshacerse mientras la incidencia siga pendiente. |
 | **Asignación con ruta** | Dijkstra calcula el camino mínimo desde la base. Si no hay ruta, el reporte permanece pendiente. |
@@ -49,7 +51,7 @@ La vista utiliza la imagen original publicada por [Postgrado UPSA](https://postg
   <img src="docs/assets/mapa-incidencias.jpg" alt="Alerta360 mostrando el plano completo y tres incidencias de demostración" width="680">
 </p>
 
-Los marcadores rojos corresponden a datos de ejemplo identificados como **DEMO**.
+Los marcadores rojos corresponden a datos de ejemplo identificados como **DEMO**. Esta captura documenta el plano anterior, pendiente de reemplazo.
 
 </details>
 
@@ -130,41 +132,36 @@ Con Make: `make`, `make test` y `make clean`. En MinGW, usá `mingw32-make`.
 
 | Argumento | Resultado |
 | :--- | :--- |
-| Sin argumentos | Inicia el menú de consola. |
+| Sin argumentos | Inicia la consola con registro de bloque, aula, ID y gravedad. |
 | `--visual` | Inicia la consola y abre el mapa de la sesión. |
 | `--mapa` | Genera y abre un mapa vacío, y termina. |
 | `--pruebas` | Ejecuta la suite automática y devuelve su resultado. |
+| `--consigna` | Conserva el registro y la clasificación manual originales para reproducir las pruebas de la consigna. |
 
-## Un primer recorrido
+## Un primer registro
 
-Registrá el reporte **101**, tipo **Energía**, descripción `Falla electrica en coliseo` y zona **3**. Marcá su ubicación con **13 → 101 → 31**, clasificalo con gravedad **5**, asignalo y resolvelo.
+La opción **01** solicita exactamente:
 
 ```text
-Asignada 101. Ruta: 0 -> 2 -> 1 -> 3; costo 8 min.
-Resuelta 101; conservada en historial.
+Bloque: D
+Aula: 203
+ID de incidencia: 501
+Gravedad (1-5): 5
 ```
 
-El marcador se ubica en la referencia **31 · Polideportivo** de la foto. La ruta se consulta en la vista del grafo de atención.
+El programa conserva bloque y aula y carga la incidencia como **PENDIENTE**, con prioridad 5. No pide tipo, descripción ni zona. La descripción se genera con la ubicación ingresada.
 
-```mermaid
-stateDiagram-v2
-    [*] --> RECIBIDA: Registrar
-    RECIBIDA --> PENDIENTE: Clasificar
-    PENDIENTE --> ASIGNADA: Asignar con ruta válida
-    ASIGNADA --> RESUELTA: Resolver
-    RECIBIDA --> CANCELADA: Cancelar
-    PENDIENTE --> CANCELADA: Cancelar
-```
+Mientras falta el nuevo mapa, estos registros conservan su ubicación escrita y no reciben una zona o coordenadas inventadas. Si se intenta asignarlos, permanecen pendientes y se informa que falta configurar la ruta del bloque. La clasificación, corrección de gravedad, deshacer, consultas y cancelación siguen disponibles.
 
-La gravedad va de **1 a 5**, donde **5 es la mayor urgencia**. Deshacer restaura una corrección de gravedad; no retrocede el estado de la incidencia.
+La gravedad va de **1 a 5**; **5 es la mayor urgencia**. El modo `--consigna` conserva el flujo original y las rutas de control del grafo de prueba para la evaluación académica.
 
 <details>
 <summary><strong>Referencia completa del menú</strong></summary>
 
 | Opción | Acción |
 | :---: | :--- |
-| **01** | Registrar una incidencia en lista, BST y cola. |
-| **02** | Clasificar la siguiente recibida e insertarla en el heap. |
+| **01** | Registrar bloque, aula, ID y gravedad; clasificar automáticamente en orden FIFO. |
+| **02** | Clasificar la siguiente recibida que aún esté esperando (compatibilidad con el modo original). |
 | **03** | Cambiar la gravedad de una pendiente. |
 | **04** | Deshacer la última corrección de gravedad. |
 | **05** | Asignar la siguiente por prioridad y registrar su ruta. |
@@ -210,7 +207,7 @@ alerta360/
 ├── MapaPlantilla.inc           # Interfaz visual
 ├── MapaCampusImagen.inc        # JPEG incorporado al ejecutable
 ├── UbicacionesCampus.h/.cpp    # Catálogo y referencias del plano
-├── Pruebas.cpp                 # 26 escenarios automáticos
+├── Pruebas.cpp                 # 29 escenarios automáticos
 ├── pruebas/                    # Entradas, salidas y evidencias
 ├── datos/                      # Foto original, catálogo y fuentes
 ├── docs/                       # Arquitectura y recursos del README
@@ -256,17 +253,17 @@ Si el destino queda desconectado, la asignación se rechaza y la incidencia cons
 
 ## Pruebas
 
-La suite incluye **26 escenarios reproducibles**: los diez casos de aceptación del proyecto y casos adicionales de prioridad, cancelación, memoria, entradas inválidas, UTF-8, exportación segura y referencias de la foto.
+La suite incluye **29 escenarios reproducibles**: los diez casos de aceptación del proyecto y casos adicionales de prioridad, cancelación, memoria, entradas inválidas, UTF-8, exportación segura y referencias de la foto.
 
 ```powershell
 ./alerta360.exe --pruebas
 ```
 
 ```text
-=== Resumen: 26 aprobadas, 0 fallidas ===
+=== Resumen: 29 aprobadas, 0 fallidas ===
 ```
 
-El proceso devuelve `0` si todas las pruebas pasan y `1` si alguna falla. CTest agrupa los 26 escenarios en una suite.
+El proceso devuelve `0` si todas las pruebas pasan y `1` si alguna falla. CTest agrupa los 29 escenarios en una suite.
 
 | Verificación automática | Entorno |
 | :--- | :--- |
@@ -280,12 +277,13 @@ El proceso devuelve `0` si todas las pruebas pasan y `1` si alguna falla. CTest 
 <summary><strong>Reproducir sesiones y ejecutar sanitizadores localmente</strong></summary>
 
 ```powershell
-Get-Content pruebas/entrada_aceptacion.txt | ./alerta360.exe
-Get-Content pruebas/entrada_invalidas.txt | ./alerta360.exe
-Get-Content pruebas/entrada_foto.txt | ./alerta360.exe
+Get-Content pruebas/entrada_aceptacion.txt | ./alerta360.exe --consigna
+Get-Content pruebas/entrada_invalidas.txt | ./alerta360.exe --consigna
+Get-Content pruebas/entrada_foto.txt | ./alerta360.exe --consigna
+Get-Content pruebas/entrada_registro.txt | ./alerta360.exe
 ```
 
-En Linux/macOS, usá `./alerta360 < pruebas/entrada_aceptacion.txt`.
+En Linux/macOS, usá `./alerta360 --consigna < pruebas/entrada_aceptacion.txt`.
 
 Con GCC/Clang y sanitizadores disponibles en Linux/macOS:
 

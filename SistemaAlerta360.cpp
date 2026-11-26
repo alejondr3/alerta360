@@ -5,6 +5,19 @@
 #include <ostream>
 #include <stdexcept>
 
+namespace {
+std::string limpiarCampo(const std::string& texto) {
+    const auto inicio=texto.find_first_not_of(" \t\r\n");
+    if (inicio==std::string::npos) return {};
+    return texto.substr(inicio,texto.find_last_not_of(" \t\r\n")-inicio+1);
+}
+bool campoValido(const std::string& texto, std::size_t limite) {
+    if (texto.empty() || longitudTexto(texto)>limite) return false;
+    for (unsigned char c:texto) if (c<32 || c==127) return false;
+    return true;
+}
+}
+
 bool SistemaAlerta360::registrar(int id, const std::string& d, Tipo tipo, int zona, std::ostream& out) {
     bool contenido = false;
     for (char c : d) if (c != ' ' && c != '\t' && c != '\r' && c != '\n') contenido = true;
@@ -14,6 +27,9 @@ bool SistemaAlerta360::registrar(int id, const std::string& d, Tipo tipo, int zo
         out << "Datos invalidos: ID positivo, descripcion de 10 a 120 caracteres, tipo 1-6 y zona 1-7.\n";
         return false;
     }
+    return crearRegistro(id,d,tipo,zona,out);
+}
+bool SistemaAlerta360::crearRegistro(int id, const std::string& d, Tipo tipo, int zona, std::ostream& out) {
     if (indice_.buscar(id)) { out << "El ID ya existe.\n"; return false; }
     if (secuencia_ == std::numeric_limits<long long>::max()) {
         out << "Contador de ingresos agotado.\n"; return false;
@@ -24,6 +40,38 @@ bool SistemaAlerta360::registrar(int id, const std::string& d, Tipo tipo, int zo
     ++secuencia_;
     out << "Registrada " << id << ": RECIBIDA, secuencia " << secuencia_ << ".\n";
     return true;
+}
+bool SistemaAlerta360::registrarAula(const std::string& bloque, const std::string& aula,
+                                   int id, int gravedad, std::ostream& out) {
+    std::string b=limpiarCampo(bloque);
+    std::string a=limpiarCampo(aula);
+    if (!campoValido(b,20) || !campoValido(a,30) || id<=0 || gravedad<1 || gravedad>5) {
+        out << "Datos invalidos: bloque (1-20 caracteres), aula (1-30), ID positivo y gravedad 1-5.\n";
+        return false;
+    }
+    for (char& c:b) if (c>='a' && c<='z') c=static_cast<char>(c-'a'+'A');
+    const std::string descripcion="Incidencia en bloque "+b+", aula "+a;
+    // -1: todavia no hay una correspondencia verificada con el grafo.
+    // No se inventa que un bloque sea Biblioteca, Coliseo u otra zona antigua.
+    if (!crearRegistro(id,descripcion,Tipo::OTRO,-1,out)) return false;
+    Incidencia* dato=indice_.buscar(id);
+    dato->bloque=b;
+    dato->aula=a;
+    dato->gravedadRegistro=gravedad;
+    clasificarRegistrosConGravedad(out);
+    out << "Registro listo: ID " << id << " | bloque " << b << " | aula " << a
+        << " | gravedad " << gravedad << ".\n";
+    return true;
+}
+void SistemaAlerta360::clasificarRegistrosConGravedad(std::ostream& out) {
+    saltarCanceladas(out);
+    int id=0;
+    while (cola_.frente(id)) {
+        const auto* dato=indice_.buscar(id);
+        if (!dato || dato->gravedadRegistro==0) break;
+        if (!clasificarSiguiente(dato->gravedadRegistro,out)) break;
+        saltarCanceladas(out);
+    }
 }
 void SistemaAlerta360::saltarCanceladas(std::ostream& out) {
     int id = 0;
@@ -53,6 +101,7 @@ bool SistemaAlerta360::clasificarSiguiente(int gravedad, std::ostream& out) {
     catch (...) { dato->estado = Estado::RECIBIDA; dato->gravedad = 0; throw; }
     int retirado = 0;
     cola_.desencolar(retirado);
+    dato->gravedadRegistro=0;
     out << "Clasificada " << id << ": PENDIENTE, gravedad " << gravedad << ".\n";
     return true;
 }
@@ -87,6 +136,11 @@ bool SistemaAlerta360::asignarSiguiente(std::ostream& out) {
     if (!heap_.cima(id)) { out << "No hay incidencias PENDIENTES (heap vacio).\n"; return false; }
     Incidencia* dato = indice_.buscar(id);
     if (!dato || dato->estado != Estado::PENDIENTE) throw std::logic_error("Cima del heap invalida.");
+    if (dato->zona==-1) {
+        out << "Falta configurar la ruta del bloque " << dato->bloque
+            << " con el nuevo mapa. La incidencia " << id << " permanece PENDIENTE.\n";
+        return false;
+    }
     const Ruta ruta = grafo_.dijkstra(0, dato->zona);
     if (!ruta.existe) {
         out << "Sin ruta a zona " << dato->zona << ": " << id << " permanece PENDIENTE en el heap.\n";
@@ -123,7 +177,12 @@ bool SistemaAlerta360::cancelar(int id, std::ostream& out) {
 void SistemaAlerta360::mostrarFicha(const Incidencia& d, std::ostream& out) {
     out << "ID " << d.id << " | " << nombreEstado(d.estado) << " | gravedad " << d.gravedad
         << " | ingreso " << d.secuenciaIngreso << "\n  " << nombreTipo(d.tipo)
-        << " | zona " << d.zona << " (" << GrafoCampus::nombreZona(d.zona) << ")\n  " << d.descripcion << '\n';
+        << " | ";
+    if (d.zona==-1) out << "ruta por configurar con el nuevo mapa";
+    else out << "zona " << d.zona << " (" << GrafoCampus::nombreZona(d.zona) << ")";
+    out << "\n  " << d.descripcion << '\n';
+    if (!d.bloque.empty()) out << "  Bloque: " << d.bloque << " | Aula: " << d.aula << '\n';
+    if (d.gravedadRegistro) out << "  Gravedad elegida: " << d.gravedadRegistro << " (en cola de clasificacion).\n";
     if (const auto* lugar = buscarUbicacionCampus(d.ubicacionCampus))
         out << "  Ubicacion UPSA #" << lugar->id << ": " << lugar->nombre << " | "
             << lugar->bloque << " | " << lugar->planta << '\n';
@@ -173,12 +232,16 @@ bool SistemaAlerta360::validarConsistencia() const {
         if (d.ubicacionCampus && !buscarUbicacionCampus(d.ubicacionCampus)) return false;
         if (d.referenciaPlano && !nombreReferenciaPlano(d.referenciaPlano)) return false;
         if (d.ubicacionCampus && d.referenciaPlano) return false;
-        if (indice_.buscar(d.id) != &d || d.id <= 0 || d.zona < 1 || d.zona > 7
+        const bool zonaValida=(d.zona>=1 && d.zona<=7)
+            || (d.zona==-1 && campoValido(d.bloque,20) && campoValido(d.aula,30));
+        if (indice_.buscar(d.id) != &d || d.id <= 0 || !zonaValida
             || d.secuenciaIngreso <= anterior || d.secuenciaIngreso > secuencia_) return false;
         anterior = d.secuenciaIngreso;
         const int ocurrencias = cola_.ocurrencias(d.id);
         if (ocurrencias > 1) return false;
         enCola += static_cast<std::size_t>(ocurrencias);
+        if (d.gravedadRegistro<0 || d.gravedadRegistro>5) return false;
+        if (d.gravedadRegistro && d.estado!=Estado::RECIBIDA && d.estado!=Estado::CANCELADA) return false;
         if (d.estado == Estado::RECIBIDA) {
             if (d.gravedad != 0 || ocurrencias != 1) return false;
         } else if (d.estado != Estado::CANCELADA && (d.gravedad < 1 || d.gravedad > 5)) return false;
@@ -243,6 +306,8 @@ void SistemaAlerta360::exportarDatosMapa(std::ostream& out) const {
             << ",\"gravedad\":" << d.gravedad << ",\"secuencia\":" << d.secuenciaIngreso << ",\"estado\":";
         escribirCadenaJSON(out,nombreEstado(d.estado));
         out << ",\"descripcion\":"; escribirCadenaJSON(out,d.descripcion);
+        out << ",\"bloque\":"; escribirCadenaJSON(out,d.bloque);
+        out << ",\"aula\":"; escribirCadenaJSON(out,d.aula);
         out << ",\"tipo\":"; escribirCadenaJSON(out,nombreTipo(d.tipo));
         out << ",\"ruta\":[";
         for (int i = 0; i < d.ruta.longitud; ++i) out << (i ? "," : "") << d.ruta.nodos[i];

@@ -33,6 +33,10 @@ obtenidas y el registro de operaciones estan en `resultados.txt`.
 | T25 | Crear/reemplazar mapa con JPEG incorporado; carpeta inexistente y directorio como destino | Archivo completo, errores controlados, directorio preservado. |
 | T26 | Referencias 1-36 de la foto, cambios de identificador y valores invalidos | Biblioteca 26 y Polideportivo 31 correctos; zona, estado y heap conservados. |
 
+| T27 | Registro de bloque, aula, ID y gravedad | Campos guardados, clasificación automática y heap por prioridad; ruta pendiente sin inventar zona. |
+| T28 | Campos vacíos, longitudes, controles, ID y gravedad inválidos | Rechazos sin datos parciales; ID único; corrección, deshacer y cancelación funcionan. |
+| T29 | Registro nuevo detrás de una recibida antigua | FIFO preservada; gravedades guardadas y clasificación posterior sin duplicados. |
+
 T19 prueba la estructura aislada: en el sistema real la secuencia de ingreso es
 unica, por lo que no se repite para dos incidencias.
 
@@ -52,3 +56,7 @@ y las herramientas disponibles.
 
 Entrada de menu adicional: entrada_foto.txt (opcion 13 -> referencia 26);
 evidencia real: salida_foto.txt.
+
+Las entradas anteriores se reproducen con `--consigna`. El registro de cuatro
+campos se reproduce con `entrada_registro.txt`, sin argumentos; evidencia en
+`salida_registro.txt`.

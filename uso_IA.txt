@@ -27,3 +27,8 @@ No se inventaron tiempos peatonales ni huellas de edificios del campus.
 Correccion del mapa: se incorporo sin editar la foto oficial de Postgrado UPSA,
 se conservaron las 36 referencias impresas, se agregaron zoom y opcion 13,
 y se verifico que el JPEG exportado coincide byte por byte con el original.
+
+Registro simplificado: asistencia para reducir la entrada a bloque, aula, ID y
+gravedad, clasificar en la cola sin preguntas adicionales y actualizar pruebas.
+Se conserva --consigna para el flujo original. No se reemplazo el mapa ni se
+inventaron conexiones para los nuevos bloques.

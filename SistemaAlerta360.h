@@ -13,9 +13,13 @@ class SistemaAlerta360 : private NoCopiable {
     GrafoCampus grafo_;
     long long secuencia_ = 0;
     void saltarCanceladas(std::ostream&);
+    bool crearRegistro(int id, const std::string&, Tipo, int zona, std::ostream&);
+    void clasificarRegistrosConGravedad(std::ostream&);
 public:
     SistemaAlerta360() = default;
     bool registrar(int id, const std::string& descripcion, Tipo tipo, int zona, std::ostream&);
+    bool registrarAula(const std::string& bloque, const std::string& aula,
+                      int id, int gravedad, std::ostream&);
     int siguienteClasificacion(std::ostream&);
     bool clasificarSiguiente(int gravedad, std::ostream&);
     bool cambiarGravedad(int id, int gravedad, std::ostream&);

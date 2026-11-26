@@ -38,7 +38,7 @@ flowchart TD
 - `GrafoCampus.h/.cpp`: matriz 8x8 y Dijkstra con reconstruccion de camino.
 - `SistemaAlerta360.h/.cpp`: reglas, coordinacion, consultas e invariantes.
 - `main.cpp`: entrada validada, menu y manejo de EOF.
-- `Pruebas.cpp`: 26 escenarios reproducibles con verificaciones automaticas.
+- `Pruebas.cpp`: 29 escenarios reproducibles con verificaciones automaticas.
 - `MapaVisual.h/.cpp` y `MapaPlantilla.inc`: exportacion y vista interactiva.
 - `UbicacionesCampus.h/.cpp`: catalogo compilado de los 205 lugares UPSA.
 
@@ -119,3 +119,17 @@ es una instantánea de consulta y no un archivo de recuperación. El BST es
 convencional, sin balanceo automático; sus recorridos recursivos consumen O(h)
 de pila. El grafo de ocho nodos corresponde a la consigna y no representa
 una red peatonal medida del campus real.
+
+## Registro simplificado por bloque y aula
+
+`registrarAula` valida bloque, aula, ID y gravedad antes de crear el registro.
+La gravedad solicitada se guarda mientras el ID atraviesa la cola FIFO; cuando
+llega al frente, la clasificación automática fija la gravedad y lo inserta en
+el heap. Una recibida antigua sin gravedad no se salta. El modo `--consigna`
+conserva la entrada y clasificación originales.
+
+El valor interno `zona = -1` identifica un reporte por bloque/aula que todavía
+no tiene correspondencia con el grafo. Se admite solo con ambos campos válidos.
+La asignación lo rechaza sin extraerlo del heap, hasta configurar sus rutas
+con el nuevo mapa. Bloque y aula se exportan como JSON escapado y no se usan
+como coordenadas sobre el plano anterior.
