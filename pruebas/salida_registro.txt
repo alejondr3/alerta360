@@ -1,19 +1,10 @@
 
 === ALERTA360 ===
-01 Registrar incidencia
-02 Clasificar siguiente
-03 Cambiar gravedad
-04 Deshacer gravedad
-05 Asignar siguiente
-06 Resolver
-07 Cancelar
-08 Buscar por ID
-09 Listados e indicadores
-10 Gestionar rutas
-11 Abrir mapa visual numerado
-12 Ubicar por catalogo UPSA (1-205)
-13 Ubicar por numero de la foto (1-36)
-00 Salir
+1 Registrar incidencia
+2 Ver incidencias
+3 Abrir mapa
+4 Mas opciones
+0 Salir
 Opcion: 
 --- Registrar incidencia ---
 Bloque: Aula: ID de incidencia: Gravedad (1-5): Registrada 501: RECIBIDA, secuencia 1.
@@ -22,20 +13,23 @@ Registro listo: ID 501 | bloque D | aula 203 | gravedad 5.
 Aula reconocida: D-203 Laboratorio de Redes | 2da. Planta.
 
 === ALERTA360 ===
-01 Registrar incidencia
-02 Clasificar siguiente
-03 Cambiar gravedad
-04 Deshacer gravedad
-05 Asignar siguiente
-06 Resolver
-07 Cancelar
-08 Buscar por ID
-09 Listados e indicadores
-10 Gestionar rutas
-11 Abrir mapa visual numerado
-12 Ubicar por catalogo UPSA (1-205)
-13 Ubicar por numero de la foto (1-36)
-00 Salir
+1 Registrar incidencia
+2 Ver incidencias
+3 Abrir mapa
+4 Mas opciones
+0 Salir
+Opcion: 
+--- Mas opciones ---
+1 Buscar por ID
+2 Cambiar gravedad
+3 Deshacer gravedad
+4 Asignar siguiente
+5 Resolver
+6 Cancelar
+7 Gestionar rutas
+8 Elegir lugar del catalogo
+9 Elegir referencia del plano
+0 Volver
 Opcion: ID a buscar: ID 501 | PENDIENTE | gravedad 5 | ingreso 1
   Otro | ruta por configurar con el nuevo mapa
   Incidencia en bloque D, aula 203
@@ -43,35 +37,29 @@ Opcion: ID a buscar: ID 501 | PENDIENTE | gravedad 5 | ingreso 1
   Ubicacion UPSA #131: D-203 Laboratorio de Redes | Bloque D | 2da. Planta
 
 === ALERTA360 ===
-01 Registrar incidencia
-02 Clasificar siguiente
-03 Cambiar gravedad
-04 Deshacer gravedad
-05 Asignar siguiente
-06 Resolver
-07 Cancelar
-08 Buscar por ID
-09 Listados e indicadores
-10 Gestionar rutas
-11 Abrir mapa visual numerado
-12 Ubicar por catalogo UPSA (1-205)
-13 Ubicar por numero de la foto (1-36)
-00 Salir
+1 Registrar incidencia
+2 Ver incidencias
+3 Abrir mapa
+4 Mas opciones
+0 Salir
+Opcion: 
+--- Mas opciones ---
+1 Buscar por ID
+2 Cambiar gravedad
+3 Deshacer gravedad
+4 Asignar siguiente
+5 Resolver
+6 Cancelar
+7 Gestionar rutas
+8 Elegir lugar del catalogo
+9 Elegir referencia del plano
+0 Volver
 Opcion: Falta configurar la ruta del bloque D con el nuevo mapa. La incidencia 501 permanece PENDIENTE.
 
 === ALERTA360 ===
-01 Registrar incidencia
-02 Clasificar siguiente
-03 Cambiar gravedad
-04 Deshacer gravedad
-05 Asignar siguiente
-06 Resolver
-07 Cancelar
-08 Buscar por ID
-09 Listados e indicadores
-10 Gestionar rutas
-11 Abrir mapa visual numerado
-12 Ubicar por catalogo UPSA (1-205)
-13 Ubicar por numero de la foto (1-36)
-00 Salir
+1 Registrar incidencia
+2 Ver incidencias
+3 Abrir mapa
+4 Mas opciones
+0 Salir
 Opcion: Liberacion: heap=1, pila=0, cola=0, BST=1, lista=1.

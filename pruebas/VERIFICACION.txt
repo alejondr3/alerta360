@@ -107,3 +107,12 @@ incidencia DEMO. Bloque B, cuarta planta: seis espacios. Bloque Central: cero
 entradas catalogadas sin inventar aulas. Alternancia con Plano original
 correcta y sin errores de consola. Los marcadores son aproximados por bloque;
 no se declaran posiciones interiores ni distancias reales.
+
+
+INTERFAZ SIMPLE - 26 de noviembre de 2026
+31 escenarios aprobados. Compilacion estatica con advertencias sin diagnosticos.
+Registro, listado, busqueda, cambio de gravedad, deshacer, intento de asignacion,
+cancelacion, volver y salir reproducidos con el menu de cuatro opciones.
+Vista verificada en Brave: Mas opciones cerrado; seleccion de incidencia 102
+sincroniza Bloque D, Aula 203 y detalle con gravedad 5 y estado pendiente.
+Captura de demostracion: docs/assets/interfaz-simple.jpg.

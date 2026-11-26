@@ -60,7 +60,12 @@ void gestionarRutas(GrafoCampus& grafo) {
     else ok = grafo.restaurar(a, b);
     std::cout << (ok ? "Via actualizada en ambos sentidos.\n" : "Operacion rechazada: verifique conexion, zonas y estado de la via.\n");
 }
-void menu() {
+void menu(bool modoConsigna) {
+    if (!modoConsigna) {
+        std::cout << "\n=== ALERTA360 ===\n"
+            "1 Registrar incidencia\n2 Ver incidencias\n3 Abrir mapa\n4 Mas opciones\n0 Salir\n";
+        return;
+    }
     std::cout << "\n=== ALERTA360 ===\n"
         "01 Registrar incidencia\n02 Clasificar siguiente\n03 Cambiar gravedad\n"
         "04 Deshacer gravedad\n05 Asignar siguiente\n06 Resolver\n07 Cancelar\n"
@@ -100,8 +105,22 @@ int main(int argc, char* argv[]) {
         try {
             bool seguir = true;
             while (seguir) {
-                menu();
-                const int opcion = leerEntero("Opcion: ", 0, 13);
+                menu(modoConsigna);
+                int opcion = leerEntero("Opcion: ", 0, modoConsigna?13:4);
+                if (!modoConsigna) {
+                    if (opcion==2) opcion=9;
+                    else if (opcion==3) opcion=11;
+                    else if (opcion==4) {
+                        std::cout << "\n--- Mas opciones ---\n"
+                            "1 Buscar por ID\n2 Cambiar gravedad\n3 Deshacer gravedad\n"
+                            "4 Asignar siguiente\n5 Resolver\n6 Cancelar\n7 Gestionar rutas\n"
+                            "8 Elegir lugar del catalogo\n9 Elegir referencia del plano\n0 Volver\n";
+                        const int extra=leerEntero("Opcion: ",0,9);
+                        if (!extra) continue;
+                        const int acciones[]={0,8,3,4,5,6,7,10,12,13};
+                        opcion=acciones[extra];
+                    }
+                }
                 switch (opcion) {
                     case 0: seguir = false; break;
                     case 1: {
@@ -171,7 +190,7 @@ int main(int argc, char* argv[]) {
                     case 12: {
                         const int id = leerEntero("ID de la incidencia: ", 1, std::numeric_limits<int>::max());
                         if (!sistema.buscar(id)) { std::cout << "ID inexistente.\n"; break; }
-                        std::cout << "Elija el numero del lugar en el mapa (opcion 11).\n";
+                        std::cout << "Elija el numero del lugar desde Mas opciones del mapa.\n";
                         const int lugar = leerEntero("Lugar UPSA (1-205; 0 quitar; 206 listar catalogo): ",0,206);
                         if (lugar == 206) {
                             listarUbicacionesCampus(std::cout);

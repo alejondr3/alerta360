@@ -148,3 +148,8 @@ El fondo original permanece incorporado y se agrega una ilustracion IA
 limpiada a partir de esa imagen. Los anclajes de bloque son aproximados, no
 coordenadas de aula. La seleccion del catalogo no equivale a una medicion
 geografica y no produce tiempos de recorrido reales.
+
+
+## Presentación simplificada
+
+El menú normal agrupa las operaciones en cuatro entradas y un submenú. El modo --consigna conserva la numeración académica. El mapa muestra bloque, aula e incidencias; los controles avanzados quedan en un panel desplegable. La selección comparte estado entre mapa, lista y selectores. No cambia las estructuras ni las reglas de prioridad.

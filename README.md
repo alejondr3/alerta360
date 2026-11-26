@@ -38,22 +38,19 @@ Alerta360 recibe fallas de energía, red, equipos, climatización e infraestruct
 
 ## Mapa del campus
 
-![Mapa con aulas por bloque y planta](docs/assets/mapa-aulas.jpg)
+![Interfaz simple: mapa e incidencias](docs/assets/interfaz-simple.jpg)
 
-La vista ofrece una **ilustración limpia derivada con IA del plano de Postgrado UPSA** y el botón **Plano original** para comparar con la infraestructura publicada. Ambas imágenes están incorporadas en el ejecutable y funcionan sin conexión. La ilustración no sustituye un plano técnico ni contiene distribuciones interiores verificadas.
+La vista ofrece una **ilustración limpia derivada con IA del plano de Postgrado UPSA** y la opción **Plano original** dentro de **Más opciones** para comparar con la infraestructura publicada. Ambas imágenes están incorporadas en el ejecutable y funcionan sin conexión. La ilustración no sustituye un plano técnico ni contiene distribuciones interiores verificadas.
 
-**Acercá hasta 400%, desplazá el plano y seleccioná una incidencia para consultar su estado y ubicación.** El botón **Ver completo** recupera el encuadre original.
+**Acercá hasta 400%, desplazá el plano y seleccioná una incidencia para consultar su estado y ubicación.** El botón **Ver todo** recupera el encuadre original.
 
-<details>
-<summary><strong>Ver captura de la aplicación con incidencias de demostración</strong></summary>
+### Interfaz simple
 
-<p align="center">
-  <img src="docs/assets/mapa-incidencias.jpg" alt="Alerta360 mostrando el plano completo y tres incidencias de demostración" width="680">
-</p>
+La pantalla principal muestra el mapa, los selectores **Bloque** y **Aula**, y la lista de incidencias. Seleccioná una incidencia para ver su gravedad, estado y ubicación. **Limpiar** quita la selección.
 
-Los marcadores rojos corresponden a datos de ejemplo identificados como **DEMO**. Esta captura documenta el plano anterior, pendiente de reemplazo.
+Los filtros, el catálogo completo, las referencias numeradas y la vista del grafo quedan dentro de **Más opciones**, cerrado al iniciar.
 
-</details>
+La consola ofrece cuatro acciones: **1 Registrar incidencia**, **2 Ver incidencias**, **3 Abrir mapa** y **4 Más opciones**. **0** cierra el programa. El submenú reúne búsquedas, cambios de gravedad, asignaciones y otras operaciones.
 
 ### Aulas por bloque y planta
 
@@ -67,7 +64,7 @@ El catálogo oficial, verificado el **26/11/2026**, contiene **122 espacios en s
 | D | 18 |
 | E | 18 |
 
-Elegí bloque y planta, buscá un código y seleccioná una tarjeta. Por ejemplo, **D-203** figura como **Laboratorio de Redes · 2da. Planta**. El marcador señala su bloque y el detalle conserva el aula y la planta; no se dibuja una distribución interior inventada.
+Elegí bloque y aula en los dos selectores. Los filtros por planta y la búsqueda completa están en **Más opciones**. Por ejemplo, **D-203** figura como **Laboratorio de Redes · 2da. Planta**. El marcador señala su bloque y el detalle conserva el aula y la planta; no se dibuja una distribución interior inventada.
 
 El registro sigue pidiendo solo **bloque, aula, ID y gravedad**. Si el aula figura en el catálogo, se vincula automáticamente. Se aceptan `D` o `Bloque D`, y `203` o `D-203`. Un aula no catalogada conserva lo ingresado y se indica que no fue verificada.
 
@@ -75,9 +72,9 @@ El archivo [espacios-docentes.json](datos/espacios-docentes.json) conserva el in
 
 ### Marcar dónde está el problema
 
-1. Registrá la incidencia desde la opción **01**.
-2. Abrí el mapa con **11**.
-3. Elegí **13 → ID de incidencia → número impreso en la foto**.
+1. Registrá la incidencia desde la opción **1**.
+2. Abrí el mapa con **3**.
+3. Elegí **4 → 9 → ID de incidencia → número impreso en la foto**.
 
 | Referencia de la foto | Ubicación |
 | :---: | :--- |
@@ -85,7 +82,7 @@ El archivo [espacios-docentes.json](datos/espacios-docentes.json) conserva el in
 | **31** | Polideportivo |
 | **36** | Laboratorios de Ingeniería |
 
-La opción **12** permite usar el catálogo avanzado de **205 lugares**, con nombres, bloques y plantas.
+La opción **4 → 8** permite usar el catálogo avanzado de **205 lugares**, con nombres, bloques y plantas.
 
 > **Tres numeraciones, tres propósitos.** La foto usa referencias **1–36**; el catálogo, ID **1–205**; y el grafo de atención, nodos **0–7**. Una ubicación visual no cambia la zona de atención ni el cálculo de rutas. Las aulas sin referencia propia se muestran aproximadamente por bloque, con una indicación visible.
 
@@ -158,7 +155,7 @@ Con Make: `make`, `make test` y `make clean`. En MinGW, usá `mingw32-make`.
 
 ## Un primer registro
 
-La opción **01** solicita exactamente:
+La opción **1** solicita exactamente:
 
 ```text
 Bloque: D
@@ -174,7 +171,9 @@ Los registros reconocidos se vinculan al catálogo y señalan su bloque en el ma
 La gravedad va de **1 a 5**; **5 es la mayor urgencia**. El modo `--consigna` conserva el flujo original y las rutas de control del grafo de prueba para la evaluación académica.
 
 <details>
-<summary><strong>Referencia completa del menú</strong></summary>
+<summary><strong>Menú académico completo: --consigna</strong></summary>
+
+Esta numeración se aplica exclusivamente al modo `--consigna`. El menú normal usa las cuatro acciones descritas arriba.
 
 | Opción | Acción |
 | :---: | :--- |
