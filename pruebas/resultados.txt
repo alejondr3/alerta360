@@ -187,7 +187,21 @@ T29 - Registros nuevos respetan recibidas anteriores de la cola
   Ambas gravedades preservadas sin duplicados | esperado: OK | obtenido: OK
 Resultado: APROBADA
 
-=== Resumen: 29 aprobadas, 0 fallidas ===
+T30 - Catalogo docente verificado por bloque y planta
+  122 espacios docentes, 72 etiquetados Aula y 121 codigos de sala | esperado: OK | obtenido: OK
+  Conteos oficiales A32 B49 C5 D18 E18 | esperado: OK | obtenido: OK
+  D-203 se reconoce como Laboratorio de Redes de segunda planta | esperado: OK | obtenido: OK
+  No inventa coincidencias de aulas | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+T31 - Vinculacion automatica del aula sin nuevas preguntas
+  Cuatro campos suficientes | esperado: OK | obtenido: OK
+  Aula reconocida conserva gravedad y no inventa ruta | esperado: OK | obtenido: OK
+  Aula no catalogada se conserva sin asignar otra sala | esperado: OK | obtenido: OK
+  Vista recibe el aula y su clasificacion docente | esperado: OK | obtenido: OK
+Resultado: APROBADA
+
+=== Resumen: 31 aprobadas, 0 fallidas ===
 
 --- Registro de operaciones y entradas de prueba ---
 Registrada 101: RECIBIDA, secuencia 1.
@@ -3748,13 +3762,16 @@ Incidencia 1: referencia del plano retirada. La zona de atencion sigue siendo 3.
 Registrada 501: RECIBIDA, secuencia 1.
 Clasificada 501: PENDIENTE, gravedad 5.
 Registro listo: ID 501 | bloque D | aula 203 | gravedad 5.
+Aula reconocida: D-203 Laboratorio de Redes | 2da. Planta.
 Falta configurar la ruta del bloque D con el nuevo mapa. La incidencia 501 permanece PENDIENTE.
 Registrada 502: RECIBIDA, secuencia 2.
 Clasificada 502: PENDIENTE, gravedad 2.
 Registro listo: ID 502 | bloque A | aula 101 | gravedad 2.
+Aula no verificada en el catalogo; se conserva el bloque y aula ingresados.
 Registrada 503: RECIBIDA, secuencia 3.
 Clasificada 503: PENDIENTE, gravedad 5.
 Registro listo: ID 503 | bloque B | aula 202 | gravedad 5.
+Aula reconocida: B-202 Aula | 2da. Planta.
 Datos invalidos: bloque (1-20 caracteres), aula (1-30), ID positivo y gravedad 1-5.
 Datos invalidos: bloque (1-20 caracteres), aula (1-30), ID positivo y gravedad 1-5.
 Datos invalidos: bloque (1-20 caracteres), aula (1-30), ID positivo y gravedad 1-5.
@@ -3765,6 +3782,7 @@ Datos invalidos: bloque (1-20 caracteres), aula (1-30), ID positivo y gravedad 1
 Registrada 1: RECIBIDA, secuencia 1.
 Clasificada 1: PENDIENTE, gravedad 3.
 Registro listo: ID 1 | bloque A | aula 101 | gravedad 3.
+Aula no verificada en el catalogo; se conserva el bloque y aula ingresados.
 El ID ya existe.
 Gravedad de 1 actualizada a 5.
 Deshecho: 1 vuelve a gravedad 3.
@@ -3772,9 +3790,19 @@ Cancelada 1; conservada en historial.
 Registrada 1: RECIBIDA, secuencia 1.
 Registrada 2: RECIBIDA, secuencia 2.
 Registro listo: ID 2 | bloque B | aula 201 | gravedad 4.
+Aula no verificada en el catalogo; se conserva el bloque y aula ingresados.
 Cancelada 1; conservada en historial.
 Registrada 3: RECIBIDA, secuencia 3.
 Se ignora 1 porque esta CANCELADA.
 Clasificada 2: PENDIENTE, gravedad 4.
 Clasificada 3: PENDIENTE, gravedad 2.
 Registro listo: ID 3 | bloque C | aula 301 | gravedad 2.
+Aula no verificada en el catalogo; se conserva el bloque y aula ingresados.
+Registrada 901: RECIBIDA, secuencia 1.
+Clasificada 901: PENDIENTE, gravedad 5.
+Registro listo: ID 901 | bloque D | aula D-203 | gravedad 5.
+Aula reconocida: D-203 Laboratorio de Redes | 2da. Planta.
+Registrada 902: RECIBIDA, secuencia 2.
+Clasificada 902: PENDIENTE, gravedad 2.
+Registro listo: ID 902 | bloque E | aula 999 | gravedad 2.
+Aula no verificada en el catalogo; se conserva el bloque y aula ingresados.

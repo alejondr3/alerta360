@@ -1,0 +1,102 @@
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: 
+--- Registrar incidencia ---
+Bloque: Aula: ID de incidencia: Gravedad (1-5): Registrada 801: RECIBIDA, secuencia 1.
+Clasificada 801: PENDIENTE, gravedad 5.
+Registro listo: ID 801 | bloque D | aula D-203 | gravedad 5.
+Aula reconocida: D-203 Laboratorio de Redes | 2da. Planta.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: ID a buscar: ID 801 | PENDIENTE | gravedad 5 | ingreso 1
+  Otro | ruta por configurar con el nuevo mapa
+  Incidencia en bloque D, aula D-203
+  Bloque: D | Aula: D-203
+  Ubicacion UPSA #131: D-203 Laboratorio de Redes | Bloque D | 2da. Planta
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: 
+--- Registrar incidencia ---
+Bloque: Aula: ID de incidencia: Gravedad (1-5): Registrada 802: RECIBIDA, secuencia 2.
+Clasificada 802: PENDIENTE, gravedad 3.
+Registro listo: ID 802 | bloque E | aula 999 | gravedad 3.
+Aula no verificada en el catalogo; se conserva el bloque y aula ingresados.
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: ID a buscar: ID 802 | PENDIENTE | gravedad 3 | ingreso 2
+  Otro | ruta por configurar con el nuevo mapa
+  Incidencia en bloque E, aula 999
+  Bloque: E | Aula: 999
+
+=== ALERTA360 ===
+01 Registrar incidencia
+02 Clasificar siguiente
+03 Cambiar gravedad
+04 Deshacer gravedad
+05 Asignar siguiente
+06 Resolver
+07 Cancelar
+08 Buscar por ID
+09 Listados e indicadores
+10 Gestionar rutas
+11 Abrir mapa visual numerado
+12 Ubicar por catalogo UPSA (1-205)
+13 Ubicar por numero de la foto (1-36)
+00 Salir
+Opcion: Liberacion: heap=2, pila=0, cola=0, BST=2, lista=2.

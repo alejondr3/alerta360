@@ -1,0 +1,11 @@
+Herramienta: image_gen integrada (sin CLI).
+Referencia: campus-upsa.jpeg, publicado por Postgrado UPSA.
+Resultado: campus-upsa-vista-limpia.png.
+Uso: ilustracion de referencia; no plano tecnico ni distribucion interior.
+
+PROMPT FINAL
+
+Use case: style-transfer / precise architectural reference cleanup.
+EDIT TARGET: the attached official UPSA campus illustration. The reference is the geometric ground truth. The user rejected a prior image because buildings were rearranged. Make an extremely faithful cleaned architectural campus illustration with EXACTLY the same external building footprints, roof silhouettes, relative sizes, roof angles, orientations, courtyards, access roads, lawns and positions as this target. Do NOT redesign, move, enlarge, split, duplicate or simplify away any building. In particular preserve the central tower with UPSA signage, the angular connected Central/A/B complex on the left, the courtyard, the long horizontal A wing, the precise adjoining C/Polideportivo masses on the right, the narrow D volume and the long E building. Keep the football field and north-east paved court unchanged in location and proportions.
+Allowed change: remove the huge dark-green masthead and lower QR-code/legend panels, tiny coloured numbered dots, circular letter badges, overlay icons and printed labels. Clean up only the surfaces underneath these graphic overlays. Turn their space into a quiet pale neutral background without inserting new architectural content. Keep all existing campus architecture in its original pixel-relative position. Do not crop or reframe, rotate, change camera angle or perspective, or add a new header. Keep the image's original 1280:786 aspect ratio, and return the same composition. Maintain the existing recognizable terracotta roofs, facade windows, plantings, gray roads; modestly improve line clarity and reduce visual noise, with subtle restrained architectural rendering. No fictional flat schematic or new campus design.
+NO TEXT AT ALL, NO NUMBERS, NO LABELS, NO LEGEND, NO BADGES, NO COMPASS, NO WATERMARK, NO NEW LOGO. Application code will place accessible real block/room labels separately. Do not draw classroom interiors or invented room numbers; the reference is exterior only. Fidelity to the actual structure is overwhelmingly more important than decorative prettiness.

@@ -43,7 +43,7 @@ bool SistemaAlerta360::crearRegistro(int id, const std::string& d, Tipo tipo, in
 }
 bool SistemaAlerta360::registrarAula(const std::string& bloque, const std::string& aula,
                                    int id, int gravedad, std::ostream& out) {
-    std::string b=limpiarCampo(bloque);
+    std::string b=normalizarBloqueCampus(bloque);
     std::string a=limpiarCampo(aula);
     if (!campoValido(b,20) || !campoValido(a,30) || id<=0 || gravedad<1 || gravedad>5) {
         out << "Datos invalidos: bloque (1-20 caracteres), aula (1-30), ID positivo y gravedad 1-5.\n";
@@ -58,9 +58,13 @@ bool SistemaAlerta360::registrarAula(const std::string& bloque, const std::strin
     dato->bloque=b;
     dato->aula=a;
     dato->gravedadRegistro=gravedad;
+    const auto* lugar=buscarAulaCampus(b,a);
+    if (lugar) dato->ubicacionCampus=lugar->id;
     clasificarRegistrosConGravedad(out);
     out << "Registro listo: ID " << id << " | bloque " << b << " | aula " << a
         << " | gravedad " << gravedad << ".\n";
+    if (lugar) out << "Aula reconocida: " << lugar->nombre << " | " << lugar->planta << ".\n";
+    else out << "Aula no verificada en el catalogo; se conserva el bloque y aula ingresados.\n";
     return true;
 }
 void SistemaAlerta360::clasificarRegistrosConGravedad(std::ostream& out) {

@@ -32,3 +32,8 @@ Registro simplificado: asistencia para reducir la entrada a bloque, aula, ID y
 gravedad, clasificar en la cola sin preguntas adicionales y actualizar pruebas.
 Se conserva --consigna para el flujo original. No se reemplazo el mapa ni se
 inventaron conexiones para los nuevos bloques.
+
+Vista con aulas: se genero una ilustracion derivada del plano real con image_gen
+y se mantuvo el original para comparar. Las aulas, plantas y conteos provienen
+del catalogo oficial verificado; no se inventaron interiores. Se agregaron
+reconocimiento automatico, filtros por bloque/planta y dos pruebas.

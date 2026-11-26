@@ -42,3 +42,12 @@ verificadas usan las referencias impresas; las aulas restantes se representan
 aproximadamente por bloque, con indicacion visible. Los lugares sin un anclaje
 verificado no se dibujan sobre la foto. Vincular un lugar o referencia no
 modifica estados, prioridades ni rutas del grafo.
+
+## Verificacion del catalogo docente: 26/11/2026
+
+Se volvio a descargar el catalogo del sitio oficial y coincide con los 205
+registros conservados. `cat-classrooms` incluye 122 espacios: A32, B49, C5,
+D18 y E18. Hay 72 entradas con la palabra Aula y 121 codigos de sala; CIAP
+es una entrada de esa categoria sin codigo. El detalle esta en
+`espacios-docentes.json`. No se afirma que este sea el inventario exhaustivo
+de ambientes de la universidad. No se publican planos interiores en estos datos.

@@ -92,3 +92,18 @@ vacios e invalidos. Se conserva la incidencia si falta configurar su ruta.
 Las sesiones originales de aceptacion, entradas invalidas, foto y catalogo
 se reprodujeron correctamente con --consigna. El mapa no fue reemplazado;
 la configuracion de ubicaciones y rutas queda pendiente del nuevo plano.
+
+VISTA LIMPIA Y AULAS - 26 de noviembre de 2026
+
+31 escenarios aprobados. El catalogo de origen se descargo de nuevo y coincide
+con los 205 registros; 122 son cat-classrooms y 72 incluyen Aula en su nombre.
+A32 B49 C5 D18 E18. El HTML contiene ambas imagenes; se decodificaron y son
+identicas byte por byte a los archivos original y generado. D-203 queda
+vinculado automaticamente al lugar #131.
+
+Navegador: Bloque D devuelve 18 espacios; segunda planta muestra D-201 y
+D-203. Seleccionar D-203 muestra Laboratorio de Redes y 2da. Planta, con una
+incidencia DEMO. Bloque B, cuarta planta: seis espacios. Bloque Central: cero
+entradas catalogadas sin inventar aulas. Alternancia con Plano original
+correcta y sin errores de consola. Los marcadores son aproximados por bloque;
+no se declaran posiciones interiores ni distancias reales.

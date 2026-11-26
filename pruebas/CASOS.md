@@ -36,6 +36,9 @@ obtenidas y el registro de operaciones estan en `resultados.txt`.
 | T27 | Registro de bloque, aula, ID y gravedad | Campos guardados, clasificación automática y heap por prioridad; ruta pendiente sin inventar zona. |
 | T28 | Campos vacíos, longitudes, controles, ID y gravedad inválidos | Rechazos sin datos parciales; ID único; corrección, deshacer y cancelación funcionan. |
 | T29 | Registro nuevo detrás de una recibida antigua | FIFO preservada; gravedades guardadas y clasificación posterior sin duplicados. |
+| T30 | Catalogo docente, codigos de aula, bloques y plantas | 122 espacios, 72 Aula; A32 B49 C5 D18 E18; D-203 en segunda planta. |
+| T31 | Registrar bloque/aula con reconocimiento automatico | Vinculo a lugar #131 sin pedir mas datos; aula no catalogada conservada sin coincidencia inventada. |
+
 
 T19 prueba la estructura aislada: en el sistema real la secuencia de ingreso es
 unica, por lo que no se repite para dos incidencias.

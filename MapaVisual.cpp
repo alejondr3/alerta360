@@ -63,6 +63,12 @@ bool guardarMapaVisual(const SistemaAlerta360& sistema, const std::string& archi
         out << "<script id=\"imagen-campus\" type=\"application/json\">{\"uri\":\"data:image/jpeg;base64,";
         for (const char* fragmento : imagenCampus) out << fragmento;
         out << "\"}</script>";
+        static const char* const imagenLimpia[] = {
+#include "MapaCampusLimpio.inc"
+        };
+        out << "<script id=\"imagen-limpia\" type=\"application/json\">{\"uri\":\"data:image/png;base64,";
+        for (const char* fragmento:imagenLimpia) out << fragmento;
+        out << "\"}</script>";
         out <<
 #include "MapaPlantilla.inc"
         ;

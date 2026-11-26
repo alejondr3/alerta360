@@ -19,3 +19,16 @@ no se debe pasar la imagen por un editor ni modificar su resolucion.
 Los anclajes interactivos de las referencias 1-36 estan expresados en pixeles
 del plano de 1280x786. Los marcadores son una capa independiente: el JPEG de
 fondo se exporta completo y se puede ampliar hasta 400%.
+
+## Vista limpia de referencia
+
+`campus-upsa-vista-limpia.png` fue generada con image_gen integrada tomando
+como objetivo el JPEG original: se solicito conservar las masas, orientacion,
+patios y caminos y retirar overlays. Es una ilustracion IA, no un plano tecnico
+ni una garantia de coincidencia exacta de cada detalle arquitectonico.
+El boton Plano original permite consultar la fuente sin alteraciones.
+
+SHA256 de la ilustracion: `fdab09e86fb3f7fca5dd85f3a4a8c6cf57198e7218893b10bc2a3f7aea0c214d`.
+Prompt exacto: `PROMPT_VISTA_LIMPIA.txt`. No se generaron interiores ni numeros
+de aula con IA: provienen del catalogo oficial y se muestran como una lista
+por bloque y planta.

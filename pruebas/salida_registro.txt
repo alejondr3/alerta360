@@ -19,6 +19,7 @@ Opcion:
 Bloque: Aula: ID de incidencia: Gravedad (1-5): Registrada 501: RECIBIDA, secuencia 1.
 Clasificada 501: PENDIENTE, gravedad 5.
 Registro listo: ID 501 | bloque D | aula 203 | gravedad 5.
+Aula reconocida: D-203 Laboratorio de Redes | 2da. Planta.
 
 === ALERTA360 ===
 01 Registrar incidencia
@@ -39,6 +40,7 @@ Opcion: ID a buscar: ID 501 | PENDIENTE | gravedad 5 | ingreso 1
   Otro | ruta por configurar con el nuevo mapa
   Incidencia en bloque D, aula 203
   Bloque: D | Aula: 203
+  Ubicacion UPSA #131: D-203 Laboratorio de Redes | Bloque D | 2da. Planta
 
 === ALERTA360 ===
 01 Registrar incidencia

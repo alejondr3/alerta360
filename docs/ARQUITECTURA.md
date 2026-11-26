@@ -133,3 +133,18 @@ no tiene correspondencia con el grafo. Se admite solo con ambos campos válidos.
 La asignación lo rechaza sin extraerlo del heap, hasta configurar sus rutas
 con el nuevo mapa. Bloque y aula se exportan como JSON escapado y no se usan
 como coordenadas sobre el plano anterior.
+
+## Catalogo docente y vista por planta
+
+Cada ubicacion conserva una marca `docente` segun `cat-classrooms` en la fuente.
+Se publican 122 entradas de esa categoria, 72 con la palabra Aula. El resto
+incluye laboratorios, salas y talleres; no se interpreta como 122 aulas.
+`buscarAulaCampus` reconoce codigos de sala y comprueba que pertenezcan al
+bloque indicado. El alta vincula el ID del catalogo sin modificar el grafo.
+La interfaz filtra por bloque y planta y presenta tarjetas de espacios; no
+reconstruye habitaciones o pasillos interiores a partir de la foto exterior.
+
+El fondo original permanece incorporado y se agrega una ilustracion IA
+limpiada a partir de esa imagen. Los anclajes de bloque son aproximados, no
+coordenadas de aula. La seleccion del catalogo no equivale a una medicion
+geografica y no produce tiempos de recorrido reales.

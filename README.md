@@ -12,7 +12,7 @@ Central de incidencias técnicas de campus desarrollada en C++20, con estructura
 
 [![Compilación y pruebas](https://github.com/alejondr3/alerta360/actions/workflows/ci.yml/badge.svg)](https://github.com/alejondr3/alerta360/actions/workflows/ci.yml)
 ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus&logoColor=white)
-![Pruebas](https://img.shields.io/badge/escenarios_de_prueba-29-165c46)
+![Pruebas](https://img.shields.io/badge/escenarios_de_prueba-31-165c46)
 ![Plataformas](https://img.shields.io/badge/CI-Linux_%7C_Windows-374151)
 
 [Inicio rápido](#inicio-rápido) · [Mapa del campus](#mapa-del-campus) · [Arquitectura](#arquitectura) · [Pruebas](#pruebas) · [Documentación](#documentación)
@@ -21,7 +21,7 @@ Central de incidencias técnicas de campus desarrollada en C++20, con estructura
 
 ---
 
-> **Registro simplificado:** ahora se solicitan solo **bloque, aula, ID y gravedad**. La incidencia se clasifica al registrarse. El reemplazo del mapa y la conexión de los bloques con las rutas están pendientes del nuevo plano que aportará el usuario.
+> **Registro simplificado:** ahora se solicitan solo **bloque, aula, ID y gravedad**. La incidencia se clasifica al registrarse. El mapa integra una vista limpia basada en el plano real y el catálogo docente por bloque y planta. Las conexiones de rutas de cada bloque todavía requieren una configuración verificada.
 
 ## Qué hace
 
@@ -38,9 +38,9 @@ Alerta360 recibe fallas de energía, red, equipos, climatización e infraestruct
 
 ## Mapa del campus
 
-![Plano completo del campus UPSA con sus referencias numeradas](datos/campus-upsa.jpeg)
+![Mapa con aulas por bloque y planta](docs/assets/mapa-aulas.jpg)
 
-La vista utiliza la imagen original publicada por [Postgrado UPSA](https://postgrado.upsa.edu.bo/contacto). Conserva el plano completo, sus **36 referencias**, los nombres de los bloques y las leyendas. La imagen está incorporada en el ejecutable y en el HTML generado, por lo que funciona sin conexión.
+La vista ofrece una **ilustración limpia derivada con IA del plano de Postgrado UPSA** y el botón **Plano original** para comparar con la infraestructura publicada. Ambas imágenes están incorporadas en el ejecutable y funcionan sin conexión. La ilustración no sustituye un plano técnico ni contiene distribuciones interiores verificadas.
 
 **Acercá hasta 400%, desplazá el plano y seleccioná una incidencia para consultar su estado y ubicación.** El botón **Ver completo** recupera el encuadre original.
 
@@ -54,6 +54,24 @@ La vista utiliza la imagen original publicada por [Postgrado UPSA](https://postg
 Los marcadores rojos corresponden a datos de ejemplo identificados como **DEMO**. Esta captura documenta el plano anterior, pendiente de reemplazo.
 
 </details>
+
+### Aulas por bloque y planta
+
+El catálogo oficial, verificado el **26/11/2026**, contiene **122 espacios en su categoría docente**: **72** tienen la palabra *Aula* en el nombre; los demás incluyen laboratorios, talleres y salas. Esto no certifica el inventario total de la universidad.
+
+| Bloque | Espacios docentes catalogados |
+| :---: | ---: |
+| A | 32 |
+| B | 49 |
+| C | 5 |
+| D | 18 |
+| E | 18 |
+
+Elegí bloque y planta, buscá un código y seleccioná una tarjeta. Por ejemplo, **D-203** figura como **Laboratorio de Redes · 2da. Planta**. El marcador señala su bloque y el detalle conserva el aula y la planta; no se dibuja una distribución interior inventada.
+
+El registro sigue pidiendo solo **bloque, aula, ID y gravedad**. Si el aula figura en el catálogo, se vincula automáticamente. Se aceptan `D` o `Bloque D`, y `203` o `D-203`. Un aula no catalogada conserva lo ingresado y se indica que no fue verificada.
+
+El archivo [espacios-docentes.json](datos/espacios-docentes.json) conserva el inventario publicado y sus conteos. La falta de entradas para un bloque no demuestra que ese bloque no tenga aulas.
 
 ### Marcar dónde está el problema
 
@@ -151,7 +169,7 @@ Gravedad (1-5): 5
 
 El programa conserva bloque y aula y carga la incidencia como **PENDIENTE**, con prioridad 5. No pide tipo, descripción ni zona. La descripción se genera con la ubicación ingresada.
 
-Mientras falta el nuevo mapa, estos registros conservan su ubicación escrita y no reciben una zona o coordenadas inventadas. Si se intenta asignarlos, permanecen pendientes y se informa que falta configurar la ruta del bloque. La clasificación, corrección de gravedad, deshacer, consultas y cancelación siguen disponibles.
+Los registros reconocidos se vinculan al catálogo y señalan su bloque en el mapa. Las rutas por bloque todavía no están configuradas con pesos verificados; no reciben una zona de destino inventada. Si se intenta asignarlos, permanecen pendientes y se informa que falta configurar la ruta del bloque. La clasificación, corrección de gravedad, deshacer, consultas y cancelación siguen disponibles.
 
 La gravedad va de **1 a 5**; **5 es la mayor urgencia**. El modo `--consigna` conserva el flujo original y las rutas de control del grafo de prueba para la evaluación académica.
 
@@ -205,9 +223,10 @@ alerta360/
 ├── SistemaAlerta360.h/.cpp     # Reglas e integración
 ├── MapaVisual.h/.cpp           # Exportación y apertura del mapa
 ├── MapaPlantilla.inc           # Interfaz visual
-├── MapaCampusImagen.inc        # JPEG incorporado al ejecutable
+├── MapaCampusImagen.inc        # JPEG original incorporado
+├── MapaCampusLimpio.inc        # Ilustración IA incorporada
 ├── UbicacionesCampus.h/.cpp    # Catálogo y referencias del plano
-├── Pruebas.cpp                 # 29 escenarios automáticos
+├── Pruebas.cpp                 # 31 escenarios automáticos
 ├── pruebas/                    # Entradas, salidas y evidencias
 ├── datos/                      # Foto original, catálogo y fuentes
 ├── docs/                       # Arquitectura y recursos del README
@@ -253,17 +272,17 @@ Si el destino queda desconectado, la asignación se rechaza y la incidencia cons
 
 ## Pruebas
 
-La suite incluye **29 escenarios reproducibles**: los diez casos de aceptación del proyecto y casos adicionales de prioridad, cancelación, memoria, entradas inválidas, UTF-8, exportación segura y referencias de la foto.
+La suite incluye **31 escenarios reproducibles**: los diez casos de aceptación del proyecto y casos adicionales de prioridad, cancelación, memoria, entradas inválidas, UTF-8, exportación segura y referencias de la foto.
 
 ```powershell
 ./alerta360.exe --pruebas
 ```
 
 ```text
-=== Resumen: 29 aprobadas, 0 fallidas ===
+=== Resumen: 31 aprobadas, 0 fallidas ===
 ```
 
-El proceso devuelve `0` si todas las pruebas pasan y `1` si alguna falla. CTest agrupa los 29 escenarios en una suite.
+El proceso devuelve `0` si todas las pruebas pasan y `1` si alguna falla. CTest agrupa los 31 escenarios en una suite.
 
 | Verificación automática | Entorno |
 | :--- | :--- |

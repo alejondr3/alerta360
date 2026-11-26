@@ -23,7 +23,7 @@ jobs:
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
       - name: Compilar
         run: cmake --build build --config Debug --parallel 2
-      - name: Ejecutar las 29 pruebas
+      - name: Ejecutar las 31 pruebas
         run: ctest --test-dir build -C Debug --output-on-failure
 
   sanitizadores:

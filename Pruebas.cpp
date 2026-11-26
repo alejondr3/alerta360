@@ -300,6 +300,8 @@ int ejecutarPruebas(std::ostream& out) {
                 && contenido.str().find("Campus UPSA")!=std::string::npos
                 && contenido.str().find("id=\"imagen-campus\"")!=std::string::npos
                 && contenido.str().find("data:image/jpeg;base64,/9j/")!=std::string::npos
+                && contenido.str().find("id=\"imagen-limpia\"")!=std::string::npos
+                && contenido.str().find("data:image/png;base64,iVBORw0KGgo")!=std::string::npos
                 && contenido.str().size()>476136
                 && contenido.str().find("</body></html>")!=std::string::npos,
                     "Archivo actualizado, con foto JPEG incorporada, plantilla y cierre completo", out);
@@ -377,6 +379,47 @@ int ejecutarPruebas(std::ostream& out) {
         exigir(x.buscar(2)->estado==Estado::PENDIENTE && x.buscar(2)->gravedad==4
             && x.buscar(3)->estado==Estado::PENDIENTE && orden(x,ids,2)
             && x.validarConsistencia(), "Ambas gravedades preservadas sin duplicados", out);
+    });
+    prueba("T30", "Catalogo docente verificado por bloque y planta", [&] {
+        int espacios=0,aulas=0,codigos=0;
+        int bloques[5]{};
+        for (int id=1;id<=205;++id) {
+            const auto* p=buscarUbicacionCampus(id);
+            if (!p || !p->docente) continue;
+            ++espacios;
+            const std::string nombre=p->nombre;
+            if (nombre.find("Aula")!=std::string::npos) ++aulas;
+            if (nombre.size()>4 && nombre[1]=='-') ++codigos;
+            const std::string b=normalizarBloqueCampus(p->bloque);
+            if (b.size()==1 && b[0]>='A' && b[0]<='E') ++bloques[b[0]-'A'];
+        }
+        exigir(espacios==122 && aulas==72 && codigos==121,
+                "122 espacios docentes, 72 etiquetados Aula y 121 codigos de sala",out);
+        exigir(bloques[0]==32 && bloques[1]==49 && bloques[2]==5 && bloques[3]==18 && bloques[4]==18,
+                "Conteos oficiales A32 B49 C5 D18 E18",out);
+        const auto* p=buscarAulaCampus(" Bloque d "," d-203 ");
+        exigir(p && p->id==131 && p->docente && std::string(p->planta)=="2da. Planta",
+                "D-203 se reconoce como Laboratorio de Redes de segunda planta",out);
+        const auto* aulaA=buscarAulaCampus("A","108");
+        const auto* aulaE=buscarAulaCampus("E","117");
+        exigir(aulaA && aulaA->id==18 && aulaE && aulaE->id==70
+            && !buscarAulaCampus("A","D-203") && !buscarAulaCampus("D","999")
+            && !buscarAulaCampus("Central","101"),"No inventa coincidencias de aulas",out);
+    });
+    prueba("T31", "Vinculacion automatica del aula sin nuevas preguntas", [&] {
+        SistemaAlerta360 x;
+        exigir(x.registrarAula("Bloque d","D-203",901,5,log),"Cuatro campos suficientes",out);
+        const auto* p=x.buscar(901);
+        exigir(p && p->bloque=="D" && p->ubicacionCampus==131 && p->gravedad==5
+            && p->estado==Estado::PENDIENTE && p->zona==-1,
+                "Aula reconocida conserva gravedad y no inventa ruta",out);
+        exigir(x.registrarAula("E","999",902,2,log) && x.buscar(902)->ubicacionCampus==0,
+                "Aula no catalogada se conserva sin asignar otra sala",out);
+        std::ostringstream datos,catalogo;
+        x.exportarDatosMapa(datos);escribirUbicacionesCampusJSON(catalogo);
+        exigir(datos.str().find("\"ubicacion\":131")!=std::string::npos
+            && catalogo.str().find("\"docente\":true")!=std::string::npos
+            && x.validarConsistencia(),"Vista recibe el aula y su clasificacion docente",out);
     });
     out << "\n=== Resumen: " << aprobadas << " aprobadas, " << fallidas << " fallidas ===\n";
     out << "\n--- Registro de operaciones y entradas de prueba ---\n" << log.str();
