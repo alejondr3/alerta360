@@ -10,7 +10,7 @@
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -28,11 +28,11 @@ Tipo: Descripcion (10-120 caracteres): Zona (1-7): Registrada 999: RECIBIDA, sec
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
-Opcion: ID de la incidencia: Elija el numero del lugar en el mapa (opcion 11).
+Opcion: ID de la incidencia: Use 206 para listar los lugares del catalogo en consola.
 Lugar UPSA (1-205; 0 quitar; 206 listar catalogo): Incidencia 999: ubicada en #173 Biblioteca. La zona de atencion sigue siendo 3.
 
 === ALERTA360 ===
@@ -46,7 +46,7 @@ Lugar UPSA (1-205; 0 quitar; 206 listar catalogo): Incidencia 999: ubicada en #1
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -66,7 +66,7 @@ Opcion: ID a buscar: ID 999 | RECIBIDA | gravedad 0 | ingreso 1
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir

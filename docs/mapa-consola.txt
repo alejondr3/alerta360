@@ -1,0 +1,27 @@
+===================== MAPA UPSA =====================
+  Esquema por bloques, orientado como la imagen de referencia.
+  Ubicaciones aproximadas; no representa interiores ni rutas.
+
+                           CANCHA / AREAS
+  +--------------------+                          +--------------------+  
+  | BLOQUE B           |                          | BLOQUE E           |  
+  | Sin incidencias    |                          | Sin incidencias    |  
+  |                    |                          |                    |  
+  +--------------------+                          +--------------------+  
+  +--------------------+  +--------------------+  +--------------------+  
+  | BLOQUE A           |  | BLOQUE C           |  | BLOQUE D           |  
+  | ! 1 activa(s)      |  | Sin incidencias    |  | ! 1 activa(s)      |  
+  | Gravedad max: 3    |  |                    |  | Gravedad max: 5    |  
+  +--------------------+  +--------------------+  +--------------------+  
+  +--------------------+                                                  
+  | BLOQUE CENTRAL     |                                                  
+  | Sin incidencias    |                                                  
+  |                    |                                                  
+  +--------------------+                                                  
+  ================= ACCESO / AVENIDA =================
+  ! = incidencia activa | Total: 2 | Sin bloque en el esquema: 0
+  Resueltas y canceladas se consultan en el historial.
+
+INCIDENCIAS ACTIVAS (ID, aula y gravedad)
+  ! #101 | Bloque D | Aula 203 | D-203 Laboratorio de Redes | 2da. Planta | Gravedad 5 | PENDIENTE
+  ! #102 | Bloque A | Aula 108 | A-108 Aula | 1ra. Planta | Gravedad 3 | PENDIENTE

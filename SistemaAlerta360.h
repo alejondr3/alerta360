@@ -31,6 +31,7 @@ public:
     int proximos(int* ids, int limite) const { return heap_.proximos(ids, limite); }
     void mostrarIncidencia(int id, std::ostream&) const;
     void mostrarInformes(std::ostream&) const;
+    void mostrarMapaConsola(std::ostream&, const std::string& bloque = {}) const;
     bool ubicarEnCampus(int id, int ubicacion, std::ostream&);
     bool ubicarEnPlano(int id, int referencia, std::ostream&);
     void exportarDatosMapa(std::ostream&) const;

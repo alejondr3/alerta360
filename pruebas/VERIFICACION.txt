@@ -116,3 +116,13 @@ cancelacion, volver y salir reproducidos con el menu de cuatro opciones.
 Vista verificada en Brave: Mas opciones cerrado; seleccion de incidencia 102
 sincroniza Bloque D, Aula 203 y detalle con gravedad 5 y estado pendiente.
 Captura de demostracion: docs/assets/interfaz-simple.jpg.
+
+
+VERSION EN CONSOLA - 28 de noviembre de 2026
+31 escenarios aprobados con CMake/CTest. T25 valida mapa vacio, conteos,
+filtro por bloque, catalogo, reubicacion y consulta sin cambios de datos.
+Sesion entrada_consola: registro A/D, mapa, aulas D-203, detalle por ID,
+bloque invalido, cancelacion y mapa actualizado. Modos --mapa y --visual
+en consola, EOF dentro del mapa y del filtro: cierre seguro.
+Fixtures de aceptacion, invalidas, foto y catalogo: --consigna.
+Fixtures registro, aulas y menu simple: sin argumentos.

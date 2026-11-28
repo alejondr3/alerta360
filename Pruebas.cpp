@@ -1,5 +1,5 @@
 #include "SistemaAlerta360.h"
-#include "MapaVisual.h"
+#include "DatosJSON.h"
 #include "UbicacionesCampus.h"
 #include <chrono>
 #include <filesystem>
@@ -281,36 +281,40 @@ int ejecutarPruebas(std::ostream& out) {
             && !buscarUbicacionCampus(206) && catalogo.str().find("\"id\":205")!=std::string::npos,
                 "Catalogo de 205 lugares disponible sin internet", out);
     });
-    prueba("T25", "Archivo del mapa completo, reemplazo y error de escritura", [&] {
-        namespace fs = std::filesystem;
-        const auto dir=fs::temp_directory_path()/ ("alerta360-prueba-"+std::to_string(
-            std::chrono::steady_clock::now().time_since_epoch().count()));
-        fs::create_directory(dir);
-        try {
-            SistemaAlerta360 x;
-            ingresar(x,1,3,log); x.ubicarEnCampus(1,49,log);
-            std::string error;
-            const auto archivo=dir/"mapa.html";
-            exigir(guardarMapaVisual(x,archivo.string(),error), "Crear HTML autosuficiente", out);
-            x.clasificarSiguiente(5,log);
-            exigir(guardarMapaVisual(x,archivo.string(),error), "Reemplazar instantanea existente", out);
-            std::ifstream entrada(archivo,std::ios::binary);
-            std::ostringstream contenido;contenido<<entrada.rdbuf();entrada.close();
-            exigir(contenido.str().find("\"estado\":\"PENDIENTE\"")!=std::string::npos
-                && contenido.str().find("Campus UPSA")!=std::string::npos
-                && contenido.str().find("id=\"imagen-campus\"")!=std::string::npos
-                && contenido.str().find("data:image/jpeg;base64,/9j/")!=std::string::npos
-                && contenido.str().find("id=\"imagen-limpia\"")!=std::string::npos
-                && contenido.str().find("data:image/png;base64,iVBORw0KGgo")!=std::string::npos
-                && contenido.str().size()>476136
-                && contenido.str().find("</body></html>")!=std::string::npos,
-                    "Archivo actualizado, con foto JPEG incorporada, plantilla y cierre completo", out);
-            exigir(!guardarMapaVisual(x,(dir/"no-existe"/"mapa.html").string(),error)
-                && !error.empty() && x.validarConsistencia(), "Error de carpeta no corrompe datos", out);
-            exigir(!guardarMapaVisual(x,dir.string(),error) && fs::is_directory(dir),
-                    "Nunca reemplaza ni elimina una carpeta con el mapa", out);
-            fs::remove_all(dir);
-        } catch (...) {fs::remove_all(dir);throw;}
+    prueba("T25", "Mapa de consola fiel al estado y sin efectos secundarios", [&] {
+        SistemaAlerta360 x;
+        std::ostringstream vacio;
+        x.mostrarMapaConsola(vacio);
+        exigir(vacio.str().find("Total: 0")!=std::string::npos, "Mapa vacio sin datos de ejemplo",out);
+        x.registrarAula("D","203",101,5,log);
+        x.registrarAula("D","999",102,2,log);
+        x.registrarAula("A","108",103,4,log);
+        x.cancelar(102,log);
+        x.registrarAula("Z","001",104,3,log);
+        std::ostringstream antes,mapa,despues;
+        x.exportarDatosMapa(antes);
+        x.mostrarMapaConsola(mapa,"D");
+        x.exportarDatosMapa(despues);
+        exigir(mapa.str().find("Total: 3")!=std::string::npos
+            && mapa.str().find("Sin bloque en el esquema: 1")!=std::string::npos
+            && mapa.str().find("! #101 | Bloque D | Aula 203")!=std::string::npos
+            && mapa.str().find("! #102")==std::string::npos
+            && mapa.str().find("! #103")==std::string::npos,
+            "Cuenta activas, excluye canceladas y filtra el bloque sin perder totales",out);
+        exigir(mapa.str().find("D-203 Laboratorio de Redes")!=std::string::npos
+            && mapa.str().find("2da. Planta")!=std::string::npos
+            && antes.str()==despues.str() && x.validarConsistencia(),
+            "Aulas del catalogo y mapa de solo lectura",out);
+        x.ubicarEnCampus(101,18,log);
+        std::ostringstream movida;
+        x.mostrarMapaConsola(movida,"D");
+        exigir(movida.str().find("! #101")==std::string::npos,
+            "Reubicacion explicita prevalece sobre bloque original",out);
+        x.ubicarEnPlano(101,26,log);
+        std::ostringstream referencia;
+        x.mostrarMapaConsola(referencia);
+        exigir(referencia.str().find("Biblioteca (P4)")!=std::string::npos,
+            "Referencias sin bloque conservan su nombre en el listado",out);
     });
     prueba("T26", "Referencias 1-36 de la foto sin alterar estados ni prioridades", [&] {
         SistemaAlerta360 x;

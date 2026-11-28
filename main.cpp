@@ -1,5 +1,4 @@
 #include "SistemaAlerta360.h"
-#include "MapaVisual.h"
 #include "UbicacionesCampus.h"
 #include <iostream>
 #include <limits>
@@ -63,14 +62,14 @@ void gestionarRutas(GrafoCampus& grafo) {
 void menu(bool modoConsigna) {
     if (!modoConsigna) {
         std::cout << "\n=== ALERTA360 ===\n"
-            "1 Registrar incidencia\n2 Ver incidencias\n3 Abrir mapa\n4 Mas opciones\n0 Salir\n";
+            "1 Registrar incidencia\n2 Ver incidencias\n3 Ver mapa en consola\n4 Mas opciones\n0 Salir\n";
         return;
     }
     std::cout << "\n=== ALERTA360 ===\n"
         "01 Registrar incidencia\n02 Clasificar siguiente\n03 Cambiar gravedad\n"
         "04 Deshacer gravedad\n05 Asignar siguiente\n06 Resolver\n07 Cancelar\n"
         "08 Buscar por ID\n09 Listados e indicadores\n10 Gestionar rutas\n"
-        "11 Abrir mapa visual numerado\n12 Ubicar por catalogo UPSA (1-205)\n"
+        "11 Ver mapa en consola\n12 Ubicar por catalogo UPSA (1-205)\n"
         "13 Ubicar por numero de la foto (1-36)\n00 Salir\n";
 }
 }
@@ -85,23 +84,12 @@ int main(int argc, char* argv[]) {
             std::cerr << "Uso: alerta360 [--pruebas | --mapa | --visual | --consigna]\n"; return 2;
         }
         SistemaAlerta360 sistema;
-        const std::string archivoMapa = "mapa_alerta360.html";
-        bool mapaActivo = false;
-        auto actualizarMapa = [&]() {
-            std::string error;
-            if (guardarMapaVisual(sistema,archivoMapa,error)) return true;
-            std::cerr << "No se pudo actualizar el mapa: " << error << '\n';
-            return false;
-        };
         if (soloMapa) {
-            if (!actualizarMapa()) return 1;
-            if (!abrirMapaVisual(archivoMapa)) std::cout << "Abra manualmente " << archivoMapa << ".\n";
+            sistema.mostrarMapaConsola(std::cout);
             return 0;
         }
-        if (inicioVisual && actualizarMapa()) {
-            mapaActivo = true;
-            if (!abrirMapaVisual(archivoMapa)) std::cout << "Abra manualmente " << archivoMapa << ".\n";
-        }
+        // --visual se conserva como alias de inicio, siempre en consola.
+        if (inicioVisual) sistema.mostrarMapaConsola(std::cout);
         try {
             bool seguir = true;
             while (seguir) {
@@ -180,17 +168,31 @@ int main(int argc, char* argv[]) {
                     }
                     case 9: sistema.mostrarInformes(std::cout); break;
                     case 10: gestionarRutas(sistema.grafo()); break;
-                    case 11:
-                        if (actualizarMapa()) {
-                            mapaActivo = true;
-                            std::cout << "Mapa numerado: " << archivoMapa << ". Se actualiza con esta sesion.\n";
-                            if (!abrirMapaVisual(archivoMapa)) std::cout << "Abra ese archivo con su navegador.\n";
+                    case 11: {
+                        sistema.mostrarMapaConsola(std::cout);
+                        if (modoConsigna) break;
+                        for (;;) {
+                            std::cout << "\n1 Ver bloque y aulas | 2 Consultar incidencia | 0 Volver\n";
+                            const int consulta=leerEntero("Opcion: ",0,2);
+                            if (!consulta) break;
+                            if (consulta==1) {
+                                const auto bloque=normalizarBloqueCampus(leerCampo("Bloque (A-E o CENTRAL): ",20));
+                                if (bloque!="CENTRAL" && !(bloque.size()==1 && bloque[0]>='A' && bloque[0]<='E')) {
+                                    std::cout << "Bloque invalido. Elija A, B, C, D, E o CENTRAL.\n";
+                                    continue;
+                                }
+                                sistema.mostrarMapaConsola(std::cout,bloque);
+                            } else {
+                                const int id=leerEntero("ID a consultar: ",1,std::numeric_limits<int>::max());
+                                sistema.mostrarIncidencia(id,std::cout);
+                            }
                         }
                         break;
+                    }
                     case 12: {
                         const int id = leerEntero("ID de la incidencia: ", 1, std::numeric_limits<int>::max());
                         if (!sistema.buscar(id)) { std::cout << "ID inexistente.\n"; break; }
-                        std::cout << "Elija el numero del lugar desde Mas opciones del mapa.\n";
+                        std::cout << "Use 206 para listar los lugares del catalogo en consola.\n";
                         const int lugar = leerEntero("Lugar UPSA (1-205; 0 quitar; 206 listar catalogo): ",0,206);
                         if (lugar == 206) {
                             listarUbicacionesCampus(std::cout);
@@ -208,13 +210,10 @@ int main(int argc, char* argv[]) {
                         break;
                     }
                 }
-                if (mapaActivo && opcion != 0 && opcion != 11) actualizarMapa();
             }
         } catch (const FinEntrada&) {
             std::cout << "\nFin de entrada; cierre seguro.\n";
         }
-        // Conserva la ultima vista como instantanea al cerrar la sesion.
-        if (mapaActivo) actualizarMapa();
         sistema.cerrar(std::cout);
         return 0;
     } catch (const std::bad_alloc&) {

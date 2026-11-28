@@ -1,0 +1,187 @@
+
+=== ALERTA360 ===
+1 Registrar incidencia
+2 Ver incidencias
+3 Ver mapa en consola
+4 Mas opciones
+0 Salir
+Opcion: 
+--- Registrar incidencia ---
+Bloque: Aula: ID de incidencia: Gravedad (1-5): Registrada 101: RECIBIDA, secuencia 1.
+Clasificada 101: PENDIENTE, gravedad 5.
+Registro listo: ID 101 | bloque D | aula 203 | gravedad 5.
+Aula reconocida: D-203 Laboratorio de Redes | 2da. Planta.
+
+=== ALERTA360 ===
+1 Registrar incidencia
+2 Ver incidencias
+3 Ver mapa en consola
+4 Mas opciones
+0 Salir
+Opcion: 
+--- Registrar incidencia ---
+Bloque: Aula: ID de incidencia: Gravedad (1-5): Registrada 102: RECIBIDA, secuencia 2.
+Clasificada 102: PENDIENTE, gravedad 3.
+Registro listo: ID 102 | bloque A | aula 108 | gravedad 3.
+Aula reconocida: A-108 Aula | 1ra. Planta.
+
+=== ALERTA360 ===
+1 Registrar incidencia
+2 Ver incidencias
+3 Ver mapa en consola
+4 Mas opciones
+0 Salir
+Opcion: 
+===================== MAPA UPSA =====================
+  Esquema por bloques, orientado como la imagen de referencia.
+  Ubicaciones aproximadas; no representa interiores ni rutas.
+
+                           CANCHA / AREAS
+  +--------------------+                          +--------------------+  
+  | BLOQUE B           |                          | BLOQUE E           |  
+  | Sin incidencias    |                          | Sin incidencias    |  
+  |                    |                          |                    |  
+  +--------------------+                          +--------------------+  
+  +--------------------+  +--------------------+  +--------------------+  
+  | BLOQUE A           |  | BLOQUE C           |  | BLOQUE D           |  
+  | ! 1 activa(s)      |  | Sin incidencias    |  | ! 1 activa(s)      |  
+  | Gravedad max: 3    |  |                    |  | Gravedad max: 5    |  
+  +--------------------+  +--------------------+  +--------------------+  
+  +--------------------+                                                  
+  | BLOQUE CENTRAL     |                                                  
+  | Sin incidencias    |                                                  
+  |                    |                                                  
+  +--------------------+                                                  
+  ================= ACCESO / AVENIDA =================
+  ! = incidencia activa | Total: 2 | Sin bloque en el esquema: 0
+  Resueltas y canceladas se consultan en el historial.
+
+INCIDENCIAS ACTIVAS (ID, aula y gravedad)
+  ! #101 | Bloque D | Aula 203 | D-203 Laboratorio de Redes | 2da. Planta | Gravedad 5 | PENDIENTE
+  ! #102 | Bloque A | Aula 108 | A-108 Aula | 1ra. Planta | Gravedad 3 | PENDIENTE
+
+1 Ver bloque y aulas | 2 Consultar incidencia | 0 Volver
+Opcion: Bloque (A-E o CENTRAL): 
+===================== MAPA UPSA =====================
+  Esquema por bloques, orientado como la imagen de referencia.
+  Ubicaciones aproximadas; no representa interiores ni rutas.
+
+                           CANCHA / AREAS
+  +--------------------+                          +--------------------+  
+  | BLOQUE B           |                          | BLOQUE E           |  
+  | Sin incidencias    |                          | Sin incidencias    |  
+  |                    |                          |                    |  
+  +--------------------+                          +--------------------+  
+  +--------------------+  +--------------------+  +--------------------+  
+  | BLOQUE A           |  | BLOQUE C           |  | BLOQUE D           |  
+  | ! 1 activa(s)      |  | Sin incidencias    |  | ! 1 activa(s)      |  
+  | Gravedad max: 3    |  |                    |  | Gravedad max: 5    |  
+  +--------------------+  +--------------------+  +--------------------+  
+  +--------------------+                                                  
+  | BLOQUE CENTRAL     |                                                  
+  | Sin incidencias    |                                                  
+  |                    |                                                  
+  +--------------------+                                                  
+  ================= ACCESO / AVENIDA =================
+  ! = incidencia activa | Total: 2 | Sin bloque en el esquema: 0
+  Resueltas y canceladas se consultan en el historial.
+
+BLOQUE D - INCIDENCIAS ACTIVAS
+  ! #101 | Bloque D | Aula 203 | D-203 Laboratorio de Redes | 2da. Planta | Gravedad 5 | PENDIENTE
+
+AULAS Y ESPACIOS DOCENTES CATALOGADOS - BLOQUE D
+  D-103 Laboratorio de Hormigón | 1ra. Planta
+  D-105 Laboratorio de Materiales de Construcción | 1ra. Planta
+  D-107 Laboratorio de Mecánica de Suelos | 1ra. Planta
+  D-100 Exposición Materiales de Construcción | 1ra. Planta
+  D-102 Laboratorio de Resistencia de Materiales | 1ra. Planta
+  D-104 Laboratorio de Hidráulica y Mecánica de Fluidos | 1ra. Planta
+  D-106 Laboratorio de Asfalto | 1ra. Planta
+  D-201 Sala de Computación | 2da. Planta
+  D-203 Laboratorio de Redes | 2da. Planta
+  D-301 Aula | 3ra. Planta
+  D-303 Aula | 3ra. Planta
+  D-305 Aula | 3ra. Planta
+  D-302 Sala de Computación | 3ra. Planta
+  D-304 Sala de Computación | 3ra. Planta
+  D-401 Sala de Computación | 4ta. Planta
+  D-403 Sala de Computación | 4ta. Planta
+  D-402 Sala de Computación | 4ta. Planta
+  D-404 Sala de Computación | 4ta. Planta
+  Catalogo de referencia; no es un plano interior.
+
+1 Ver bloque y aulas | 2 Consultar incidencia | 0 Volver
+Opcion: ID a consultar: ID 101 | PENDIENTE | gravedad 5 | ingreso 1
+  Otro | ruta por configurar con el nuevo mapa
+  Incidencia en bloque D, aula 203
+  Bloque: D | Aula: 203
+  Ubicacion UPSA #131: D-203 Laboratorio de Redes | Bloque D | 2da. Planta
+
+1 Ver bloque y aulas | 2 Consultar incidencia | 0 Volver
+Opcion: Bloque (A-E o CENTRAL): Bloque invalido. Elija A, B, C, D, E o CENTRAL.
+
+1 Ver bloque y aulas | 2 Consultar incidencia | 0 Volver
+Opcion: 
+=== ALERTA360 ===
+1 Registrar incidencia
+2 Ver incidencias
+3 Ver mapa en consola
+4 Mas opciones
+0 Salir
+Opcion: 
+--- Mas opciones ---
+1 Buscar por ID
+2 Cambiar gravedad
+3 Deshacer gravedad
+4 Asignar siguiente
+5 Resolver
+6 Cancelar
+7 Gestionar rutas
+8 Elegir lugar del catalogo
+9 Elegir referencia del plano
+0 Volver
+Opcion: ID a cancelar: Cancelada 101; conservada en historial.
+
+=== ALERTA360 ===
+1 Registrar incidencia
+2 Ver incidencias
+3 Ver mapa en consola
+4 Mas opciones
+0 Salir
+Opcion: 
+===================== MAPA UPSA =====================
+  Esquema por bloques, orientado como la imagen de referencia.
+  Ubicaciones aproximadas; no representa interiores ni rutas.
+
+                           CANCHA / AREAS
+  +--------------------+                          +--------------------+  
+  | BLOQUE B           |                          | BLOQUE E           |  
+  | Sin incidencias    |                          | Sin incidencias    |  
+  |                    |                          |                    |  
+  +--------------------+                          +--------------------+  
+  +--------------------+  +--------------------+  +--------------------+  
+  | BLOQUE A           |  | BLOQUE C           |  | BLOQUE D           |  
+  | ! 1 activa(s)      |  | Sin incidencias    |  | Sin incidencias    |  
+  | Gravedad max: 3    |  |                    |  |                    |  
+  +--------------------+  +--------------------+  +--------------------+  
+  +--------------------+                                                  
+  | BLOQUE CENTRAL     |                                                  
+  | Sin incidencias    |                                                  
+  |                    |                                                  
+  +--------------------+                                                  
+  ================= ACCESO / AVENIDA =================
+  ! = incidencia activa | Total: 1 | Sin bloque en el esquema: 0
+  Resueltas y canceladas se consultan en el historial.
+
+INCIDENCIAS ACTIVAS (ID, aula y gravedad)
+  ! #102 | Bloque A | Aula 108 | A-108 Aula | 1ra. Planta | Gravedad 3 | PENDIENTE
+
+1 Ver bloque y aulas | 2 Consultar incidencia | 0 Volver
+Opcion: 
+=== ALERTA360 ===
+1 Registrar incidencia
+2 Ver incidencias
+3 Ver mapa en consola
+4 Mas opciones
+0 Salir
+Opcion: Liberacion: heap=1, pila=0, cola=0, BST=2, lista=2.

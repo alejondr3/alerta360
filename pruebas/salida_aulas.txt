@@ -2,7 +2,7 @@
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -15,7 +15,7 @@ Aula reconocida: D-203 Laboratorio de Redes | 2da. Planta.
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -39,7 +39,7 @@ Opcion: ID a buscar: ID 801 | PENDIENTE | gravedad 5 | ingreso 1
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -52,7 +52,7 @@ Aula no verificada en el catalogo; se conserva el bloque y aula ingresados.
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -75,7 +75,7 @@ Opcion: ID a buscar: ID 802 | PENDIENTE | gravedad 3 | ingreso 2
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: Liberacion: heap=2, pila=0, cola=0, BST=2, lista=2.

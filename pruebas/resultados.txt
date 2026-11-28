@@ -150,12 +150,12 @@ T24 - Exportacion segura y sin efectos sobre el sistema
   Catalogo de 205 lugares disponible sin internet | esperado: OK | obtenido: OK
 Resultado: APROBADA
 
-T25 - Archivo del mapa completo, reemplazo y error de escritura
-  Crear HTML autosuficiente | esperado: OK | obtenido: OK
-  Reemplazar instantanea existente | esperado: OK | obtenido: OK
-  Archivo actualizado, con foto JPEG incorporada, plantilla y cierre completo | esperado: OK | obtenido: OK
-  Error de carpeta no corrompe datos | esperado: OK | obtenido: OK
-  Nunca reemplaza ni elimina una carpeta con el mapa | esperado: OK | obtenido: OK
+T25 - Mapa de consola fiel al estado y sin efectos secundarios
+  Mapa vacio sin datos de ejemplo | esperado: OK | obtenido: OK
+  Cuenta activas, excluye canceladas y filtra el bloque sin perder totales | esperado: OK | obtenido: OK
+  Aulas del catalogo y mapa de solo lectura | esperado: OK | obtenido: OK
+  Reubicacion explicita prevalece sobre bloque original | esperado: OK | obtenido: OK
+  Referencias sin bloque conservan su nombre en el listado | esperado: OK | obtenido: OK
 Resultado: APROBADA
 
 T26 - Referencias 1-36 de la foto sin alterar estados ni prioridades
@@ -3748,9 +3748,25 @@ Incidencia 1: ubicacion exacta retirada. La zona de atencion sigue siendo 3.
 Registrada 1: RECIBIDA, secuencia 1.
 Clasificada 1: PENDIENTE, gravedad 5.
 Incidencia 1: ubicada en #49 Coliseo Polideportivo. La zona de atencion sigue siendo 3.
-Registrada 1: RECIBIDA, secuencia 1.
-Incidencia 1: ubicada en #49 Coliseo Polideportivo. La zona de atencion sigue siendo 3.
-Clasificada 1: PENDIENTE, gravedad 5.
+Registrada 101: RECIBIDA, secuencia 1.
+Clasificada 101: PENDIENTE, gravedad 5.
+Registro listo: ID 101 | bloque D | aula 203 | gravedad 5.
+Aula reconocida: D-203 Laboratorio de Redes | 2da. Planta.
+Registrada 102: RECIBIDA, secuencia 2.
+Clasificada 102: PENDIENTE, gravedad 2.
+Registro listo: ID 102 | bloque D | aula 999 | gravedad 2.
+Aula no verificada en el catalogo; se conserva el bloque y aula ingresados.
+Registrada 103: RECIBIDA, secuencia 3.
+Clasificada 103: PENDIENTE, gravedad 4.
+Registro listo: ID 103 | bloque A | aula 108 | gravedad 4.
+Aula reconocida: A-108 Aula | 1ra. Planta.
+Cancelada 102; conservada en historial.
+Registrada 104: RECIBIDA, secuencia 4.
+Clasificada 104: PENDIENTE, gravedad 3.
+Registro listo: ID 104 | bloque Z | aula 001 | gravedad 3.
+Aula no verificada en el catalogo; se conserva el bloque y aula ingresados.
+Incidencia 101: ubicada en #18 A-108 Aula. La zona de atencion sigue siendo -1.
+Incidencia 101: plano oficial #26 Biblioteca (P4). La zona de atencion sigue siendo -1.
 Registrada 1: RECIBIDA, secuencia 1.
 Clasificada 1: PENDIENTE, gravedad 5.
 Incidencia 1: plano oficial #26 Biblioteca (P4). La zona de atencion sigue siendo 3.

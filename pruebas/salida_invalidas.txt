@@ -10,7 +10,7 @@
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -34,7 +34,7 @@ Zona (1-7): Registrada 101: RECIBIDA, secuencia 1.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -51,7 +51,7 @@ Opcion: ID positivo: El ID ya existe.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -73,7 +73,7 @@ Gravedad (1-5, 5 es mayor urgencia): Clasificada 101: PENDIENTE, gravedad 4.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -91,7 +91,7 @@ Nueva gravedad (1-5): Gravedad de 101 actualizada a 5.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -108,7 +108,7 @@ Opcion: Deshecho: 101 vuelve a gravedad 4.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -125,7 +125,7 @@ Opcion: Asignada 101. Ruta: 0 -> 2; costo 2 min.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -142,7 +142,7 @@ Opcion: ID a resolver: Resuelta 101; conservada en historial.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -159,7 +159,7 @@ Opcion: ID a cancelar: No se cancela una RESUELTA.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -176,7 +176,7 @@ Opcion: Pila de deshacer vacia.
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir

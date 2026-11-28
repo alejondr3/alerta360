@@ -1,6 +1,6 @@
 // Catalogo obtenido de https://maps.upsa.edu.bo/ (23-11-2026).
 #include "UbicacionesCampus.h"
-#include "MapaVisual.h"
+#include "DatosJSON.h"
 #include <ostream>
 #include <iomanip>
 namespace {

@@ -10,7 +10,7 @@
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -28,7 +28,7 @@ Tipo: Descripcion (10-120 caracteres): Zona (1-7): Registrada 999: RECIBIDA, sec
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -81,7 +81,7 @@ Numero impreso en la foto (1-36; 0 quitar): Incidencia 999: plano oficial #26 Bi
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir
@@ -101,7 +101,7 @@ Opcion: ID a buscar: ID 999 | RECIBIDA | gravedad 0 | ingreso 1
 08 Buscar por ID
 09 Listados e indicadores
 10 Gestionar rutas
-11 Abrir mapa visual numerado
+11 Ver mapa en consola
 12 Ubicar por catalogo UPSA (1-205)
 13 Ubicar por numero de la foto (1-36)
 00 Salir

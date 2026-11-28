@@ -2,7 +2,7 @@
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -15,7 +15,7 @@ Aula reconocida: D-203 Laboratorio de Redes | 2da. Planta.
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -39,7 +39,7 @@ Opcion: ID a buscar: ID 501 | PENDIENTE | gravedad 5 | ingreso 1
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -59,7 +59,7 @@ Opcion: Falta configurar la ruta del bloque D con el nuevo mapa. La incidencia 5
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: Liberacion: heap=1, pila=0, cola=0, BST=1, lista=1.

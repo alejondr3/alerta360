@@ -2,7 +2,7 @@
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -15,7 +15,7 @@ Aula reconocida: D-203 Laboratorio de Redes | 2da. Planta.
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: --- Historial hacia adelante ---
@@ -40,7 +40,7 @@ En cola: 0 (incluye canceladas sin descartar). Correcciones: 0.
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -64,7 +64,7 @@ Opcion: ID a buscar: ID 901 | PENDIENTE | gravedad 5 | ingreso 1
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -84,7 +84,7 @@ Opcion: ID: Nueva gravedad (1-5): Gravedad de 901 actualizada a 3.
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -104,7 +104,7 @@ Opcion: Deshecho: 901 vuelve a gravedad 5.
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -124,7 +124,7 @@ Opcion: Falta configurar la ruta del bloque D con el nuevo mapa. La incidencia 9
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -144,7 +144,7 @@ Opcion: ID a cancelar: Cancelada 901; conservada en historial.
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: 
@@ -163,7 +163,7 @@ Opcion:
 === ALERTA360 ===
 1 Registrar incidencia
 2 Ver incidencias
-3 Abrir mapa
+3 Ver mapa en consola
 4 Mas opciones
 0 Salir
 Opcion: Liberacion: heap=0, pila=0, cola=0, BST=1, lista=1.

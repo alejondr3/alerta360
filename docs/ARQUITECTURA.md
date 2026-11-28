@@ -38,8 +38,9 @@ flowchart TD
 - `GrafoCampus.h/.cpp`: matriz 8x8 y Dijkstra con reconstruccion de camino.
 - `SistemaAlerta360.h/.cpp`: reglas, coordinacion, consultas e invariantes.
 - `main.cpp`: entrada validada, menu y manejo de EOF.
-- `Pruebas.cpp`: 29 escenarios reproducibles con verificaciones automaticas.
-- `MapaVisual.h/.cpp` y `MapaPlantilla.inc`: exportacion y vista interactiva.
+- `Pruebas.cpp`: 31 escenarios reproducibles con verificaciones automaticas.
+- `MapaConsola.h/.cpp`: esquema ASCII, conteos e incidencias por bloque.
+- `DatosJSON.h/.cpp`: serializacion independiente de la interfaz.
 - `UbicacionesCampus.h/.cpp`: catalogo compilado de los 205 lugares UPSA.
 
 La lista es la unica propietaria de los registros. El BST guarda punteros no
@@ -150,6 +151,10 @@ coordenadas de aula. La seleccion del catalogo no equivale a una medicion
 geografica y no produce tiempos de recorrido reales.
 
 
-## Presentación simplificada
+## Mapa de consola
 
-El menú normal agrupa las operaciones en cuatro entradas y un submenú. El modo --consigna conserva la numeración académica. El mapa muestra bloque, aula e incidencias; los controles avanzados quedan en un panel desplegable. La selección comparte estado entre mapa, lista y selectores. No cambia las estructuras ni las reglas de prioridad.
+`SistemaAlerta360::mostrarMapaConsola` pasa su lista como referencia constante al renderizador. El renderizador cuenta las incidencias activas (recibidas, pendientes y asignadas), agrupa por bloque y muestra el detalle en orden de ingreso. Resueltas y canceladas conservan su ficha en el historial.
+
+Una ubicacion del catalogo elegida explicitamente prevalece sobre el bloque ingresado. Las referencias del plano sin correspondencia de bloque se listan sin inventar una posicion. La vista no modifica el heap, el BST, la cola ni los estados. Su recorrido cuesta O(n) con un catalogo fijo de 205 entradas; los seis contadores requieren O(1) memoria auxiliar. No usa HTML, imagenes incorporadas, APIs de apertura del navegador ni bibliotecas externas.
+
+El menu normal tiene cuatro opciones y un submenu; `--consigna` conserva la numeracion academica. Los caracteres del esquema son ASCII y los nombres del catalogo se imprimen en UTF-8.

@@ -63,3 +63,10 @@ evidencia real: salida_foto.txt.
 Las entradas anteriores se reproducen con `--consigna`. El registro de cuatro
 campos se reproduce con `entrada_registro.txt`, sin argumentos; evidencia en
 `salida_registro.txt`.
+
+
+## Version de consola - 28/11/2026
+
+T25 reemplaza la antigua prueba de archivo HTML: comprueba mapa vacio, conteos de activas, exclusión de canceladas, filtro por bloque, catalogo de aulas, reubicaciones y ausencia de modificaciones al consultar. Los casos JSON restantes comprueban serializacion de datos, independiente de la interfaz.
+
+`entrada_consola.txt` recorre registro de dos incidencias, mapa, aulas del bloque D, consulta por ID, bloque invalido, cancelacion y mapa actualizado. La salida real esta en `salida_consola.txt`. Los modos --mapa y --visual funcionan en consola; el cierre por EOF se verifica tambien dentro de las consultas del mapa.

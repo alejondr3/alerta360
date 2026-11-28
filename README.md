@@ -1,124 +1,25 @@
-<p align="center">
-  <img src="docs/assets/alerta360-banner.svg" alt="Alerta360 — incidencias, prioridades y rutas del campus" width="100%">
-</p>
-
-<div align="center">
-
 # Alerta360
 
-**Del reporte a la resolución, con prioridad y ubicación.**
-
-Central de incidencias técnicas de campus desarrollada en C++20, con estructuras de datos propias y un mapa visual de la UPSA.
+**Incidencias del campus UPSA, de principio a fin en consola.**
 
 [![Compilación y pruebas](https://github.com/alejondr3/alerta360/actions/workflows/ci.yml/badge.svg)](https://github.com/alejondr3/alerta360/actions/workflows/ci.yml)
-![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus&logoColor=white)
-![Pruebas](https://img.shields.io/badge/escenarios_de_prueba-31-165c46)
-![Plataformas](https://img.shields.io/badge/CI-Linux_%7C_Windows-374151)
+![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C)
+![Pruebas](https://img.shields.io/badge/escenarios-31-165c46)
 
-[Inicio rápido](#inicio-rápido) · [Mapa del campus](#mapa-del-campus) · [Arquitectura](#arquitectura) · [Pruebas](#pruebas) · [Documentación](#documentación)
-
-</div>
-
----
-
-> **Registro simplificado:** ahora se solicitan solo **bloque, aula, ID y gravedad**. La incidencia se clasifica al registrarse. El mapa integra una vista limpia basada en el plano real y el catálogo docente por bloque y planta. Las conexiones de rutas de cada bloque todavía requieren una configuración verificada.
-
-## Qué hace
-
-Alerta360 recibe fallas de energía, red, equipos, climatización e infraestructura. Las clasifica, ordena su atención por urgencia, calcula una ruta de asignación y conserva el historial de cada reporte durante la sesión.
-
-| Capacidad | Comportamiento |
-| :--- | :--- |
-| **Recepción ordenada** | Los reportes reciben un ID único; la cola FIFO conserva el orden durante la clasificación automática. |
-| **Atención por prioridad** | Mayor gravedad primero; ante un empate, se atiende el reporte más antiguo. |
-| **Correcciones reversibles** | Los cambios de gravedad se guardan en una pila y pueden deshacerse mientras la incidencia siga pendiente. |
-| **Asignación con ruta** | Dijkstra calcula el camino mínimo desde la base. Si no hay ruta, el reporte permanece pendiente. |
-| **Ubicación visual** | Las incidencias se marcan sobre la imagen completa del campus, con referencias numeradas y zoom. |
-| **Historial e indicadores** | Búsqueda por ID, recorridos, conteos por estado y próximas cinco incidencias sin modificar las estructuras. |
-
-## Mapa del campus
-
-![Interfaz simple: mapa e incidencias](docs/assets/interfaz-simple.jpg)
-
-La vista ofrece una **ilustración limpia derivada con IA del plano de Postgrado UPSA** y la opción **Plano original** dentro de **Más opciones** para comparar con la infraestructura publicada. Ambas imágenes están incorporadas en el ejecutable y funcionan sin conexión. La ilustración no sustituye un plano técnico ni contiene distribuciones interiores verificadas.
-
-**Acercá hasta 400%, desplazá el plano y seleccioná una incidencia para consultar su estado y ubicación.** El botón **Ver todo** recupera el encuadre original.
-
-### Interfaz simple
-
-La pantalla principal muestra el mapa, los selectores **Bloque** y **Aula**, y la lista de incidencias. Seleccioná una incidencia para ver su gravedad, estado y ubicación. **Limpiar** quita la selección.
-
-Los filtros, el catálogo completo, las referencias numeradas y la vista del grafo quedan dentro de **Más opciones**, cerrado al iniciar.
-
-La consola ofrece cuatro acciones: **1 Registrar incidencia**, **2 Ver incidencias**, **3 Abrir mapa** y **4 Más opciones**. **0** cierra el programa. El submenú reúne búsquedas, cambios de gravedad, asignaciones y otras operaciones.
-
-### Aulas por bloque y planta
-
-El catálogo oficial, verificado el **26/11/2026**, contiene **122 espacios en su categoría docente**: **72** tienen la palabra *Aula* en el nombre; los demás incluyen laboratorios, talleres y salas. Esto no certifica el inventario total de la universidad.
-
-| Bloque | Espacios docentes catalogados |
-| :---: | ---: |
-| A | 32 |
-| B | 49 |
-| C | 5 |
-| D | 18 |
-| E | 18 |
-
-Elegí bloque y aula en los dos selectores. Los filtros por planta y la búsqueda completa están en **Más opciones**. Por ejemplo, **D-203** figura como **Laboratorio de Redes · 2da. Planta**. El marcador señala su bloque y el detalle conserva el aula y la planta; no se dibuja una distribución interior inventada.
-
-El registro sigue pidiendo solo **bloque, aula, ID y gravedad**. Si el aula figura en el catálogo, se vincula automáticamente. Se aceptan `D` o `Bloque D`, y `203` o `D-203`. Un aula no catalogada conserva lo ingresado y se indica que no fue verificada.
-
-El archivo [espacios-docentes.json](datos/espacios-docentes.json) conserva el inventario publicado y sus conteos. La falta de entradas para un bloque no demuestra que ese bloque no tenga aulas.
-
-### Marcar dónde está el problema
-
-1. Registrá la incidencia desde la opción **1**.
-2. Abrí el mapa con **3**.
-3. Elegí **4 → 9 → ID de incidencia → número impreso en la foto**.
-
-| Referencia de la foto | Ubicación |
-| :---: | :--- |
-| **26** | Biblioteca |
-| **31** | Polideportivo |
-| **36** | Laboratorios de Ingeniería |
-
-La opción **4 → 8** permite usar el catálogo avanzado de **205 lugares**, con nombres, bloques y plantas.
-
-> **Tres numeraciones, tres propósitos.** La foto usa referencias **1–36**; el catálogo, ID **1–205**; y el grafo de atención, nodos **0–7**. Una ubicación visual no cambia la zona de atención ni el cálculo de rutas. Las aulas sin referencia propia se muestran aproximadamente por bloque, con una indicación visible.
+Registrá un problema con **bloque, aula, ID y gravedad**, consultá su ubicación en un mapa de texto y administrá su atención por prioridad. La aplicación funciona sin navegador, servidor ni conexión a Internet.
 
 ## Inicio rápido
-
-### Requisitos
-
-- Compilador compatible con **C++20**: GCC, Clang o MSVC.
-- **CMake 3.20+**, si elegís ese método de compilación.
-- Navegador para la vista del campus.
-
-El núcleo utiliza la biblioteca estándar y las APIs del sistema para abrir el navegador. No requiere instalar paquetes externos.
 
 ```sh
 git clone https://github.com/alejondr3/alerta360.git
 cd alerta360
-```
-
-### Windows · GCC / MinGW
-
-```powershell
-g++ -std=c++20 -Wall -Wextra -pedantic *.cpp -o alerta360.exe
-./alerta360.exe --visual
-```
-
-### Linux / macOS · GCC o Clang
-
-```sh
 g++ -std=c++20 -Wall -Wextra -pedantic *.cpp -o alerta360
-./alerta360 --visual
+./alerta360
 ```
 
-Con Clang, reemplazá `g++` por `clang++`. En una consola Windows antigua, `chcp 65001` permite usar texto UTF-8.
+En Windows, compilá con `-o alerta360.exe` y ejecutá `./alerta360.exe`. El ZIP de entrega también incluye el ejecutable estático de Windows. Se necesita un compilador C++20 para compilar desde las fuentes; no hay paquetes externos.
 
-<details>
-<summary><strong>Compilar con CMake, Visual Studio o Make</strong></summary>
+Con CMake 3.20 o posterior:
 
 ```sh
 cmake -S . -B build
@@ -126,213 +27,146 @@ cmake --build build --config Debug
 ctest --test-dir build -C Debug --output-on-failure
 ```
 
-| Generador / entorno | Ejecutar el mapa con la consola |
-| :--- | :--- |
-| Linux / macOS, generador de una configuración | `./build/alerta360 --visual` |
-| Windows con MinGW | `./build/alerta360.exe --visual` |
-| Windows con Visual Studio | `./build/Debug/alerta360.exe --visual` |
+El ejecutable queda en `build/alerta360` con generadores de una configuración; Visual Studio usa `build/Debug/alerta360.exe`. También se incluyen `make` y `make test`.
 
-Para seleccionar MinGW explícitamente, usá una carpeta de compilación nueva:
+## Uso
 
-```powershell
-cmake -S . -B build-mingw -G "MinGW Makefiles"
-cmake --build build-mingw
+```text
+=== ALERTA360 ===
+1 Registrar incidencia
+2 Ver incidencias
+3 Ver mapa en consola
+4 Mas opciones
+0 Salir
 ```
 
-Con Make: `make`, `make test` y `make clean`. En MinGW, usá `mingw32-make`.
-
-</details>
-
-### Modos de ejecución
-
-| Argumento | Resultado |
-| :--- | :--- |
-| Sin argumentos | Inicia la consola con registro de bloque, aula, ID y gravedad. |
-| `--visual` | Inicia la consola y abre el mapa de la sesión. |
-| `--mapa` | Genera y abre un mapa vacío, y termina. |
-| `--pruebas` | Ejecuta la suite automática y devuelve su resultado. |
-| `--consigna` | Conserva el registro y la clasificación manual originales para reproducir las pruebas de la consigna. |
-
-## Un primer registro
-
-La opción **1** solicita exactamente:
+La opción **1** pide exactamente cuatro campos:
 
 ```text
 Bloque: D
 Aula: 203
-ID de incidencia: 501
+ID de incidencia: 101
 Gravedad (1-5): 5
 ```
 
-El programa conserva bloque y aula y carga la incidencia como **PENDIENTE**, con prioridad 5. No pide tipo, descripción ni zona. La descripción se genera con la ubicación ingresada.
+**5 es la mayor urgencia.** El registro se clasifica automáticamente respetando la cola de recepción y queda pendiente. El ID es único durante la sesión. Se reconocen tanto `D` y `Bloque D` como `203` y `D-203`.
 
-Los registros reconocidos se vinculan al catálogo y señalan su bloque en el mapa. Las rutas por bloque todavía no están configuradas con pesos verificados; no reciben una zona de destino inventada. Si se intenta asignarlos, permanecen pendientes y se informa que falta configurar la ruta del bloque. La clasificación, corrección de gravedad, deshacer, consultas y cancelación siguen disponibles.
+## Mapa en consola
 
-La gravedad va de **1 a 5**; **5 es la mayor urgencia**. El modo `--consigna` conserva el flujo original y las rutas de control del grafo de prueba para la evaluación académica.
+La opción **3** dibuja un esquema de los bloques y muestra las incidencias activas. Cada bloque indica su cantidad y gravedad máxima; debajo aparecen **ID, aula, gravedad y estado**. Los conteos se calculan con los datos actuales, sin incidencias de ejemplo al iniciar.
 
-<details>
-<summary><strong>Menú académico completo: --consigna</strong></summary>
+```text
+                         CANCHA / AREAS
+  +--------------------+                          +--------------------+
+  | BLOQUE B           |                          | BLOQUE E           |
+  | Sin incidencias    |                          | Sin incidencias    |
+  +--------------------+                          +--------------------+
+  +--------------------+  +--------------------+  +--------------------+
+  | BLOQUE A           |  | BLOQUE C           |  | BLOQUE D           |
+  | ! 1 activa(s)      |  | Sin incidencias    |  | ! 1 activa(s)      |
+  | Gravedad max: 3    |  |                    |  | Gravedad max: 5    |
+  +--------------------+  +--------------------+  +--------------------+
+  +--------------------+
+  | BLOQUE CENTRAL     |
+  | Sin incidencias    |
+  +--------------------+
+  ================= ACCESO / AVENIDA =================
 
-Esta numeración se aplica exclusivamente al modo `--consigna`. El menú normal usa las cuatro acciones descritas arriba.
+  ! #101 | Bloque D | Aula 203 | Gravedad 5 | PENDIENTE
+  ! #102 | Bloque A | Aula 108 | Gravedad 3 | PENDIENTE
+```
+
+Ejemplo ilustrativo con dos reportes. [Salida real de demostración](docs/mapa-consola.txt).
+
+Dentro del mapa:
 
 | Opción | Acción |
 | :---: | :--- |
-| **01** | Registrar bloque, aula, ID y gravedad; clasificar automáticamente en orden FIFO. |
-| **02** | Clasificar la siguiente recibida que aún esté esperando (compatibilidad con el modo original). |
-| **03** | Cambiar la gravedad de una pendiente. |
-| **04** | Deshacer la última corrección de gravedad. |
-| **05** | Asignar la siguiente por prioridad y registrar su ruta. |
-| **06** | Resolver una incidencia asignada. |
-| **07** | Cancelar una recibida o pendiente. |
-| **08** | Buscar por ID mediante el BST. |
-| **09** | Consultar historial, indicadores y próximas cinco pendientes. |
-| **10** | Gestionar costos, cierres y restauraciones de vías. |
-| **11** | Abrir el mapa visual. |
-| **12** | Vincular un lugar del catálogo UPSA, con ID de 1 a 205. |
-| **13** | Vincular una referencia de la foto, de 1 a 36. |
-| **00** | Liberar las estructuras y cerrar. |
+| **1** | Elegir A, B, C, D, E o CENTRAL y consultar sus incidencias y espacios docentes por planta. |
+| **2** | Ingresar un ID para ver la ficha completa, incluso si está resuelto o cancelado. |
+| **0** | Volver al menú principal. |
 
-</details>
+`!` identifica incidencias activas. Las canceladas y resueltas quedan en el historial. Los reportes sin un bloque representable permanecen visibles en el listado y se cuentan como **sin bloque en el esquema**. Una ubicación explícita posterior tiene prioridad sobre el bloque original para ubicar el reporte.
 
-## Arquitectura
+La disposición sigue aproximadamente la imagen de referencia del campus. **Es un esquema por bloques, sin planos interiores, escala ni distancias reales.** Las aulas se consultan por código y planta; no se inventa su posición dentro de los edificios. El mapa utiliza caracteres ASCII para funcionar también en terminales sin colores o símbolos especiales; los nombres del catálogo conservan UTF-8.
 
-La consola y el mapa comparten los datos de una misma sesión. `SistemaAlerta360` coordina las reglas de negocio y mantiene consistentes las estructuras implementadas por el proyecto.
+## Más opciones
+
+| Opción del submenú | Acción |
+| :---: | :--- |
+| **1** | Buscar por ID. |
+| **2** | Cambiar gravedad. |
+| **3** | Deshacer el último cambio de gravedad. |
+| **4** | Asignar la siguiente por prioridad. |
+| **5** | Resolver una asignada. |
+| **6** | Cancelar una recibida o pendiente. |
+| **7** | Gestionar costos, cierres y restauraciones de rutas. |
+| **8** | Vincular un lugar del catálogo; ingresar **206** para listar los lugares en consola. |
+| **9** | Vincular una referencia numerada del plano de origen, disponible como listado de texto. |
+| **0** | Volver. |
+
+Las correcciones de gravedad se deshacen mientras la incidencia siga pendiente. Si una asignación no tiene ruta, la incidencia permanece pendiente. Los registros de bloque y aula esperan una configuración verificada de rutas por bloque; no se inventa una conexión con el grafo académico.
+
+## Catálogo y fuentes
+
+El catálogo incorporado procede de [maps.upsa.edu.bo](https://maps.upsa.edu.bo/) y conserva 205 lugares de referencia. La copia verificada el **26/11/2026** contiene 122 espacios en la categoría docente: A 32, B 49, C 5, D 18 y E 18. De ellos, 72 incluyen la palabra *Aula*. Es una copia de referencia, no una certificación del inventario actual de la universidad.
+
+Por ejemplo, **D-203** figura como **Laboratorio de Redes · 2da. Planta**. Un aula ausente del catálogo conserva los datos ingresados sin asignarle otra sala. La falta de entradas de un bloque no demuestra que no tenga aulas.
+
+[Catálogo docente](datos/espacios-docentes.json) · [Fuentes del plano](datos/FUENTE_PLANO.md) · [Alcance de los datos](datos/LEEME.md)
+
+## Estructuras y arquitectura
 
 | Estructura propia | Responsabilidad |
 | :--- | :--- |
-| **Lista doblemente enlazada** | Repositorio único e historial de incidencias. |
-| **Cola FIFO enlazada** | Orden de recepción para la clasificación. |
-| **BST por ID** | Índice hacia los registros originales de la lista. |
-| **Heap binario máximo** | Prioridad por gravedad y antigüedad. |
-| **Pila LIFO enlazada** | Historial de correcciones de gravedad. |
-| **Grafo ponderado + Dijkstra** | Conexiones del campus de prueba y caminos mínimos. |
+| Lista doblemente enlazada | Propiedad de los registros e historial. |
+| Cola FIFO enlazada | Clasificación en orden de recepción. |
+| BST por ID | Búsqueda sobre los registros originales. |
+| Heap máximo | Gravedad descendente y antigüedad ante empates. |
+| Pila LIFO | Historial de cambios de gravedad. |
+| Grafo ponderado y Dijkstra | Rutas mínimas sobre los ocho nodos académicos. |
 
-La lista posee los registros. Los índices guardan referencias o IDs y no duplican incidencias completas. El heap mantiene una posición inversa para reajustar o retirar elementos conocidos en `O(log p)`.
+`main.cpp` gestiona las entradas. `SistemaAlerta360` coordina las operaciones; `MapaConsola` recorre los registros en modo de solo lectura. `UbicacionesCampus` contiene el catálogo. `DatosJSON` conserva la serialización de datos para verificaciones, sin generar una interfaz web.
 
-Los detalles de memoria, invariantes y complejidad están en [Arquitectura y decisiones de diseño](docs/ARQUITECTURA.md).
+El grafo académico parte de **0 · Central de soporte** y conserva las zonas y pesos de la consigna. Las rutas de control cuestan 8 minutos hacia la zona 3 y 13 hacia la zona 7. Sus pesos no representan mediciones reales sobre el campus.
 
-### Organización del repositorio
+[Arquitectura, invariantes y complejidades](docs/ARQUITECTURA.md).
 
-```text
-alerta360/
-├── main.cpp                    # Menú y entrada validada
-├── Incidencia.h                # Modelo de dominio
-├── Estructuras.h/.cpp          # Lista, cola, BST, heap y pila
-├── GrafoCampus.h/.cpp          # Matriz de adyacencia y Dijkstra
-├── SistemaAlerta360.h/.cpp     # Reglas e integración
-├── MapaVisual.h/.cpp           # Exportación y apertura del mapa
-├── MapaPlantilla.inc           # Interfaz visual
-├── MapaCampusImagen.inc        # JPEG original incorporado
-├── MapaCampusLimpio.inc        # Ilustración IA incorporada
-├── UbicacionesCampus.h/.cpp    # Catálogo y referencias del plano
-├── Pruebas.cpp                 # 31 escenarios automáticos
-├── pruebas/                    # Entradas, salidas y evidencias
-├── datos/                      # Foto original, catálogo y fuentes
-├── docs/                       # Arquitectura y recursos del README
-├── .github/workflows/ci.yml    # Linux, Windows y sanitizadores
-├── CMakeLists.txt
-├── Makefile
-└── uso_IA.txt
-```
+## Modos de ejecución
 
-## Grafo de atención
+| Argumento | Resultado |
+| :--- | :--- |
+| Sin argumentos | Menú principal en consola. |
+| `--mapa` | Imprime el esquema vacío y termina. |
+| `--visual` | Alias conservado: muestra el mapa y continúa en consola. |
+| `--consigna` | Registro y menú académico originales; opción **11** imprime el mapa en consola. |
+| `--pruebas` | Ejecuta los 31 escenarios automáticos y devuelve 0 si pasan. |
 
-El sistema utiliza el grafo **no dirigido de ocho nodos** definido para el proyecto. El origen fijo es **0 · Central de soporte**.
+En `--consigna`, las opciones son: 1 registrar, 2 clasificar, 3 cambiar gravedad, 4 deshacer, 5 asignar, 6 resolver, 7 cancelar, 8 buscar, 9 informes, 10 rutas, 11 mapa, 12 catálogo, 13 referencia y 0 salir.
 
-| Nodo | Zona | Nodo | Zona |
-| :---: | :--- | :---: | :--- |
-| 0 | Central de soporte | 4 | Residencias |
-| 1 | Biblioteca | 5 | Cafetería |
-| 2 | Laboratorios | 6 | Centro de salud universitario |
-| 3 | Coliseo | 7 | Estadio |
+## Verificación
 
-<details>
-<summary><strong>Conexiones, costos y rutas de control</strong></summary>
-
-| Vía | Minutos | Vía | Minutos |
-| :---: | ---: | :---: | ---: |
-| 0–1 | 4 | 0–2 | 2 |
-| 1–2 | 1 | 1–3 | 5 |
-| 2–3 | 8 | 2–4 | 10 |
-| 3–4 | 2 | 3–5 | 6 |
-| 4–5 | 3 | 4–6 | 1 |
-| 5–7 | 4 | 6–7 | 2 |
-
-| Destino | Ruta mínima desde la base | Costo |
-| :--- | :--- | ---: |
-| Zona 3 | `0 → 2 → 1 → 3` | **8 min** |
-| Zona 7 | `0 → 2 → 1 → 3 → 4 → 6 → 7` | **13 min** |
-
-Las conexiones tienen costos positivos; la diagonal es `0` y una vía ausente o cerrada vale `-1`. Los costos acumulados se almacenan en `long long`.
-
-</details>
-
-Si el destino queda desconectado, la asignación se rechaza y la incidencia conserva su posición lógica como pendiente. Las rutas registradas se mantienen como historial aunque el mapa cambie después.
-
-## Pruebas
-
-La suite incluye **31 escenarios reproducibles**: los diez casos de aceptación del proyecto y casos adicionales de prioridad, cancelación, memoria, entradas inválidas, UTF-8, exportación segura y referencias de la foto.
-
-```powershell
-./alerta360.exe --pruebas
+```sh
+./alerta360 --pruebas
 ```
 
 ```text
 === Resumen: 31 aprobadas, 0 fallidas ===
 ```
 
-El proceso devuelve `0` si todas las pruebas pasan y `1` si alguna falla. CTest agrupa los 31 escenarios en una suite.
+La suite verifica prioridad, cancelaciones, estructuras, Dijkstra, validaciones, catálogo y mapa de consola. El caso **T25** comprueba conteos, filtros, aulas, reubicación y que consultar el mapa no cambie los datos. GitHub Actions compila y ejecuta las pruebas en Linux y Windows; Linux también utiliza AddressSanitizer y UndefinedBehaviorSanitizer.
 
-| Verificación automática | Entorno |
-| :--- | :--- |
-| Compilación C++20 y suite funcional | GitHub Actions · Linux y Windows |
-| AddressSanitizer y UndefinedBehaviorSanitizer | GitHub Actions · Linux |
-| Entradas y salidas reproducibles del menú | Archivos de evidencia en `pruebas/` |
-
-[Ver las ejecuciones de CI](https://github.com/alejondr3/alerta360/actions) · [Matriz de pruebas](pruebas/CASOS.md) · [Resultados](pruebas/resultados.txt) · [Registro de verificación](pruebas/VERIFICACION.txt)
-
-<details>
-<summary><strong>Reproducir sesiones y ejecutar sanitizadores localmente</strong></summary>
+Para reproducir una sesión completa en PowerShell:
 
 ```powershell
+Get-Content pruebas/entrada_consola.txt | ./alerta360.exe
 Get-Content pruebas/entrada_aceptacion.txt | ./alerta360.exe --consigna
-Get-Content pruebas/entrada_invalidas.txt | ./alerta360.exe --consigna
-Get-Content pruebas/entrada_foto.txt | ./alerta360.exe --consigna
-Get-Content pruebas/entrada_registro.txt | ./alerta360.exe
 ```
 
-En Linux/macOS, usá `./alerta360 --consigna < pruebas/entrada_aceptacion.txt`.
+[Casos](pruebas/CASOS.md) · [Resultados](pruebas/resultados.txt) · [Sesión de consola](pruebas/salida_consola.txt) · [Verificación](pruebas/VERIFICACION.txt)
 
-Con GCC/Clang y sanitizadores disponibles en Linux/macOS:
+## Alcance
 
-```sh
-cmake -S . -B build-asan -DCMAKE_BUILD_TYPE=Debug -DENABLE_SANITIZERS=ON
-cmake --build build-asan
-ctest --test-dir build-asan --output-on-failure
-```
+Las incidencias permanecen en memoria hasta cerrar la aplicación. El programa libera las estructuras al salir o recibir fin de entrada. Las versiones HTML anteriores fueron retiradas del código ejecutable: el programa actual no abre el navegador ni genera archivos HTML. Los recursos gráficos de referencia conservados en `datos/` y `docs/assets/` no forman parte de la interfaz.
 
-</details>
-
-## Alcance de la sesión
-
-- Las incidencias permanecen **en memoria** hasta cerrar el programa.
-- `mapa_alerta360.html` conserva una instantánea visual; no recupera la sesión.
-- Con el mapa activo, la consola regenera el HTML después de las operaciones. El navegador se actualiza cuando no se está interactuando.
-- Cada sesión visual debe usar su propia carpeta para evitar compartir el mismo archivo generado.
-- El grafo de prueba conserva los pesos de la consigna. Sus tiempos no representan mediciones peatonales reales sobre la fotografía.
-
-## Documentación
-
-| Recurso | Contenido |
-| :--- | :--- |
-| [Arquitectura](docs/ARQUITECTURA.md) | Componentes, propiedad de memoria, invariantes y complejidades. |
-| [Pruebas y evidencias](pruebas/CASOS.md) | Escenarios, entradas y resultados esperados. |
-| [Fuente del plano](datos/FUENTE_PLANO.md) | Procedencia, dimensiones y hash de la imagen original. |
-| [Catálogo del campus](datos/LEEME.md) | Alcance de las ubicaciones y correspondencias con la foto. |
-| [Asistencia de IA](uso_IA.txt) | Declaración del alcance de la asistencia utilizada. |
-
----
-
-**Contexto académico:** proyecto integrador de Estructuras de Datos, UPSA. La implementación y la documentación del repositorio acompañan el informe y la defensa requeridos por la asignatura.
-
-La imagen del campus pertenece a su fuente original y mantiene sus marcas y atribuciones. Su incorporación no implica que Alerta360 sea un producto oficial de la universidad.
+Proyecto académico de Estructuras de Datos, UPSA. No es un producto oficial de la universidad. La asistencia de IA se declara en [uso_IA.txt](uso_IA.txt).

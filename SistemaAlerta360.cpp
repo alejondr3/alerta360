@@ -1,9 +1,14 @@
 #include "SistemaAlerta360.h"
-#include "MapaVisual.h"
+#include "DatosJSON.h"
+#include "MapaConsola.h"
 #include "UbicacionesCampus.h"
 #include <limits>
 #include <ostream>
 #include <stdexcept>
+
+void SistemaAlerta360::mostrarMapaConsola(std::ostream& out, const std::string& bloque) const {
+    dibujarMapaConsola(lista_,out,bloque);
+}
 
 namespace {
 std::string limpiarCampo(const std::string& texto) {
